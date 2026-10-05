@@ -16,7 +16,9 @@
 - [2026-09-15 — 「何もしない時間」は無駄なのか](daily/2026/09/2026-09-15_rest-and-productivity.md)
 - [2026-09-17 — 人によって「普通」は違う](daily/2026/09/2026-09-17_different-normals.md)
 - [2026-09-19 — 知らない場所を歩く楽しさ](daily/2026/09/2026-09-19_walking-without-a-plan.md)
-- [2026-09-28 — AI・時間・選択](daily/2026/09/2026-09-28_ai-time-and-choices.md)
+- [2026-09-28 — 「答えを知っている」ことの価値](daily/2026/09/2026-09-28_ai-and-knowledge.md)
+- [2026-09-28 — 大人になると、時間が早く感じるのはなぜ？](daily/2026/09/2026-09-28_time-and-memory.md)
+- [2026-09-28 — 選択肢が多いほど幸せなのか](daily/2026/09/2026-09-28_choices-and-happiness.md)
 
 ## Daily Format
 
@@ -37,4 +39,4 @@
 
 `YYYY-MM-DD_topic.md`
 
-同じ日に複数テーマを学んだ場合は、一つの Markdown 内で Session を分けるか、内容が独立している場合のみ topic 別に分けます。
+同じ日に複数の文章を学んだ場合も、**文章ごとに必ず別 Markdown** として保存します。日付が同じでも topic slug で区別します。
