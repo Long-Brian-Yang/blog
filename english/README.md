@@ -1,29 +1,31 @@
 # English Learning
 
-A long-term English learning log focused on **natural output, speaking fluency, and advanced expression**.
+A date-based English learning log focused on **natural output, speaking fluency, and advanced expression**.
+
+## How this repository works
+
+Each day's lesson is intentionally kept in **one Markdown file** so it can be studied from top to bottom without jumping between separate vocabulary, grammar, and speaking notes.
+
+A typical daily file contains:
+
+**Reading → 中文理解 → Vocabulary & Chunks → Grammar & Usage → Natural Spoken English → Pronunciation → Active Output → Retelling → Review**
+
+The goal is not to build a traditional textbook. It is to create a chronological record of English that I can actually understand, speak, and reuse.
 
 ## Structure
 
-- [Daily](./daily/) — date-based learning logs: reading, speaking, output, and review
-- [Vocabulary](./vocabulary/vocabulary.md) — cumulative reusable chunks and expressions
-- [Speaking](./speaking/speaking_notes.md) — speaking methods, shadowing, retelling, and practice logs
-- [Grammar](./grammar/grammar_notes.md) — grammar and usage worth actively remembering
-
-## Learning approach
-
-The core system is:
-
-**Daily Input → Expressions → Speaking → Output → Review**
-
-Daily files record **what I learned that day**. Vocabulary, speaking, and grammar files record **what I have accumulated over time**.
+```text
+english/
+├── README.md
+└── daily/
+    └── YYYY/
+        └── MM/
+            └── YYYY-MM-DD_topic.md
+```
 
 File naming:
 
 `YYYY-MM-DD_topic.md`
-
-Example:
-
-`2026-10-05_phd-and-industry.md`
 
 ## Daily Log
 
@@ -31,10 +33,10 @@ Example:
 
 #### October
 
-| Date | Topic | Focus |
+| Date | Topic | Main focus |
 |---|---|---|
-| 2026-10-05 | [PhD & Industry](./daily/2026/10/2026-10-05_phd-and-industry.md) | Academia vs. industry; uncertainty; practical constraints |
+| 2026-10-05 | [Does a PhD Prepare You for Industry?](./daily/2026/10/2026-10-05_phd-and-industry.md) | Academia vs. industry · chunks · grammar · spoken English · output |
 
 ---
 
-> Target: turn passive English knowledge into natural, precise, and spontaneous output.
+> **Target:** turn passive English knowledge into natural, precise, and spontaneous output.
