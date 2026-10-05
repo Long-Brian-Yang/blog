@@ -1,32 +1,39 @@
 # English Learning
 
-A long-term English learning notebook focused on **natural output, speaking fluency, and advanced expression**.
+A long-term English learning log focused on **natural output, speaking fluency, and advanced expression**.
 
 ## Structure
 
-- [Reading](./reading/) — topic-based English essays and discussion materials
-- [Vocabulary](./vocabulary/vocabulary.md) — useful vocabulary and reusable chunks
-- [Speaking](./speaking/speaking_notes.md) — natural spoken English, shadowing, and retelling practice
-- [Grammar](./grammar/grammar_notes.md) — grammar and usage notes collected during practice
+- [Daily](./daily/) — date-based learning logs: reading, speaking, output, and review
+- [Vocabulary](./vocabulary/vocabulary.md) — cumulative reusable chunks and expressions
+- [Speaking](./speaking/speaking_notes.md) — speaking methods, shadowing, retelling, and practice logs
+- [Grammar](./grammar/grammar_notes.md) — grammar and usage worth actively remembering
 
 ## Learning approach
 
-The goal is not simply to learn more words, but to make English increasingly automatic.
+The core system is:
 
-Each reading practice follows roughly this loop:
+**Daily Input → Expressions → Speaking → Output → Review**
 
-1. Read and understand the topic.
-2. Learn reusable chunks rather than isolated words.
-3. Compare formal and spoken versions.
-4. Read the spoken version aloud / shadow it.
-5. Retell the idea without looking at the original.
-6. Produce several sentences using the new expressions.
+Daily files record **what I learned that day**. Vocabulary, speaking, and grammar files record **what I have accumulated over time**.
 
-## Progress
+File naming:
 
-| No. | Topic | Focus |
+`YYYY-MM-DD_topic.md`
+
+Example:
+
+`2026-10-05_phd-and-industry.md`
+
+## Daily Log
+
+### 2026
+
+#### October
+
+| Date | Topic | Focus |
 |---|---|---|
-| 001 | [Does a PhD Prepare You for Industry?](./reading/001_does_a_phd_prepare_you_for_industry.md) | Academia vs. industry; uncertainty; practical constraints |
+| 2026-10-05 | [PhD & Industry](./daily/2026/10/2026-10-05_phd-and-industry.md) | Academia vs. industry; uncertainty; practical constraints |
 
 ---
 
