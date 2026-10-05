@@ -51,6 +51,7 @@ File naming: `YYYY-MM-DD_topic.md`
 ### October
 - [2026-10-05 — Does a PhD Prepare You for Industry?](./daily/2026/10/2026-10-05_phd-and-industry.md)
 - [2026-10-05 — Why Is It So Hard to Slow Down?](./daily/2026/10/2026-10-05_slowing-down.md)
+- [2026-10-05 — Why Do Some People Feel Easy to Talk To?](./daily/2026/10/2026-10-05_easy-to-talk-to.md)
 
 ---
 
