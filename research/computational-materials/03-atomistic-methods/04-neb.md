@@ -1,6 +1,6 @@
 # Nudged Elastic Band (NEB): Principles and Practice
 
-**Recommended prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md) → [Forces and Gradients](../01-physical-foundations/02-forces-and-gradients.md) → [Geometry Optimization](01-geometry-optimization.md) → [Reaction Coordinates and Saddle Points](../01-physical-foundations/03-reaction-coordinates-and-saddle-points.md) → **NEB**
+**Recommended prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md) → [Forces and Gradients](../01-physical-foundations/02-forces-and-gradients.md) → [Geometry Optimization](01-geometry-optimization.md) → [Reaction Coordinates and Saddle Points](../01-physical-foundations/05-reaction-coordinates-and-saddle-points.md) → **NEB**
 
 > Computational Materials Science · Atomistic Simulations · Solid-State Ion Transport  
 > **Level:** Beginner → Intermediate · **Language:** English
@@ -46,7 +46,7 @@ The **nudged elastic band (NEB)** method optimizes a chain of atomic configurati
 
 ### 2.1 Potential Energy Surface (PES)
 
-> **Review:** [Potential Energy Surfaces](../01-physical-foundations/01-potential-energy-surface.md), [Forces and Gradients](../01-physical-foundations/02-forces-and-gradients.md), and [Reaction Coordinates](../01-physical-foundations/03-reaction-coordinates-and-saddle-points.md).
+> **Review:** [Potential Energy Surfaces](../01-physical-foundations/01-potential-energy-surface.md), [Forces and Gradients](../01-physical-foundations/02-forces-and-gradients.md), and [Reaction Coordinates](../01-physical-foundations/05-reaction-coordinates-and-saddle-points.md).
 
 For a system containing $N$ atoms, its atomic configuration can be written as
 
@@ -371,4 +371,4 @@ Not necessarily. High-energy transition-state configurations may be outside the 
 
 NEB finds a locally optimized migration pathway and its potential-energy barrier between specified endpoint configurations. Its most difficult aspects are **selecting meaningful endpoints, sampling realistic pathways, converging saddle points, and connecting microscopic barriers to statistically representative transport mechanisms**.
 
-**Materials applications:** [Bulk structures](../01-physical-foundations/01-bulk-crystal-structures.md) · [Surfaces and Slabs](../04-materials-interfaces/02-surfaces-and-slabs.md) · [Interfaces](../04-materials-interfaces/03-interfaces-and-heterostructures.md).
+**Materials applications:** [Bulk structures](../04-materials-interfaces/01-bulk-crystal-structures.md) · [Surfaces and Slabs](../04-materials-interfaces/02-surfaces-and-slabs.md) · [Interfaces](../04-materials-interfaces/03-interfaces-and-heterostructures.md).
