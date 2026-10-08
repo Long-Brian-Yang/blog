@@ -143,3 +143,27 @@ For an ideal cubic perovskite $ABO_3$, the B-site center has an oxygen octahedro
 2. Why does (001) not tell you whether the exposed surface is BaO or ZrO₂?
 3. What distinguishes an oxygen vacancy from a protonic defect?
 4. Why can equal dopant concentrations yield different local activation barriers?
+
+---
+
+## Additional Foundation: Reciprocal-Lattice Geometry
+
+Reciprocal vectors are defined by $\mathbf a_i\cdot\mathbf b_j=2\pi\delta_{ij}$. For a nondegenerate cell volume $V=\mathbf a_1\cdot(\mathbf a_2\times\mathbf a_3)$:
+
+```math
+\mathbf b_1=2\pi\frac{\mathbf a_2\times\mathbf a_3}{V}.
+```
+
+Cyclic permutations give the other vectors. In a general lattice, the normal to $(hkl)$ planes is proportional to $\mathbf G_{hkl}=h\mathbf b_1+k\mathbf b_2+l\mathbf b_3$, and their spacing is:
+
+```math
+d_{hkl}=\frac{2\pi}{|\mathbf G_{hkl}|}.
+```
+
+This generalizes the earlier cubic-specific formula. **Miller indices label reciprocal-lattice normals, not the chemical termination of a surface**. The distinction matters when building slabs from crystals with more than one chemically inequivalent layer.
+
+![Reciprocal geometry overview](../assets/figures/reciprocal-brillouin.svg)
+
+*Figure. Reciprocal-space concepts link crystal planes to k-point sampling.*
+
+**Related:** [PBC and Brillouin Zones](../01-physical-foundations/03-periodic-boundary-conditions.md).
