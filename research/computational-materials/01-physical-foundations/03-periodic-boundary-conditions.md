@@ -125,3 +125,40 @@ A 2×2×2 supercell has eight times the volume of its parent cell but need not g
 1. Why is minimum-image distance different from unwrapped displacement?
 2. Why can a slab still interact electrostatically with periodic replicas?
 3. Why are more atoms not automatically more independent statistics?
+
+---
+
+## Extended Foundations: Reciprocal Space and Brillouin Zones
+
+![Reciprocal lattice schematic](../assets/figures/reciprocal-brillouin.svg)
+
+*Figure. A reciprocal lattice encodes periodic phase variation rather than another arrangement of physical atoms.*
+
+For real-space primitive lattice vectors $\mathbf a_i$, reciprocal vectors $\mathbf b_j$ satisfy:
+
+```math
+\mathbf a_i\cdot\mathbf b_j=2\pi\delta_{ij}.
+```
+
+The reciprocal lattice contains points $\mathbf G=h\mathbf b_1+k\mathbf b_2+l\mathbf b_3$ with integer indices. The **first Brillouin zone** is the Wigner–Seitz region around the reciprocal-space origin.
+
+Bloch's theorem for a periodic single-particle Hamiltonian states:
+
+```math
+\psi_{n\mathbf k}(\mathbf r)=e^{i\mathbf k\cdot\mathbf r}u_{n\mathbf k}(\mathbf r),\qquad u_{n\mathbf k}(\mathbf r+\mathbf R)=u_{n\mathbf k}(\mathbf r).
+```
+
+A k-point mesh samples the Brillouin zone. A large real-space supercell generally corresponds to a smaller reciprocal zone and may need a coarser k-grid for comparable sampling density. **A gamma-only calculation is not universally converged**, even in a sizeable supercell.
+
+### Why Fourier transforms appear
+
+Periodic functions can be represented through reciprocal-space components. Plane-wave DFT uses basis functions $\exp[i(\mathbf k+\mathbf G)\cdot\mathbf r]$. Reciprocal-space sampling controls electronic integrals, while plane-wave cutoff controls basis resolution; these are separate convergence variables.
+
+### Practical interpretation
+
+1. Verify the reciprocal-vector convention includes $2\pi$.
+2. Distinguish Brillouin-zone sampling from real-space supercell replication.
+3. Compare k-point convergence of forces, stresses and relative energies.
+4. For a surface, sampling along the vacuum direction is typically much less demanding, but still must match the simulation setup.
+
+**Related:** [Bulk Crystal Structures](../04-materials-interfaces/01-bulk-crystal-structures.md) and [DFT](../02-electronic-structure/01-dft-fundamentals.md).
