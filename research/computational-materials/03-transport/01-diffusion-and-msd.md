@@ -23,6 +23,12 @@ The displacement must be computed using **unwrapped positions** across periodic 
 
 ## 2. Einstein relation
 
+![MSD regimes and a long-time linear slope](../assets/figures/msd-regimes.svg)
+
+*Figure. Schematic MSD evolution; the diffusivity must be obtained from an appropriate long-time linear regime.*
+
+
+
 For normal, isotropic three-dimensional diffusion in the long-time diffusive regime:
 
 ```math
