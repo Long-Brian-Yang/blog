@@ -9,6 +9,12 @@ Understand why forces point downhill on a PES, how gradients and Hessians differ
 
 ## 1. From energy to forces
 
+![Energy gradient and downhill force](../assets/figures/force-gradient.svg)
+
+*Figure. Forces point opposite to the energy gradient in a one-dimensional potential well.*
+
+
+
 For a configuration with atomic positions $\mathbf R$, the potential energy is $E(\mathbf R)$. The force on atom $i$ is the **negative gradient** with respect to its Cartesian position:
 
 ```math
