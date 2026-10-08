@@ -8,7 +8,7 @@
 > [!IMPORTANT]
 > **Core idea:** NEB finds a *locally optimized minimum-energy pathway* between two specified atomic configurations. CI-NEB refines the highest-energy image toward a saddle point. **Neither technique directly calculates a diffusion coefficient.**
 
-![Schematic NEB energy profile](../neb/figures/energy-profile.svg)
+![Schematic NEB energy profile](../assets/figures/energy-profile.svg)
 
 *Figure 1. Illustrative energy landscape showing initial and final states, a saddle point, and the forward migration barrier. Energies are examples, not measured results.*
 
@@ -116,7 +116,7 @@ Several distinct local MEPs can exist between the same endpoint states. One succ
 
 ### 2.6 Images
 
-![NEB band with five intermediate images](../neb/figures/neb-band.svg)
+![NEB band with five intermediate images](../assets/figures/neb-band.svg)
 
 *Figure 2. Seven configurations along a discretized pathway: five intermediate images and two fixed endpoints. Each image represents the entire atomic system.*
 
