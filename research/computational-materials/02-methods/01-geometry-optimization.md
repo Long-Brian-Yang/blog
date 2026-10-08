@@ -20,6 +20,12 @@ flowchart TD
 
 ## 2. The force criterion
 
+![Schematic geometry optimization convergence](../assets/figures/optimization-convergence.svg)
+
+*Figure. Illustrative energy decrease during structural relaxation. The energy plot alone is not proof of force convergence.*
+
+
+
 A common convergence criterion is that the largest unconstrained atomic force magnitude is below a specified tolerance:
 
 ```math
