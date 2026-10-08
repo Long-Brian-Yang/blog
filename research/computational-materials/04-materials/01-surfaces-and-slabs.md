@@ -86,3 +86,46 @@ A lower local barrier does **not** automatically imply greater net proton transp
 5. How could dopant depth affect both residence and migration?
 
 **Next:** [Interfaces and Heterostructures](02-interfaces-and-heterostructures.md) · [NEB](../02-methods/02-neb.md).
+
+
+## Advanced Application: Surface Relaxation and Reconstruction
+
+![Ideal and reconstructed surfaces](../assets/figures/surface-reconstruction.svg)
+
+*Figure 2. Relaxation changes atomic coordinates; reconstruction may change the surface periodicity and bonding pattern.*
+
+**Surface relaxation** describes adjustments of near-surface positions with the same basic surface periodicity. **Surface reconstruction** involves a new ordering or periodicity, often accompanying changed bonding or stoichiometry. They are related but not interchangeable.
+
+A small primitive $(1\times1)$ surface cell can prevent a physically relevant $(2\times1)$ or larger reconstruction. Surface thermodynamic comparisons should consider reconstructions and adsorption coverages that are realistic under the intended environment.
+
+## Advanced Application: Adsorption Thermodynamics
+
+![Illustrative adsorption energy](../assets/figures/adsorption-thermodynamics.svg)
+
+*Figure 3. Adsorption energies depend on the chosen reference states; finite-temperature adsorption thermodynamics also includes entropy and chemical potentials.*
+
+For a surface exchanging species with a reservoir, a grand-potential-based quantity is more general than a fixed-composition surface energy:
+
+```math
+\gamma(T,\{p_i\})=\frac{G_{\mathrm{slab}}(T)-\sum_i N_i\mu_i(T,p_i)}{A_{\mathrm{ref}}}.
+```
+
+Here $A_{\mathrm{ref}}$ must be defined consistently for the slab faces included. If two equivalent surfaces contribute, one commonly uses $2A$; asymmetric slabs require a separate accounting of inequivalent faces.
+
+For ideal-gas reservoirs:
+
+```math
+\mu_i(T,p_i)=\mu_i^\circ(T,p^\circ)+k_{\mathrm B}T\ln\left(\frac{p_i}{p^\circ}\right).
+```
+
+This form uses a per-particle chemical potential. When using molar chemical potentials, replace $k_{\mathrm B}$ with $R$.
+
+**BaZrO₃ example:** Different hydroxyl and water coverage on BaO versus ZrO₂ terminations can change proton binding sites and available pathways. When interpreting NEB, report the hydration/coverage state rather than treating the clean surface barrier as universal.
+
+### Validation checklist
+
+- Test larger lateral cells when reconstruction or adsorbate interactions are possible.
+- Compare several adsorbate positions and coverages.
+- State the chemical reservoirs and surface stoichiometry.
+- Check slab thickness, vacuum, and electrostatic corrections.
+- Separate equilibrium surface stability from the kinetics of individual proton hops.
