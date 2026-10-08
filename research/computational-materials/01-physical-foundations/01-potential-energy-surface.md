@@ -173,35 +173,6 @@ A PES is a *physical concept*, not a single computational method.
 
 The same NEB concept can be used with different energy-and-force models. However, different models can predict different barriers, especially in poorly sampled transition-state regions.
 
-## 9. Common Misconceptions
-
-- **“The PES is a 2D graph.”** The graph is a visualization or lower-dimensional slice of a high-dimensional function.
-- **“Zero force always means a stable structure.”** Saddle points also have zero net gradient.
-- **“Geometry optimization always finds the global minimum.”** It usually finds a nearby local minimum.
-- **“A short migration distance guarantees a low barrier.”** Local atomic repulsion and relaxation determine the barrier.
-- **“A PES directly gives a diffusion coefficient.”** Diffusion additionally requires dynamics, site connectivity, statistical populations, or a kinetic model.
-
-## 10. Review Questions
-
-1. What constitutes a single point on the PES of a 100-atom system?
-2. How are forces related to the energy gradient?
-3. Why is a first-order saddle point different from a local minimum?
-4. Why might two geometry optimizations end in different structures?
-5. Why must the surrounding atoms be considered when modeling Li⁺ migration?
-6. How does a PES support both MD and NEB?
-
-### Key Takeaway
-
-**The PES connects structure, energy, and force.** Local minima represent stable configurations, first-order saddle points describe elementary activated transitions, and force information allows us to optimize structures, integrate trajectories, and search for migration pathways.
-
----
-
-**Continue:** [02 · Nudged Elastic Band (NEB)](../03-atomistic-methods/04-neb.md)
-
-**Materials context:** [Bulk crystal structures](../04-materials-interfaces/01-bulk-crystal-structures.md) connect the PES to periodic solid models.
-
----
-
 ## Deeper Understanding: Basins, Metastability, and Reaction Coordinates
 
 ![Local and global minima](../assets/figures/pes-local-global.svg)
@@ -233,3 +204,32 @@ Relaxing a proton near oxygen A seeks a local minimum. Relaxing it near oxygen B
 1. Can a higher-energy local minimum be long-lived?
 2. Does the globally lowest potential energy guarantee highest finite-temperature population?
 3. Why can two different reaction coordinates yield distinct barriers?
+
+## 9. Common Misconceptions
+
+- **“The PES is a 2D graph.”** The graph is a visualization or lower-dimensional slice of a high-dimensional function.
+- **“Zero force always means a stable structure.”** Saddle points also have zero net gradient.
+- **“Geometry optimization always finds the global minimum.”** It usually finds a nearby local minimum.
+- **“A short migration distance guarantees a low barrier.”** Local atomic repulsion and relaxation determine the barrier.
+- **“A PES directly gives a diffusion coefficient.”** Diffusion additionally requires dynamics, site connectivity, statistical populations, or a kinetic model.
+
+## 10. Review Questions
+
+1. What constitutes a single point on the PES of a 100-atom system?
+2. How are forces related to the energy gradient?
+3. Why is a first-order saddle point different from a local minimum?
+4. Why might two geometry optimizations end in different structures?
+5. Why must the surrounding atoms be considered when modeling Li⁺ migration?
+6. How does a PES support both MD and NEB?
+
+### Key Takeaway
+
+**The PES connects structure, energy, and force.** Local minima represent stable configurations, first-order saddle points describe elementary activated transitions, and force information allows us to optimize structures, integrate trajectories, and search for migration pathways.
+
+---
+
+**Continue:** [02 · Nudged Elastic Band (NEB)](../03-atomistic-methods/04-neb.md)
+
+**Materials context:** [Bulk crystal structures](../04-materials-interfaces/01-bulk-crystal-structures.md) connect the PES to periodic solid models.
+
+---
