@@ -21,6 +21,10 @@ A structured collection of **English-language notes** organized by subject and c
 | 13 | [Diffusion, MSD and Ionic Transport](05-transport-properties/01-diffusion-and-msd.md) | Transport |
 | 14 | [Surfaces and Slab Models](04-materials-interfaces/02-surfaces-and-slabs.md) | Materials |
 | 15 | [Interfaces, Heterostructures and Space Charge](04-materials-interfaces/03-interfaces-and-heterostructures.md) | Materials |
+| 16 | [Vibrations, Phonons and Free Energy](01-physical-foundations/06-vibrations-phonons-free-energy.md) | Foundations |
+| 17 | [MLIP Fundamentals](06-machine-learning-potentials/01-mlip-fundamentals.md) | Machine Learning |
+| 18 | [MLIP Validation for MD, NEB and Diffusion](06-machine-learning-potentials/02-mlip-validation.md) | Machine Learning |
+| 19 | [Amorphous Structure and Ionic Transport](04-materials-interfaces/04-amorphous-structure-and-ionic-transport.md) | Materials / Transport |
 
 ## Concept Dependencies
 
@@ -44,18 +48,28 @@ flowchart TD
     BULK --> SURF[Surface]
     SURF --> INT[Interface]
     INT --> DIFF
+    FORCE2[Hessian] --> VIB[Vibrations and Free Energy]
+    PES --> FORCE2
+    VIB --> TST
+    DFT --> MLIP[MLIP Fundamentals]
+    MLIP --> VALID[MLIP Validation]
+    NEB --> VALID
+    MD --> VALID
+    BULK --> AMORPH[Amorphous Structure]
+    MD --> AMORPH
+    AMORPH --> DIFF
 ```
 
 ## Subject Folders
 
 ```text
 computational-materials/
-├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates
+├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates, vibrations
 ├── 02-electronic-structure/     DFT and future SCF/convergence notes
 ├── 03-atomistic-methods/       optimization, MD, ensembles, NEB, TST
-├── 04-materials-interfaces/    bulk, surface, interface, defects
+├── 04-materials-interfaces/    bulk, surface, interface, amorphous structure
 ├── 05-transport-properties/    MSD, diffusion, conductivity
-├── 06-machine-learning-potentials/  future MLIP course
+├── 06-machine-learning-potentials/  MLIP fundamentals and property validation
 ├── assets/figures/             original, version-controlled SVG illustrations
 └── README.md
 ```
@@ -72,6 +86,6 @@ computational-materials/
 ## Next Topics
 
 - Plane-wave cutoff, k-point convergence, pseudopotentials/PAW, and SCF numerical reliability.
-- RDF, coordination environments, glass preparation, and charge-transport correlations.
-- MLIP training data, force/energy/stress validation, and out-of-distribution transferability.
+- Expand amorphous transport with independent glass protocols, RDF, van Hove, and charge-correlation studies.
+- Compare NEP, MACE, and SevenNet on application-specific transferability and performance.
 - Surface thermodynamics, grain boundaries, and interface resistance.
