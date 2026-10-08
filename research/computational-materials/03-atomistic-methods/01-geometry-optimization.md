@@ -87,3 +87,43 @@ In periodic simulations, account for the minimum-image convention and atomic wra
 4. Does an optimizer prove that a relaxed configuration is the global minimum?
 
 **Next:** [Reaction Coordinates and Saddle Points](../01-physical-foundations/05-reaction-coordinates-and-saddle-points.md), then [NEB](04-neb.md).
+
+---
+
+## Numerical Methods: Gradients, Finite Differences, and Error Budgets
+
+![Numerical error categories](../assets/figures/numerical-error.svg)
+
+*Figure. Numerical resolution, solver tolerances and finite sampling contribute different kinds of uncertainty.*
+
+For a differentiable scalar function $f(x)$, the centered finite-difference derivative is:
+
+```math
+f'(x)\approx\frac{f(x+h)-f(x-h)}{2h}.
+```
+
+For smooth functions its truncation error is typically of order $h^2$, but reducing $h$ indefinitely can amplify floating-point and force/energy noise. A step-size convergence test is often necessary for Hessians and vibrational modes.
+
+### Error types
+
+| Type | Example | Check |
+| --- | --- | --- |
+| Discretization | Plane-wave cutoff, finite timestep | Refine numerical resolution |
+| Solver tolerance | SCF or optimizer residual | Tighten until observable stabilizes |
+| Finite size | Periodic replica interaction | Increase system size |
+| Sampling | Limited independent structures | Multiple replicas and uncertainty intervals |
+| Model error | Approximate DFT or MLIP | Compare appropriate references |
+
+Optimization algorithms such as BFGS, conjugate gradient and FIRE behave differently. A small step size or small energy difference per iteration does **not** imply small residual forces. The stopping criterion should reflect the intended use.
+
+### Propagation to an energy barrier
+
+For $E_m=E_{\mathrm{TS}}-E_A$, errors in both energies contribute. If error estimates have variances and covariance:
+
+```math
+\operatorname{Var}(E_m)=\operatorname{Var}(E_{\mathrm{TS}})+\operatorname{Var}(E_A)-2\operatorname{Cov}(E_{\mathrm{TS}},E_A).
+```
+
+Common systematic errors can cancel partially, but that cancellation must not be assumed without validation. Numerical convergence and model uncertainty are not interchangeable.
+
+**Practice:** Test force thresholds separately from energy change; examine whether an NEB barrier is stable when endpoint and saddle settings are both tightened.
