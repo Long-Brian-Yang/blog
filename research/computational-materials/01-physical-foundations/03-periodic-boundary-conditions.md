@@ -96,7 +96,7 @@ In NEB, two endpoints must represent the intended motion with consistent atom or
 
 ---
 
-## Extended Foundations: Minimum Images and Dimensionality
+## Deeper Understanding: Minimum Images and Dimensionality
 
 ![Minimum image across a periodic boundary](../assets/figures/pbc-minimum-image.svg)
 
@@ -128,7 +128,7 @@ A 2×2×2 supercell has eight times the volume of its parent cell but need not g
 
 ---
 
-## Extended Foundations: Reciprocal Space and Brillouin Zones
+## Deeper Understanding: Reciprocal Space and Brillouin Zones
 
 ![Reciprocal lattice schematic](../assets/figures/reciprocal-brillouin.svg)
 
