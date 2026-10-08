@@ -15,7 +15,7 @@ A general pathway is a continuous mapping $\mathbf R(s)$, where $s$ runs from in
 
 An energy profile is obtained by sampling $E(\mathbf R(s))$. **This one-dimensional profile is a slice through a high-dimensional PES, not the PES itself.**
 
-![Example pathway energy profile](../neb/figures/energy-profile.svg)
+![Example pathway energy profile](../assets/figures/energy-profile.svg)
 
 *Figure 1. Schematic energy along a reaction coordinate. Local minima represent endpoints, and the pathway reaches a high-energy region near the transition state.*
 
