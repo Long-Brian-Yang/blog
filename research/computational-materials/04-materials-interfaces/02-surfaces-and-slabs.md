@@ -129,3 +129,31 @@ This form uses a per-particle chemical potential. When using molar chemical pote
 - State the chemical reservoirs and surface stoichiometry.
 - Check slab thickness, vacuum, and electrostatic corrections.
 - Separate equilibrium surface stability from the kinetics of individual proton hops.
+
+---
+
+## Advanced Practice: Slab Convergence and Surface Comparability
+
+![Comparison of thin and thick slab models](../assets/figures/slab-convergence.svg)
+
+*Figure. A surface model should be thick enough for a bulk-like interior when that approximation is required.*
+
+**A surface is not simply half of a bulk structure.** The exposed coordination changes atomic relaxation, charge distribution, adsorption, and often the relative stability of point defects.
+
+A systematic slab study should vary:
+
+- **Layer count:** do central layers recover bulk-like positions and electronic features?
+- **Vacuum thickness:** are image-image electrostatic interactions negligible?
+- **Lateral area:** are adsorbates/dopants interacting through periodic images?
+- **Constraints:** do fixed lower layers bias adsorption or proton-transfer geometry?
+- **Stoichiometry and termination:** are the compared slabs thermodynamically equivalent reference states?
+
+### Comparing BaO and ZrO₂ terminations
+
+For BaZrO₃(001), compare like with like: water coverage, dopant arrangements, charge bookkeeping, simulation conditions, and slab convergence. A bare-slab surface energy should not be compared directly with a hydrated slab without a specified chemical reservoir.
+
+When interpreting proton transport, separate **where protons reside**, **how often elementary hops occur**, and **whether paths connect across layers**. A surface termination can stabilize a proton while suppressing its net migration away from the surface.
+
+### Direction matters
+
+For slabs with finite thickness, lateral diffusion may reach a linear MSD regime while the normal displacement remains confined. It is then appropriate to report layer exchange events, residence times, and directional displacement distributions rather than force a normal diffusion coefficient from a plateau.
