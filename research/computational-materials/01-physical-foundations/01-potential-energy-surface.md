@@ -202,7 +202,7 @@ The same NEB concept can be used with different energy-and-force models. However
 
 ---
 
-## Extended Foundations: Basins, Metastability, and Reaction Coordinates
+## Deeper Understanding: Basins, Metastability, and Reaction Coordinates
 
 ![Local and global minima](../assets/figures/pes-local-global.svg)
 
