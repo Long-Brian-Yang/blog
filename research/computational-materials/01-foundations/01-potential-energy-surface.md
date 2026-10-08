@@ -39,7 +39,7 @@ E=E(\mathbf R).
 
 A PES is often illustrated as a landscape of valleys, ridges, and passes. **This is an analogy**: a realistic many-atom PES lives in a high-dimensional configuration space, not on an ordinary two-dimensional sheet.
 
-![Illustrative energy profile](../neb/figures/energy-profile.svg)
+![Illustrative energy profile](../assets/figures/energy-profile.svg)
 
 *Figure 1. An energy profile along one chosen pathway through a PES. The curve is not the full multidimensional surface.*
 
