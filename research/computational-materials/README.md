@@ -1,55 +1,84 @@
 # Computational Materials Science · Learning Path
 
-An English-language learning library arranged by **conceptual prerequisites** rather than publication date. Start with a physical concept, then learn the algorithm that uses it, and finally connect the results to measurable materials properties.
+A growing collection of English-language study notes, organized by **prerequisites** rather than publication dates. Follow the reading sequence below, or browse by subject folder. Lesson file numbers indicate order *within a subject*, while this table gives the overall recommended learning sequence.
 
-## Recommended Learning Sequence
+## Recommended Reading Sequence
 
-| Step | Learning note | Main questions |
+| Step | Lesson | Subject |
 | --- | --- | --- |
-| **01** | [Potential Energy Surfaces](01-foundations/01-potential-energy-surface.md) | How do atomic configurations determine energy? |
-| **02** | [Forces, Gradients, and Curvature](01-foundations/02-forces-and-gradients.md) | How are forces and saddle points characterized? |
-| **03** | [Geometry Optimization and Convergence](02-methods/01-geometry-optimization.md) | How do we relax structures reliably? |
-| **04** | [Reaction Coordinates, MEPs, and Saddle Points](01-foundations/03-reaction-coordinates-and-saddle-points.md) | What is a migration pathway? |
-| **05** | [Nudged Elastic Band and CI-NEB](02-methods/02-neb.md) | How do we find a minimum-energy pathway and barrier? |
-| **06** | [Diffusion, MSD, and Ionic Transport](03-transport/01-diffusion-and-msd.md) | How do individual events relate to transport? |
+| 01 | [Potential Energy Surfaces](01-foundations/01-potential-energy-surface.md) | Foundations |
+| 02 | [Forces, Gradients, and Curvature](01-foundations/02-forces-and-gradients.md) | Foundations |
+| 03 | [Periodic Boundary Conditions](01-foundations/04-periodic-boundary-conditions.md) | Foundations |
+| 04 | [Born–Oppenheimer Approximation](01-foundations/05-born-oppenheimer-approximation.md) | Foundations |
+| 05 | [DFT Fundamentals](02-methods/04-dft-fundamentals.md) | Electronic structure |
+| 06 | [Geometry Optimization and Convergence](02-methods/01-geometry-optimization.md) | Methods |
+| 07 | [Reaction Coordinates, MEPs, and Saddle Points](01-foundations/03-reaction-coordinates-and-saddle-points.md) | Foundations |
+| 08 | [NEB and CI-NEB](02-methods/02-neb.md) | Methods |
+| 09 | [Molecular Dynamics Fundamentals](02-methods/03-molecular-dynamics.md) | Methods |
+| 10 | [Statistical Ensembles: NVE/NVT/NPT](02-methods/05-statistical-ensembles.md) | Methods |
+| 11 | [Transition-State Theory](02-methods/06-transition-state-theory.md) | Kinetics |
+| 12 | [Diffusion, MSD, and Ionic Transport](03-transport/01-diffusion-and-msd.md) | Transport |
 
-The numbers in this table indicate **reading order**, not permanent subject identifiers; lesson files are grouped by subject for easier expansion.
+These are **suggested dependencies**, not the only valid reading order. MD and NEB are complementary branches; DFT can be learned in parallel with classical atomistic dynamics.
 
-## Concept Map
+## Conceptual Roadmap
 
 ```mermaid
 flowchart TD
-    PES[Potential Energy Surfaces] --> FORCES[Forces and Curvature]
-    FORCES --> OPT[Geometry Optimization]
-    OPT --> PATH[Reaction Coordinates and Saddles]
+    PES[PES] --> FORCE[Forces and Hessians]
+    PES --> BO[Born-Oppenheimer]
+    BO --> DFT[DFT Fundamentals]
+    FORCE --> OPT[Geometry Optimization]
+    DFT --> OPT
+    OPT --> PATH[Reaction Coordinates and Saddle Points]
     PATH --> NEB[NEB and CI-NEB]
-    PES --> MD[Molecular Dynamics - planned]
-    MD --> DIFF[Diffusion and MSD]
-    NEB --> DIFF
-    PES --> DFT[DFT Fundamentals - planned]
-    DFT --> MLIP[ML Potentials - planned]
+    PATH --> TST[Transition-State Theory]
+    NEB --> TST
+    FORCE --> MD[Molecular Dynamics]
+    PBC[Periodic Boundary Conditions] --> MD
+    MD --> ENS[NVE, NVT and NPT]
+    ENS --> DIFF[Diffusion and MSD]
+    TST --> DIFF
+    PBC --> DIFF
 ```
 
-## Subjects
+## Repository Organization
 
-- **[Foundations](01-foundations/)** — PES, gradients, curvature, and reaction coordinates.
-- **[Methods](02-methods/)** — geometry optimization, NEB, and future simulation methods.
-- **[Transport](03-transport/)** — diffusion, MSD, charge transport, and later amorphous conductors.
+```text
+computational-materials/
+├── 01-foundations/
+│   ├── 01-potential-energy-surface.md
+│   ├── 02-forces-and-gradients.md
+│   ├── 03-reaction-coordinates-and-saddle-points.md
+│   ├── 04-periodic-boundary-conditions.md
+│   └── 05-born-oppenheimer-approximation.md
+├── 02-methods/
+│   ├── 01-geometry-optimization.md
+│   ├── 02-neb.md
+│   ├── 03-molecular-dynamics.md
+│   ├── 04-dft-fundamentals.md
+│   ├── 05-statistical-ensembles.md
+│   └── 06-transition-state-theory.md
+├── 03-transport/
+│   └── 01-diffusion-and-msd.md
+├── assets/figures/
+└── README.md
+```
 
-## Future Topics
+## Editorial Standards
 
-These will be added where their prerequisites make sense, with links updated as the collection grows:
+- **English only:** no dates in filenames or article headings.
+- **One core concept per article**, with prerequisites, intuition, equations, practical pitfalls, and review questions.
+- **GitHub-compatible mathematics:** standalone LaTeX expressions use fenced `math` blocks.
+- **Figures:** locally stored SVG illustrations with explanatory captions; diagrams are schematic unless explicitly labeled as data.
+- **Navigation:** maintain prerequisite links and the roadmap when new material is added.
+- **Scientific caution:** distinguish PES barriers, free-energy barriers, jump rates, diffusion coefficients, and conductivity.
 
-- DFT fundamentals: Born–Oppenheimer approximation, exchange–correlation functionals, plane-wave basis, k-points.
-- Molecular dynamics: ensembles, thermostats, timestep, equilibration, trajectory analysis.
-- Transition-state theory: rate constants, attempt frequencies, free-energy barriers.
-- Machine-learned interatomic potentials: training data, force errors, transferability, and saddle-point validation.
-- Amorphous ion conductors: glass preparation, coordination analysis, sampling, and correlated transport.
+## Next Expansion Ideas
 
-## Editorial Conventions
-
-1. Write **in English** with no dates in article titles or filenames.
-2. Give each important concept a separate, focused page and explicit prerequisites.
-3. Use GitHub-compatible `math` code blocks for standalone equations, native Markdown for prose, and Mermaid or repository-local SVG figures when useful.
-4. Include physical intuition, assumptions, practical pitfalls, examples, and review questions.
-5. Adjust reading order and internal links when new prerequisite concepts are added; subject categories remain stable where possible.
+- Self-consistent field convergence, plane-wave basis sets, and k-point sampling.
+- Vibrations and phonons; harmonic transition-state theory.
+- Thermostats, trajectory analysis, statistical uncertainty.
+- RDF, coordination number, structure factors, and amorphous materials.
+- Machine-learned interatomic potentials: training, validation, and out-of-distribution behavior.
+- Collective charge transport and correlated ion migration.
