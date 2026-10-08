@@ -144,3 +144,19 @@ Overlapping MSD time origins are **correlated** because they share trajectory se
 | Hop/residence statistics | Diagnose rare events and trapping |
 
 **Research example:** For amorphous Li–O–Hf–Cl, sample independent glass structures. A single fast-moving Li ion in one glass does not guarantee a representative bulk conductivity.
+
+---
+
+## Numerical Time Integration and Uncertainty
+
+Time discretization affects trajectories even when the force model is exact. A finite timestep $\Delta t$ approximates the continuous equations of motion. Check stability and representative NVE energy drift as $\Delta t$ changes, but remember that small energy drift alone does not prove convergence of rare hopping rates.
+
+For an estimated observable $\overline A$ formed from $M$ approximately independent replica estimates $A_i$:
+
+```math
+\mathrm{SE}(\overline A)\approx\frac{s_A}{\sqrt M}.
+```
+
+This familiar standard error is not valid if the $A_i$ are strongly correlated or fail to sample the process of interest. For correlated trajectory blocks, use block-length sensitivity or other autocorrelation-aware analyses. For rare events, report event counts and waiting-time evidence before fitting macroscopic transport parameters.
+
+**Avoid a false precision trap:** a long numerical trajectory is not necessarily a statistically converged diffusion estimate, especially when an ion remains trapped for nearly the entire run.
