@@ -23,6 +23,12 @@
 
 ## 1. What Is a Potential Energy Surface?
 
+![Schematic potential-energy landscape with two minima and a saddle](../assets/figures/pes-landscape.svg)
+
+*Figure. Conceptual contour map of a PES showing two local minima and a saddle region.*
+
+
+
 A **potential energy surface (PES)** is a mathematical map from atomic configurations to their potential energies. Each point corresponds to a specific arrangement of atoms, and its height represents that arrangement's energy.
 
 For a fixed set of $N$ atoms, write the atomic coordinates as:
