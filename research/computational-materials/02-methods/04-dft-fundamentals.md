@@ -54,6 +54,22 @@ The exact exchange–correlation functional is generally unknown in practice. Co
 
 ## 5. Numerical choices
 
+![Plane-wave cutoff and k-point mesh concepts](../assets/figures/kpoints-cutoff.svg)
+
+*Figure 2. Increasing basis-set resolution and reciprocal-space sampling improves numerical completeness; actual convergence must be established for the target observable.*
+
+### Plane-wave cutoff and reciprocal-space sampling
+
+In periodic plane-wave DFT, the expansion contains reciprocal-lattice components satisfying a kinetic-energy cutoff:
+
+```math
+\frac{\hbar^2}{2m_e}\left|\mathbf k+\mathbf G\right|^2\leq E_{\mathrm{cut}}.
+```
+
+Increasing $E_{\mathrm{cut}}$ enlarges the basis and usually increases cost. A denser k-point mesh samples more of the Brillouin zone, while a larger supercell often permits a coarser mesh. Convergence must be checked for **forces and energy differences**, not only absolute total energy.
+
+
+
 | Setting | Why it matters |
 | --- | --- |
 | Basis / plane-wave cutoff | Controls representational completeness |
