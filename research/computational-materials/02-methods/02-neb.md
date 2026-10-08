@@ -1,6 +1,6 @@
-# 02 · Nudged Elastic Band (NEB): Principles and Practice
+# Nudged Elastic Band (NEB): Principles and Practice
 
-**Learning path:** [Course index](../README.md) → [01 · Potential Energy Surfaces](../01-foundations/01-potential-energy-surface.md) → **02 · NEB**
+**Recommended prerequisites:** [PES](../01-foundations/01-potential-energy-surface.md) → [Forces and Gradients](../01-foundations/02-forces-and-gradients.md) → [Geometry Optimization](01-geometry-optimization.md) → [Reaction Coordinates and Saddle Points](../01-foundations/03-reaction-coordinates-and-saddle-points.md) → **NEB**
 
 > Computational Materials Science · Atomistic Simulations · Solid-State Ion Transport  
 > **Level:** Beginner → Intermediate · **Language:** English
@@ -46,7 +46,7 @@ The **nudged elastic band (NEB)** method optimizes a chain of atomic configurati
 
 ### 2.1 Potential Energy Surface (PES)
 
-> **Prerequisite:** Study [01 · Potential Energy Surfaces](../01-foundations/01-potential-energy-surface.md) before continuing. This section is a short review.
+> **Review:** [Potential Energy Surfaces](../01-foundations/01-potential-energy-surface.md), [Forces and Gradients](../01-foundations/02-forces-and-gradients.md), and [Reaction Coordinates](../01-foundations/03-reaction-coordinates-and-saddle-points.md).
 
 For a system containing $N$ atoms, its atomic configuration can be written as
 
