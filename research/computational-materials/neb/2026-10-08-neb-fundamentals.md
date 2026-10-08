@@ -13,21 +13,25 @@
 
 *Figure 1. Illustrative energy landscape showing initial and final states, a saddle point, and the forward migration barrier. Energies are examples, not measured results.*
 
-### Contents
+## Table of Contents
 
-- [01 · Why NEB?](#1-why-do-we-need-neb)
-- [02 · Physical foundations](#2-foundational-concepts)
-- [03 · NEB and CI-NEB algorithms](#3-how-does-the-neb-algorithm-work)
-- [04 · Practical workflow](#4-step-by-step-computational-workflow)
-- [05 · DFT, MD and MLIPs](#5-neb-vs-dft-vs-md-vs-mlips)
-- [06 · Barriers vs diffusion](#6-neb-barriers-and-diffusion-activation-energies-are-not-identical)
-- [07 · Practical challenges](#7-practical-challenges)
-- [08 · BaZrO₃ example](#8-example-proton-migration-in-bazro)
-- [09–12 · Review, exercises and references](#9-common-misconceptions)
+- [1. Why NEB Matters](#1-why-neb-matters)
+- [2. Physical Foundations](#2-physical-foundations)
+- [3. The NEB Algorithm](#3-the-neb-algorithm)
+- [4. Computational Workflow](#4-computational-workflow)
+- [5. NEB, DFT, MD, and MLIPs](#5-neb-dft-md-and-mlips)
+- [6. Migration Barriers vs Diffusion Activation Energies](#6-migration-barriers-vs-diffusion-activation-energies)
+- [7. Practical Challenges](#7-practical-challenges)
+- [8. Case Study: Proton Migration in BaZrO3](#8-case-study-proton-migration-in-bazro3)
+- [9. Common Misconceptions](#9-common-misconceptions)
+- [10. Knowledge Check](#10-knowledge-check)
+- [11. Key Terminology](#11-key-terminology)
+- [12. Further Reading](#12-further-reading)
+- [Key Takeaway](#key-takeaway)
 
 ---
 
-## 1. Why Do We Need NEB?
+## 1. Why NEB Matters
 
 In a solid electrolyte, an ion such as Li⁺ or a proton may move between nearby stable sites. However, the ion generally needs to overcome an energy barrier imposed by its surrounding atoms.
 
@@ -39,7 +43,7 @@ Three basic questions arise:
 
 The **nudged elastic band (NEB)** method optimizes a chain of atomic configurations to approximate a **minimum-energy path (MEP)** between two specified states. It does not automatically discover every possible migration mechanism.
 
-## 2. Foundational Concepts
+## 2. Physical Foundations
 
 ### 2.1 Potential Energy Surface (PES)
 
@@ -129,7 +133,7 @@ For example, five intermediate images plus two endpoints give seven configuratio
 
 **Common misconception:** An image is *not* one atom or one moment from a real-time MD simulation.
 
-## 3. How Does the NEB Algorithm Work?
+## 3. The NEB Algorithm
 
 Imagine connecting successive images with artificial springs. The purpose of the springs is to maintain a useful distribution of images along the path.
 
@@ -173,7 +177,7 @@ In practice, an initial regular-NEB relaxation can help stabilize the pathway be
 **NEB:** Refine the pathway.  
 **CI-NEB:** More accurately localize the saddle point on that pathway.
 
-## 4. Step-by-Step Computational Workflow
+## 4. Computational Workflow
 
 ```mermaid
 flowchart TD
@@ -220,7 +224,7 @@ Compute the energy difference between the saddle point and initial state. If the
 
 Inspect atomic displacements and changes in local coordination to identify the physical migration mechanism.
 
-## 5. NEB vs DFT vs MD vs MLIPs
+## 5. NEB, DFT, MD, and MLIPs
 
 These techniques play different roles rather than being direct alternatives.
 
@@ -235,7 +239,7 @@ These techniques play different roles rather than being direct alternatives.
 
 An MLIP can make large-scale or repeated NEB calculations much more affordable, but speed does not guarantee fidelity near saddle points.
 
-## 6. NEB Barriers and Diffusion Activation Energies Are Not Identical
+## 6. Migration Barriers vs Diffusion Activation Energies
 
 For an elementary thermally activated jump, a simple transition-state-inspired rate expression is
 
@@ -291,7 +295,7 @@ A representative workflow could be:
 
 This is a **proposed research workflow**, not a claim that NEB alone determines bulk conductivity.
 
-## 8. Example: Proton Migration in BaZrO₃
+## 8. Case Study: Proton Migration in BaZrO3
 
 For hydrated BaZrO₃, proton motion may involve at least two different elementary rearrangements:
 
@@ -338,7 +342,7 @@ Not necessarily. High-energy transition-state configurations may be outside the 
 | Climbing-image NEB (CI-NEB) | NEB refinement that converges a selected image toward a saddle point |
 | Reaction coordinate | A variable parameterizing progress along a transformation |
 
-## 12. Suggested Further Reading
+## 12. Further Reading
 
 - Henkelman, G.; Uberuaga, B. P.; Jónsson, H. **A Climbing Image Nudged Elastic Band Method for Finding Saddle Points and Minimum Energy Paths.** *Journal of Chemical Physics* **2000**, *113*, 9901–9904. DOI: [10.1063/1.1329672](https://doi.org/10.1063/1.1329672).
 - Henkelman, G.; Jónsson, H. **Improved Tangent Estimate in the Nudged Elastic Band Method for Finding Minimum Energy Paths and Saddle Points.** *Journal of Chemical Physics* **2000**, *113*, 9978–9985. DOI: [10.1063/1.1323224](https://doi.org/10.1063/1.1323224).
@@ -346,6 +350,6 @@ Not necessarily. High-energy transition-state configurations may be outside the 
 
 ---
 
-### Takeaway
+## Key Takeaway
 
 NEB finds a locally optimized migration pathway and its potential-energy barrier between specified endpoint configurations. Its most difficult aspects are **selecting meaningful endpoints, sampling realistic pathways, converging saddle points, and connecting microscopic barriers to statistically representative transport mechanisms**.
