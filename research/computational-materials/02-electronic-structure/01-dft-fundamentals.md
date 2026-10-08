@@ -28,7 +28,7 @@ $T_s$ is the noninteracting reference kinetic energy, $E_{\mathrm H}$ the Hartre
 Auxiliary single-particle orbitals satisfy:
 
 ```math
-\left[-\frac{\hbar^2}{2m_e}\nabla^2+v_{\mathrm{eff}}[n](../02-methods/\mathbf r)\right]\phi_i(\mathbf r)=\varepsilon_i\phi_i(\mathbf r).
+\left[-\frac{\hbar^2}{2m_e}\nabla^2+v_{\mathrm{eff}}[n](\mathbf r)\right]\phi_i(\mathbf r)=\varepsilon_i\phi_i(\mathbf r).
 ```
 
 The density is reconstructed from occupied orbitals:
