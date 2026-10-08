@@ -1,6 +1,6 @@
 # Transition-State Theory (TST) and Kinetic Rates
 
-> **Module:** Methods · **Prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md), [Reaction Coordinates](../01-physical-foundations/03-reaction-coordinates-and-saddle-points.md), [NEB](04-neb.md)  
+> **Module:** Methods · **Prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md), [Reaction Coordinates](../01-physical-foundations/05-reaction-coordinates-and-saddle-points.md), [NEB](04-neb.md)  
 > **Related:** [Diffusion and MSD](../05-transport-properties/01-diffusion-and-msd.md)
 
 ## Learning goals
