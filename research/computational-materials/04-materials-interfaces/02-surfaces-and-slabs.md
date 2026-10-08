@@ -1,6 +1,6 @@
 # Surfaces, Terminations, and Slab Models
 
-> **Module:** Materials · **Prerequisites:** [Bulk Crystal Structures](../01-physical-foundations/01-bulk-crystal-structures.md), [PBC](../01-physical-foundations/04-periodic-boundary-conditions.md)  
+> **Module:** Materials · **Prerequisites:** [Bulk Crystal Structures](01-bulk-crystal-structures.md), [PBC](../01-physical-foundations/04-periodic-boundary-conditions.md)  
 > **Next:** [Interfaces](03-interfaces-and-heterostructures.md)
 
 ## Learning goals
