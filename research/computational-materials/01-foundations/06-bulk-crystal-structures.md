@@ -104,3 +104,42 @@ If $\Delta G^\circ$ is defined per mole, use $RT$ instead of $k_{\mathrm B}T$. S
 ### Defect association and transport
 
 A dopant–proton association energy measures relative stability of nearby versus separated configurations under a declared reference convention. To discuss trapping quantitatively, evaluate association energies, residence times, and connected migration paths rather than inferring association from distance alone.
+
+---
+
+## Extended Crystallography: Unit Cells, Planes, and Point Defects
+
+![Primitive conventional and supercells](../assets/figures/bulk-cell-hierarchy.svg)
+
+*Figure. The primitive cell is a minimal repeating lattice description; the conventional cell emphasizes symmetry; a supercell is a larger periodic repeat.*
+
+A **lattice** is a periodic set of points, while a **basis** is the group of atoms attached to each point. A **crystal structure** combines the two. A primitive cell contains one lattice point; a conventional unit cell may contain more, chosen to show symmetry clearly. The same physical crystal can have several valid cell representations.
+
+### Miller indices and surface orientation
+
+![Crystallographic planes](../assets/figures/bulk-miller-planes.svg)
+
+*Figure. Schematic projected planes corresponding to different Miller-index orientations in a cubic setting.*
+
+Miller indices $(hkl)$ are obtained from reciprocal intercepts of a plane with the crystallographic axes and reduced to integers. The **plane orientation** does not uniquely specify its atomic **termination**. For example, a BaZrO₃(001) cut can expose different layer chemistries.
+
+### Point defects
+
+![Vacancy, substitution, and interstitial defects](../assets/figures/bulk-defect-types.svg)
+
+*Figure. A missing host atom, a replacement impurity, and an extra atom in an interstitial region represent different point-defect classes.*
+
+A **vacancy** removes an atom from a lattice site. A **substitutional defect** replaces a host atom. An **interstitial** occupies a normally unoccupied location. Their formal effective charges depend on the chosen reference lattice and charge convention.
+
+In Kröger–Vink notation, $V_{\mathrm O}^{\bullet\bullet}$ represents an oxygen vacancy with effective charge +2 relative to an occupied oxygen site, not necessarily a localized ion carrying +2 elementary charge in a literal electronic picture.
+
+### Why local coordination matters
+
+For an ideal cubic perovskite $ABO_3$, the B-site center has an oxygen octahedron. Oxygen vacancies, Y substitution, and proton binding distort that local environment, affecting site stability and migration channels. Always distinguish **nominal doping concentration**, **dopant arrangement**, and **actual hydrated defect concentration**.
+
+### Check yourself
+
+1. Can two differently shaped unit cells represent the same infinite crystal?
+2. Why does (001) not tell you whether the exposed surface is BaO or ZrO₂?
+3. What distinguishes an oxygen vacancy from a protonic defect?
+4. Why can equal dopant concentrations yield different local activation barriers?
