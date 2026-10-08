@@ -93,6 +93,10 @@ computational-materials/
 └── README.md
 ```
 
+## Quality Review
+
+The [Content Quality Audit](QUALITY_AUDIT.md) documents confirmed fixes, remaining scientific and editorial risks, figure-quality priorities, and the staged review plan.
+
 ## Editorial Rules
 
 1. English writing throughout, without dates in article filenames.
