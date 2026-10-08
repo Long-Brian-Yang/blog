@@ -372,3 +372,37 @@ Not necessarily. High-energy transition-state configurations may be outside the 
 NEB finds a locally optimized migration pathway and its potential-energy barrier between specified endpoint configurations. Its most difficult aspects are **selecting meaningful endpoints, sampling realistic pathways, converging saddle points, and connecting microscopic barriers to statistically representative transport mechanisms**.
 
 **Materials applications:** [Bulk structures](../04-materials-interfaces/01-bulk-crystal-structures.md) · [Surfaces and Slabs](../04-materials-interfaces/02-surfaces-and-slabs.md) · [Interfaces](../04-materials-interfaces/03-interfaces-and-heterostructures.md).
+
+---
+
+## Advanced Practice: Competing Paths and Path Validation
+
+![Alternative pathways connecting the same endpoints](../assets/figures/neb-path-alternatives.svg)
+
+*Figure. Distinct pathways may connect the same minima and converge to different local saddle points.*
+
+The initial band influences which local MEP is obtained. **A converged NEB path is not a proof that no lower-barrier path exists.**
+
+A robust strategy is to identify candidate events from symmetry analysis, local coordination, pre-relaxed intermediates, or MD trajectories, then initialize more than one path. Compare mechanisms rather than merely the highest plotted energies.
+
+### Images, forces, and resolution
+
+A finite band discretizes a continuous path. Too few images may miss an intermediate minimum or sharp bend; too many increase cost. Report the number of *intermediate* images distinctly from the *total* number including endpoints.
+
+For a pathway of maximum energy $E_{\max}$, the forward barrier estimate is:
+
+```math
+E_m^{A\to B}\approx E_{\max}-E_A.
+```
+
+In climbing-image NEB, a well-converged saddle image gives the preferred estimate. Check interpolation geometry, image ordering, NEB force components, and whether endpoints remained meaningful local minima.
+
+### Special concerns for MLIP-NEB
+
+A small global force MAE does not guarantee accurate saddle-point forces. Select representative saddle-nearby structures for DFT evaluation; compare both energy differences and force vectors. If deviations are significant, consider targeted retraining or active-learning enrichment before interpreting many MLIP barriers.
+
+### A physically meaningful results table
+
+Report pathway, direction, initial and final sites, termination/defect environment, image count, maximum residual force, saddle geometry, and the reference model. Keep uncertainty and sampling limitations visible.
+
+**Connection:** [Transition-State Theory](05-transition-state-theory.md) describes how the barrier may enter a kinetic model; [Diffusion](../05-transport-properties/01-diffusion-and-msd.md) concerns collective long-range transport.
