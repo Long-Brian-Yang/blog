@@ -160,3 +160,41 @@ For an estimated observable $\overline A$ formed from $M$ approximately independ
 This familiar standard error is not valid if the $A_i$ are strongly correlated or fail to sample the process of interest. For correlated trajectory blocks, use block-length sensitivity or other autocorrelation-aware analyses. For rare events, report event counts and waiting-time evidence before fitting macroscopic transport parameters.
 
 **Avoid a false precision trap:** a long numerical trajectory is not necessarily a statistically converged diffusion estimate, especially when an ion remains trapped for nearly the entire run.
+
+---
+
+## Classical Mechanics: The Foundation of MD
+
+![Dynamical evolution and conserved quantities](../assets/figures/mechanics-conservation.svg)
+
+*Figure. Classical force laws govern momentum and position evolution in conventional MD.*
+
+Newton's second law is $\mathbf F_i=d\mathbf p_i/dt$, where $\mathbf p_i=m_i\mathbf v_i$ for nonrelativistic particles of fixed mass. For a conservative time-independent potential:
+
+```math
+E_{\mathrm{tot}}=\sum_i\frac{|\mathbf p_i|^2}{2m_i}+V(\mathbf R),\qquad \frac{dE_{\mathrm{tot}}}{dt}=0.
+```
+
+The derivative vanishes in exact isolated Hamiltonian dynamics, not necessarily for finite-timestep numerical trajectories or thermostatted simulations.
+
+### Lagrangian and Hamiltonian formulations
+
+The Lagrangian is $L=K-V$. For generalized coordinates $q_j$, Euler–Lagrange equations give:
+
+```math
+\frac{d}{dt}\left(\frac{\partial L}{\partial\dot q_j}\right)-\frac{\partial L}{\partial q_j}=0.
+```
+
+Hamiltonian dynamics uses canonical coordinates and momenta:
+
+```math
+\dot q_j=\frac{\partial H}{\partial p_j},\qquad \dot p_j=-\frac{\partial H}{\partial q_j}.
+```
+
+These formulations motivate symplectic integrators such as Velocity Verlet. Symplectic structure improves long-time qualitative behavior but does not make a finite timestep exact.
+
+### Conservation laws and boundary conditions
+
+Time-translation symmetry is associated with energy conservation. Spatial-translation invariance yields momentum conservation; rotational invariance yields angular-momentum conservation under appropriate assumptions. External constraints, rigid walls, thermostats, or barostats modify conservation statements.
+
+**Practical exercise:** Compare NVE energy drift at several timesteps. Why is a stable kinetic temperature insufficient evidence of good Hamiltonian integration?
