@@ -51,6 +51,22 @@ These expressions apply when the corresponding directions exhibit normal diffusi
 
 ## 4. From self-diffusion to conductivity
 
+![Collective ionic motion and charge displacement correlations](../assets/figures/ionic-correlations.svg)
+
+*Figure 2. Different cross-correlations between ionic displacements can increase or decrease net charge transport relative to an independent-particle estimate.*
+
+### Correlated displacement terms and transport
+
+Expanding the collective charge-displacement square shows self terms and cross terms:
+
+```math
+\left|\sum_i q_i\Delta\mathbf r_i\right|^2=\sum_i q_i^2|\Delta\mathbf r_i|^2+\sum_{i\ne j}q_iq_j\,\Delta\mathbf r_i\cdot\Delta\mathbf r_j.
+```
+
+The Nernst–Einstein approximation neglects distinct-particle displacement correlations; a collective Einstein–Helfand estimate retains them. Define the convention clearly when reporting a correlation factor $f_{\mathrm{corr}}=\sigma_{\mathrm{coll}}/\sigma_{\mathrm{NE}}$. It may be above or below unity, and should not be confused with a reciprocally defined Haven ratio.
+
+
+
 The Nernst–Einstein (NE) estimate for identical mobile ions is:
 
 ```math
