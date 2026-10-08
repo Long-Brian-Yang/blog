@@ -105,7 +105,7 @@ DFT is not automatically exact, nor does standard ground-state DFT directly capt
 
 ---
 
-## Advanced Practice: A Reproducible DFT Convergence Study
+## Practical Validation: A Reproducible DFT Convergence Study
 
 ![Convergence of target quantities](../assets/figures/dft-convergence-checks.svg)
 
