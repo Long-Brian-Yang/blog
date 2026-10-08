@@ -137,3 +137,5 @@ Here $z$ is the number of equivalent destinations and $\nu$ an attempt frequency
 4. What happens to the surface-normal MSD if ions remain confined?
 
 **Related:** [NEB and migration barriers](../02-methods/02-neb.md).
+
+**Spatial context:** [Bulk](../01-foundations/06-bulk-crystal-structures.md) · [Surface](../04-materials/01-surfaces-and-slabs.md) · [Interface](../04-materials/02-interfaces-and-heterostructures.md). Compare parallel and normal transport carefully.
