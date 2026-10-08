@@ -252,32 +252,6 @@ Macroscopic diffusion and conductivity can depend on:
 
 Thus, NEB provides **microscopic mechanistic evidence**, while MD and transport experiments probe dynamical behavior at larger scales.
 
-### 7.2 Convergence, image spacing, and saddle validation
-
-![NEB energy and force convergence](../assets/figures/neb-convergence.svg)
-
-*Figure. Schematic convergence behavior. A nearly unchanged barrier does not prove that the largest perpendicular NEB force is sufficiently small.*
-
-Reliable NEB analysis should report the maximum residual NEB force, image number, path initialization, climbing-image treatment, endpoint relaxation settings, and whether the highest-energy image lies on a smooth path.
-
-Test sensitivity to image density: too few images can miss sharp turns or narrow high-energy features. Very many images increase optimization cost and may lead to inefficient distribution if spring parameters are poorly chosen.
-
-If different starting paths converge to different saddle points, these are distinct *local* pathways, not necessarily a numerical failure. Compare their geometric mechanisms and verify relevant alternatives.
-
-### 7.3 Practical barrier uncertainty checklist
-
-| Source | Recommended check |
-| --- | --- |
-| Atomic endpoints | Re-relax both minima using consistent settings |
-| Images | Repeat with a denser band or alternative initialization |
-| Electronic structure | Tighten SCF, cutoff, and k-point convergence for DFT |
-| MLIP | Validate energies **and forces** near saddle configurations |
-| Constraints | Test whether fixed atoms alter the reaction mechanism |
-| Kinetics | Avoid equating one barrier with measured conductivity |
-
-**Report both forward and backward directional barriers** if the endpoint energies differ. A low NEB barrier alone does not establish rapid long-range transport without site populations, kinetic connectivity, and prefactor information.
-
-
 ## 7. Practical Challenges
 
 > [!WARNING]
@@ -312,9 +286,36 @@ A representative workflow could be:
 
 This is a **proposed research workflow**, not a claim that NEB alone determines bulk conductivity.
 
-## 8. Case Study: Proton Migration in BaZrO3
+### 7.2 Convergence, image spacing, and saddle validation
 
-For hydrated BaZrO₃, proton motion may involve at least two different elementary rearrangements:
+![NEB energy and force convergence](../assets/figures/neb-convergence.svg)
+
+*Figure. Schematic convergence behavior. A nearly unchanged barrier does not prove that the largest perpendicular NEB force is sufficiently small.*
+
+Reliable NEB analysis should report the maximum residual NEB force, image number, path initialization, climbing-image treatment, endpoint relaxation settings, and whether the highest-energy image lies on a smooth path.
+
+Test sensitivity to image density: too few images can miss sharp turns or narrow high-energy features. Very many images increase optimization cost and may lead to inefficient distribution if spring parameters are poorly chosen.
+
+If different starting paths converge to different saddle points, these are distinct *local* pathways, not necessarily a numerical failure. Compare their geometric mechanisms and verify relevant alternatives.
+
+### 7.3 Practical barrier uncertainty checklist
+
+| Source | Recommended check |
+| --- | --- |
+| Atomic endpoints | Re-relax both minima using consistent settings |
+| Images | Repeat with a denser band or alternative initialization |
+| Electronic structure | Tighten SCF, cutoff, and k-point convergence for DFT |
+| MLIP | Validate energies **and forces** near saddle configurations |
+| Constraints | Test whether fixed atoms alter the reaction mechanism |
+| Kinetics | Avoid equating one barrier with measured conductivity |
+
+**Report both forward and backward directional barriers** if the endpoint energies differ. A low NEB barrier alone does not establish rapid long-range transport without site populations, kinetic connectivity, and prefactor information.
+
+
+
+## 8. Illustrative Ion-Migration Mechanisms
+
+For a generic hydrated oxide, proton motion may involve at least two different elementary rearrangements:
 
 - **OH reorientation:** A proton changes orientation around an oxygen.
 - **Proton transfer:** A proton moves between neighboring oxygen environments.
@@ -375,7 +376,7 @@ NEB finds a locally optimized migration pathway and its potential-energy barrier
 
 ---
 
-## Advanced Practice: Competing Paths and Path Validation
+## 13. Comparing Alternative Migration Paths
 
 ![Alternative pathways connecting the same endpoints](../assets/figures/neb-path-alternatives.svg)
 
