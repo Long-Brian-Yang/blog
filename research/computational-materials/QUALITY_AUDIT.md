@@ -23,6 +23,20 @@ The handbook covers a strong range of foundational concepts and major computatio
 1. **Reordered the README's recommended 23-lesson reading list** to introduce mathematical concepts and quantum mechanics before Born–Oppenheimer and DFT, and thermodynamics/statistical mechanics before later statistical applications. Permanent filenames remain unchanged.
 2. **Fixed the broken Surface → Periodic Boundary Conditions link** caused by an earlier filename renumbering.
 
+## Editorial Pass A — Partial Completion
+
+The first editorial pass has now been applied to five priority chapters:
+
+- PES: normalized the article title and moved the metastability/landscape discussion ahead of the review section.
+- NEB: moved misplaced convergence subsections under practical challenges, reorganized alternate-path material, and generalized the principal case-study heading.
+- DFT: placed extended numerical/theoretical discussion before review questions.
+- PBC: grouped the advanced periodic and reciprocal-space explanations before exercises.
+- MD: moved sampling and integration discussions ahead of pitfalls and review questions.
+
+**Source validation:** The five changed articles have balanced Markdown code fences, and local Markdown links and figure paths were verified against the repository tree; no missing target path was found among these five.
+
+**Important limitation:** This is a structural and editorial pass, **not** full resolution of duplicated physics derivations, scientific line-by-line verification, or live GitHub rendering. Some headings and repeated definitions still need a second pass.
+
 ## Priority 1 — Editorial and factual review
 
 ### 1. Resolve duplicated introductions and repeated explanatory blocks
