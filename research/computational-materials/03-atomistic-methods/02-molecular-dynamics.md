@@ -1,6 +1,6 @@
 # Molecular Dynamics (MD) Fundamentals
 
-> **Module:** Methods · **Prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md), [Forces](../01-physical-foundations/02-forces-and-gradients.md), [PBC](../01-physical-foundations/04-periodic-boundary-conditions.md)  
+> **Module:** Methods · **Prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md), [Forces](../01-physical-foundations/02-forces-and-gradients.md), [PBC](../01-physical-foundations/03-periodic-boundary-conditions.md)  
 > **Next:** [Statistical Ensembles](03-statistical-ensembles.md) · [Diffusion and MSD](../05-transport-properties/01-diffusion-and-msd.md)
 
 ## Learning goals
