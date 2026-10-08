@@ -28,8 +28,11 @@ A structured collection of **English-language notes** organized by subject and c
 | 20 | [Thermodynamics Fundamentals](01-physical-foundations/07-thermodynamics-fundamentals.md) | Foundations |
 | 21 | [Statistical Mechanics Fundamentals](01-physical-foundations/08-statistical-mechanics-fundamentals.md) | Foundations |
 | 22 | [Free-Energy Calculation Methods](03-atomistic-methods/06-free-energy-calculation-methods.md) | Atomistic methods |
+| 23 | [Quantum Mechanics Fundamentals](01-physical-foundations/09-quantum-mechanics-fundamentals.md) | Foundations |
 
 **Suggested prerequisite route for the new lessons:** Thermodynamics → Statistical Mechanics → Statistical Ensembles → Free-Energy Calculation Methods. Reciprocal Space is integrated with PBC and Bulk; DFT Theory with DFT Fundamentals; Numerical Error Analysis with Geometry Optimization and MD.
+
+**Foundational dependency guides:** Linear Algebra & Vector Calculus → Quantum Mechanics → Born–Oppenheimer → DFT; Crystallography & Symmetry → PBC / Reciprocal Space → periodic electronic structure; Classical Mechanics → MD → Statistical Mechanics & Uncertainty; numerical optimization → Geometry Optimization → NEB. Existing notes have been enriched in place rather than fragmented into many separate lessons.
 
 ## Concept Dependencies
 
@@ -63,6 +66,12 @@ flowchart TD
     BULK --> AMORPH[Amorphous Structure]
     MD --> AMORPH
     AMORPH --> DIFF
+    LA[Linear Algebra] --> QM[Quantum Mechanics]
+    QM --> BO
+    SYM[Crystal Symmetry] --> BULK
+    FT[Fourier Analysis] --> DFT
+    PBC --> FT
+    CM[Classical Mechanics] --> MD
     TH[Thermodynamics] --> SM[Statistical Mechanics]
     SM --> ENS
     SM --> FE[Free Energy Methods]
@@ -74,7 +83,7 @@ flowchart TD
 
 ```text
 computational-materials/
-├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates, vibrations, thermodynamics, statistical mechanics
+├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates, vibrations, thermodynamics, statistical mechanics, quantum mechanics
 ├── 02-electronic-structure/     DFT and future SCF/convergence notes
 ├── 03-atomistic-methods/       optimization, MD, ensembles, NEB, TST, free-energy methods
 ├── 04-materials-interfaces/    bulk, surface, interface, amorphous structure
@@ -96,6 +105,7 @@ computational-materials/
 ## Next Topics
 
 - Continue deepening numerical convergence, finite-size checks, and property-specific uncertainty.
+- Extended sections now cover vector calculus, eigensystems, Fourier analysis, crystal symmetry, classical mechanics, probability, bonding, and optimization algorithms.
 - Expand amorphous transport with independent glass protocols, RDF, van Hove, and charge-correlation studies.
 - Compare NEP, MACE, and SevenNet on application-specific transferability and performance.
 - Surface thermodynamics, grain boundaries, and interface resistance.
