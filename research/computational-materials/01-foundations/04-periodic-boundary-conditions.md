@@ -37,6 +37,16 @@ This simple expression is specific to orthogonal cells; triclinic cells require 
 
 ## 3. Wrapped and unwrapped trajectories
 
+![Wrapped and unwrapped atomic trajectories](../assets/figures/wrapped-unwrapped.svg)
+
+*Figure 2. The stored wrapped position can jump at cell boundaries; the reconstructed unwrapped trajectory remains continuous.*
+
+### Practical boundary-crossing example
+
+Consider a one-dimensional 10 Å box. An ion moves from 9.7 Å to 0.3 Å across the right-hand boundary. The physically continuous displacement is **+0.6 Å**, not −9.4 Å. Over a long trajectory, image counters retain the accumulated number of cell crossings. Use these counters for MSD while using minimum-image differences for short-range pair distances.
+
+
+
 A particle can cross a periodic boundary without physically jumping backwards. For diffusion analysis, reconstruct an **unwrapped** trajectory that preserves accumulated crossings:
 
 ```math
