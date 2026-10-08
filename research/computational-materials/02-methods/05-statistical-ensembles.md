@@ -35,6 +35,16 @@ The thermostat should sample the intended equilibrium distribution, but differen
 
 ## 3. Thermostats
 
+![Thermostat choice and dynamical response](../assets/figures/thermostat-effects.svg)
+
+*Figure 2. Thermostat choice can affect time-dependent observables even when equilibrium temperature distributions appear well controlled.*
+
+### Ensemble accuracy vs transport accuracy
+
+A correct equilibrium distribution does not guarantee undisturbed real-time correlations. Stochastic thermostats can perturb velocity autocorrelations and jump rates. A careful diffusion study reports coupling times and compares different strengths or NVE production runs after equilibration. Interpret differences alongside finite sampling errors, not from a single trajectory.
+
+
+
 | Thermostat | Main idea | Caution |
 | --- | --- | --- |
 | Nosé–Hoover | Extended-system deterministic dynamics | May be nonergodic for some small systems |
