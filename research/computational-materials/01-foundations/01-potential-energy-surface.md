@@ -101,6 +101,23 @@ Zero modes due to translation, rotation, or other symmetries require special car
 
 **Important distinction:** A transition state for an elementary activated event typically corresponds to a first-order saddle point, **not necessarily a maximum of the full PES**. It appears as a maximum only *along the reaction path*.
 
+### Hessian eigenvalues and the physical meaning of curvature
+
+![Curvature and stable or unstable directions](../assets/figures/pes-hessian.svg)
+
+*Figure. Local energy curvature distinguishes stable and unstable directions; a saddle point has both.*
+
+Near a stationary configuration $\mathbf R_0$, expand the energy in a small displacement $\delta\mathbf R$:
+
+```math
+E(\mathbf R_0+\delta\mathbf R)\approx E(\mathbf R_0)+\frac12\delta\mathbf R^{\mathrm T}H\delta\mathbf R.
+```
+
+The Hessian's eigenvectors define local displacement directions, while its eigenvalues measure local curvature. After excluding trivial zero modes, positive curvatures indicate local stability; one negative curvature identifies a first-order saddle. The corresponding mass-weighted Hessian is used in vibrational analysis.
+
+**Application:** In NEB, the climbing image is meant to approach a saddle, but a converged projected force alone does not rigorously verify the number of unstable modes. A targeted vibrational or Hessian check can provide additional evidence for critical pathways.
+
+
 ## 5. From PES to Geometry Optimization
 
 **Geometry optimization** seeks a nearby local minimum by moving atoms according to energies and forces.
