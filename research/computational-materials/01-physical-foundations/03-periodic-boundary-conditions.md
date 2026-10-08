@@ -162,3 +162,37 @@ Periodic functions can be represented through reciprocal-space components. Plane
 4. For a surface, sampling along the vacuum direction is typically much less demanding, but still must match the simulation setup.
 
 **Related:** [Bulk Crystal Structures](../04-materials-interfaces/01-bulk-crystal-structures.md) and [DFT](../02-electronic-structure/01-dft-fundamentals.md).
+
+---
+
+## Fourier Analysis: Why Reciprocal-Space Descriptions Work
+
+![Real and reciprocal signal representations](../assets/figures/fourier-duality.svg)
+
+*Figure. Fourier decomposition expresses spatial variation through wavevector components.*
+
+A periodic function with period $L$ admits a Fourier series:
+
+```math
+f(x)=\sum_{n=-\infty}^{\infty}c_n e^{i2\pi nx/L},\qquad c_n=\frac1L\int_0^L f(x)e^{-i2\pi nx/L}\,dx.
+```
+
+In three-dimensional periodic crystals, reciprocal lattice vectors replace $2\pi n/L$. Complex exponentials form a convenient basis because spatial translations multiply each term by a phase.
+
+For a general nonperiodic integrable function, one Fourier-transform convention is:
+
+```math
+\widetilde f(\mathbf q)=\int f(\mathbf r)e^{-i\mathbf q\cdot\mathbf r}\,d^3r,\qquad f(\mathbf r)=\frac1{(2\pi)^3}\int \widetilde f(\mathbf q)e^{i\mathbf q\cdot\mathbf r}\,d^3q.
+```
+
+### Why this matters in calculations
+
+Plane-wave DFT expands orbitals in reciprocal-space modes. Diffraction/structure factors quantify spatial correlations by wavevector. A discrete Fourier transform of sampled data introduces periodicity and finite-resolution effects; finite-cell truncation creates aliasing if sampling is insufficient.
+
+**Distinguish:** plane-wave basis cutoff controls high-frequency spatial resolution; **k-point mesh** samples Bloch wavevectors in the Brillouin zone. They are two separate numerical settings.
+
+### Review
+
+1. Why do reciprocal vectors have units of inverse length?
+2. What does a large wavevector signify about spatial variation?
+3. Why are a plane-wave cutoff and k-point sampling not the same thing?
