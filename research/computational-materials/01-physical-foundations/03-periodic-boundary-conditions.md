@@ -72,30 +72,6 @@ Periodic DFT also samples the electronic Brillouin zone using **k-points**. Real
 
 In NEB, two endpoints must represent the intended motion with consistent atom ordering and periodic-image mapping. A naive interpolation between wrapped coordinates might send an ion across the entire unit cell instead of over the neighboring migration saddle.
 
-## Common mistakes
-
-- Interpreting periodic copies as independent statistical samples.
-- Computing MSD from wrapped trajectories.
-- Assuming all finite-size errors vanish in a modest supercell.
-- Using a simple orthogonal minimum-image formula for arbitrary triclinic cells.
-
-## Practice
-
-1. In a 10 Å periodic 1D box, what is the minimum-image displacement between positions 9.7 Å and 0.3 Å?
-2. Why can a defect formation energy depend on supercell size?
-3. Why must NEB endpoints have consistent periodic-image mapping?
-
-**Continue:** [Born–Oppenheimer Approximation](04-born-oppenheimer-approximation.md) · [MD](../03-atomistic-methods/02-molecular-dynamics.md).
-
-## References
-
-- [ASE Atoms and cells](https://ase-lib.org/ase/atoms.html)
-- [GROMACS manual: periodic boundary conditions](https://manual.gromacs.org/current/reference-manual/algorithms/periodic-boundary-conditions.html)
-
-**Applications:** [Bulk crystal structures](../04-materials-interfaces/01-bulk-crystal-structures.md) and [Surface slab models](../04-materials-interfaces/02-surfaces-and-slabs.md).
-
----
-
 ## Deeper Understanding: Minimum Images and Dimensionality
 
 ![Minimum image across a periodic boundary](../assets/figures/pbc-minimum-image.svg)
@@ -196,3 +172,27 @@ Plane-wave DFT expands orbitals in reciprocal-space modes. Diffraction/structure
 1. Why do reciprocal vectors have units of inverse length?
 2. What does a large wavevector signify about spatial variation?
 3. Why are a plane-wave cutoff and k-point sampling not the same thing?
+
+## Common mistakes
+
+- Interpreting periodic copies as independent statistical samples.
+- Computing MSD from wrapped trajectories.
+- Assuming all finite-size errors vanish in a modest supercell.
+- Using a simple orthogonal minimum-image formula for arbitrary triclinic cells.
+
+## Practice
+
+1. In a 10 Å periodic 1D box, what is the minimum-image displacement between positions 9.7 Å and 0.3 Å?
+2. Why can a defect formation energy depend on supercell size?
+3. Why must NEB endpoints have consistent periodic-image mapping?
+
+**Continue:** [Born–Oppenheimer Approximation](04-born-oppenheimer-approximation.md) · [MD](../03-atomistic-methods/02-molecular-dynamics.md).
+
+## References
+
+- [ASE Atoms and cells](https://ase-lib.org/ase/atoms.html)
+- [GROMACS manual: periodic boundary conditions](https://manual.gromacs.org/current/reference-manual/algorithms/periodic-boundary-conditions.html)
+
+**Applications:** [Bulk crystal structures](../04-materials-interfaces/01-bulk-crystal-structures.md) and [Surface slab models](../04-materials-interfaces/02-surfaces-and-slabs.md).
+
+---
