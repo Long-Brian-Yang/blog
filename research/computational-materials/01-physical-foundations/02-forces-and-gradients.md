@@ -119,3 +119,57 @@ A small projected NEB force does not ensure that a path has sufficient images, t
 1. Why is perpendicular force important in NEB?
 2. What is the difference between a zero force and a stable minimum?
 3. What physical information is contained in Hessian eigenvectors?
+
+---
+
+## Vector Calculus and Linear Algebra: A Working Toolkit
+
+![Scalar-field gradient interpretation](../assets/figures/vector-gradient.svg)
+
+*Figure. The gradient is perpendicular to local level sets and points toward the steepest rise of a scalar function.*
+
+For a differentiable scalar field $f(x,y,z)$, the gradient is a vector of partial derivatives:
+
+```math
+\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right).
+```
+
+The directional derivative along a unit vector $\hat{\mathbf u}$ is $\nabla f\cdot\hat{\mathbf u}$. The Cauchy–Schwarz inequality shows that this derivative is largest when $\hat{\mathbf u}$ aligns with $\nabla f$. For potential energy, force is $-\nabla E$.
+
+The divergence of a vector field $\mathbf A$ measures its local outward flux density:
+
+```math
+\nabla\cdot\mathbf A=\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}.
+```
+
+Divergence appears in electrostatics and continuity equations; it is **not** interchangeable with the gradient.
+
+### Eigenvalues and eigenvectors
+
+![Linear transformation and eigenvector idea](../assets/figures/linear-eigenvectors.svg)
+
+*Figure. Eigenvectors retain their directions under the represented linear transformation, up to scaling and possible sign reversal.*
+
+For a square matrix $A$, an eigenvector $\mathbf v\ne0$ satisfies:
+
+```math
+A\mathbf v=\lambda\mathbf v,\qquad \det(A-\lambda I)=0.
+```
+
+If $A$ is real symmetric, all eigenvalues are real and eigenvectors can be chosen orthonormal. The Hessian of a sufficiently smooth scalar energy is symmetric under standard differentiability assumptions. Its eigenvectors identify local principal-curvature directions.
+
+A quadratic energy example is:
+
+```math
+E(x,y)=\frac12k_xx^2+\frac12k_yy^2,\qquad H=\begin{pmatrix}k_x&0\\0&k_y\end{pmatrix}.
+```
+
+Both $k_x,k_y>0$ mean a local minimum. One negative eigenvalue and one positive eigenvalue give a saddle.
+
+### Coordinate conventions and constraints
+
+Coordinate gradients and Hessians depend on whether coordinates are Cartesian, fractional, or mass-weighted. Eigenfrequencies require **mass weighting**. Fixed atoms eliminate allowed degrees of freedom; always state which subspace was optimized.
+
+### Worked check
+
+For $E(x,y)=2x^2+3y^2$, calculate the gradient and Hessian. Why does $-\nabla E$ point toward $(0,0)$? How does changing the coefficient of $x^2$ affect the curvature?
