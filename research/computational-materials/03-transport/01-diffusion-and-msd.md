@@ -83,6 +83,33 @@ Actual collective conductivity includes correlated motion; for a charge-neutral 
 
 Care is required in defining transported charge and unwrapped trajectories for multi-species systems. For correlated transport, $\sigma/\sigma_{\mathrm{NE}}$ need not equal one.
 
+### Structural interpretation: RDF and coordination number
+
+![Pair distribution and first coordination shell](../assets/figures/rdf-coordination.svg)
+
+*Figure. A schematic radial distribution function. The first minimum is often used as a cutoff for a first-shell coordination estimate.*
+
+A radial distribution function $g_{\alpha\beta}(r)$ describes the relative occurrence of species $\beta$ at radial distance $r$ from species $\alpha$. For a homogeneous isotropic sample, the partial coordination number to radius $r_c$ is:
+
+```math
+N_{\alpha\beta}(r_c)=4\pi\rho_\beta\int_0^{r_c}g_{\alpha\beta}(r)\,r^2\,dr.
+```
+
+Here $\rho_\beta$ is the number density of species $\beta$. The chosen cutoff should be justified from the shell structure, and overlapping distributions may make a unique coordination assignment difficult.
+
+For amorphous Li–O–Hf–Cl, Li–O and Li–Cl coordination statistics can help categorize migration environments. **A correlation between coordination and diffusivity is not itself proof of a causal migration mechanism**; combine local structure with residence times, hop statistics, and migration pathways.
+
+### Comparing calculated and experimental activation energies
+
+If a diffusion coefficient follows an Arrhenius law over a meaningful temperature range:
+
+```math
+D(T)=D_0\exp\left[-\frac{E_a}{k_{\mathrm B}T}\right].
+```
+
+The slope of $\ln D$ versus $1/T$ is $-E_a/k_{\mathrm B}$. A fitted $E_a$ describes the overall temperature dependence of the sampled transport regime; it need not match one specific NEB barrier, particularly when multiple hops, trapping, or correlations are important.
+
+
 ## 5. Why NEB does not directly output $D$
 
 In a simple uncorrelated hopping model with equivalent sites and hop length $\ell$:
