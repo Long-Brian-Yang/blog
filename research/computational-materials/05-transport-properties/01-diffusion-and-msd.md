@@ -138,4 +138,4 @@ Here $z$ is the number of equivalent destinations and $\nu$ an attempt frequency
 
 **Related:** [NEB and migration barriers](../03-atomistic-methods/04-neb.md).
 
-**Spatial context:** [Bulk](../01-physical-foundations/01-bulk-crystal-structures.md) · [Surface](../04-materials-interfaces/02-surfaces-and-slabs.md) · [Interface](../04-materials-interfaces/03-interfaces-and-heterostructures.md). Compare parallel and normal transport carefully.
+**Spatial context:** [Bulk](../04-materials-interfaces/01-bulk-crystal-structures.md) · [Surface](../04-materials-interfaces/02-surfaces-and-slabs.md) · [Interface](../04-materials-interfaces/03-interfaces-and-heterostructures.md). Compare parallel and normal transport carefully.
