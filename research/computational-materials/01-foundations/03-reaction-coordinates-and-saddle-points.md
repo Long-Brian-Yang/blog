@@ -21,6 +21,12 @@ An energy profile is obtained by sampling $E(\mathbf R(s))$. **This one-dimensio
 
 ## 2. Why the straight line may be wrong
 
+![Geometric interpolation compared with a curved pathway](../assets/figures/reaction-paths.svg)
+
+*Figure. A curved route can avoid an unfavorable high-energy region that lies on the direct interpolation.*
+
+
+
 Linear interpolation uses:
 
 ```math
