@@ -167,3 +167,39 @@ This generalizes the earlier cubic-specific formula. **Miller indices label reci
 *Figure. Reciprocal-space concepts link crystal planes to k-point sampling.*
 
 **Related:** [PBC and Brillouin Zones](../01-physical-foundations/03-periodic-boundary-conditions.md).
+
+---
+
+## Crystallography and Symmetry: A More Complete Foundation
+
+![Translational and point symmetry operations](../assets/figures/symmetry-operations.svg)
+
+*Figure. Translations, rotations, mirrors and equivalent sites underlie the symmetry classification of crystals.*
+
+A lattice is invariant under discrete translations. A *point operation* leaves at least one point fixed, such as a rotation or mirror. A *space group* combines point symmetry with translations, including screw axes and glide planes.
+
+Crystals are grouped into **seven crystal systems** and **14 Bravais lattices** in three dimensions. The crystal system constrains lattice geometry; the Bravais lattice describes translational centering. A space group describes the fuller spatial symmetry including basis placement.
+
+### Fractional coordinates and symmetry
+
+A fractional coordinate $\mathbf s$ is mapped to Cartesian position through the cell matrix $H$:
+
+```math
+\mathbf r=H\mathbf s,\qquad H=[\mathbf a_1\ \mathbf a_2\ \mathbf a_3].
+```
+
+A space-group operation on fractional coordinates has the form:
+
+```math
+\mathbf s' = W\mathbf s+\mathbf w\pmod{\mathbb Z^3},
+```
+
+where $W$ represents a symmetry-compatible linear operation and $\mathbf w$ its fractional translation. Symmetry-equivalent sites can reduce the number of distinct defect placements and migration paths that need separate evaluation.
+
+### Why symmetry is useful but not always retained
+
+Dopants, point defects, finite surfaces, strain, and magnetic order may lower symmetry. A bulk structure's space group does not automatically describe its defect-containing supercell or relaxed interface. Structural relaxation may spontaneously lower symmetry, and overly restrictive symmetry settings can hide an instability.
+
+### Worked example
+
+Consider an ideal cubic perovskite and then replace one B-site atom with a dopant in a supercell. Which original B sites remain symmetry equivalent? Why can two different dopant depths under a surface produce inequivalent environments?
