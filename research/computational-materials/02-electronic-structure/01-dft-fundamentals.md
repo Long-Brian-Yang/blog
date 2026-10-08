@@ -180,3 +180,39 @@ Plane-wave all-electron wavefunctions oscillate strongly near nuclei and are cos
 **Self-consistency** refers to electron-density convergence at fixed nuclei; **basis and k-point convergence** concern numerical representation; **structural relaxation** changes nuclei. They require separate checks.
 
 **Further reading:** [Original Kohn–Sham paper](https://doi.org/10.1103/PhysRev.140.A1133).
+
+---
+
+## Chemical Bonding and Electron Density
+
+![Bonding motifs and charge redistribution](../assets/figures/chemical-bonding.svg)
+
+*Figure. Ionic, covalent, and metallic bonding are useful limiting descriptions; real solids can mix these characters.*
+
+**Ionic bonding** emphasizes electrostatic attraction associated with charge redistribution; **covalent bonding** emphasizes shared electron density and orbital overlap; **metallic bonding** emphasizes extended electronic states. These are models along a continuum, not mutually exclusive labels for every real bond.
+
+### Molecular orbitals and hybridization
+
+In a simple two-orbital picture, combinations of atomic orbitals produce lower-energy bonding and higher-energy antibonding orbitals. Their ordering depends on overlap and Hamiltonian matrix elements, not a universal fixed energy spacing.
+
+Local orbital hybridization can explain preferred bond angles, but in solids, Bloch states and orbital projections provide a more suitable basis for many electronic properties.
+
+### Charge-density differences
+
+One illustrative convention is:
+
+```math
+\Delta n(\mathbf r)=n_{\mathrm{combined}}(\mathbf r)-n_A(\mathbf r)-n_B(\mathbf r).
+```
+
+The fragment densities must be evaluated in a common geometry/cell and under compatible numerical settings. Positive and negative regions represent redistribution **under the stated reference**, not uniquely defined atomic charges.
+
+### Density of states and bands
+
+A density of states counts electronic states per energy interval under a given normalization. In crystals, band energies vary with Bloch wavevector. A small Kohn–Sham gap should not automatically be interpreted as the experimentally measured quasiparticle gap; approximate exchange–correlation functionals have limitations.
+
+**Related:** [Quantum Mechanics Fundamentals](../01-physical-foundations/09-quantum-mechanics-fundamentals.md).
+
+### Questions
+
+Why is bonding often mixed rather than purely ionic or covalent? What does a charge-density difference depend on? Why are projected orbitals and charge partitioning not unique observables?
