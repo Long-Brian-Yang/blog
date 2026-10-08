@@ -101,3 +101,43 @@ As temperature increases, energetic penalties become relatively less dominant; m
 **Questions:** Why is $Z$ needed? When can state B have a larger population despite higher energy? Why can time averaging fail on a trapped trajectory?
 
 **Continue:** [Statistical Ensembles](../03-atomistic-methods/03-statistical-ensembles.md) · [Free-Energy Calculation Methods](../03-atomistic-methods/06-free-energy-calculation-methods.md).
+
+---
+
+## Probability and Statistical Inference for Simulations
+
+![Correlation, block means, and uncertainty](../assets/figures/sampling-confidence.svg)
+
+*Figure. Repeated correlated measurements do not provide as much independent information as equally many independent draws.*
+
+Let $X_1,\ldots,X_n$ be observations. A sample mean and sample variance are:
+
+```math
+\overline X=\frac1n\sum_{i=1}^n X_i,\qquad s^2=\frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2.
+```
+
+For approximately independent observations with finite variance, the standard error of the mean is estimated as $s/\sqrt n$. Molecular dynamics data, however, are typically correlated.
+
+### Autocorrelation and effective sample size
+
+Define normalized lag autocorrelation $\rho(k)$. One discrete-time convention is:
+
+```math
+n_{\mathrm{eff}}\approx\frac{n}{1+2\sum_{k=1}^{\infty}\rho(k)}.
+```
+
+This approximation assumes stationary processes and a reliably estimated correlation sum. When events are too rare or nonstationary, it can give misleading certainty.
+
+### Bootstrap and block bootstrap
+
+An ordinary bootstrap resamples independent observations with replacement. For correlated MD data, a **block bootstrap** resamples sufficiently long blocks or independent trajectories, but results depend on block size and sampling adequacy.
+
+A confidence interval quantifies uncertainty under the specified statistical procedure; it does not prove freedom from systematic model bias.
+
+### Practical report checklist
+
+State independent replica count, trajectory length, temperature, lag-time window, effective sampling assumptions, uncertainty estimation, and the observed number of rare migration events. For non-Gaussian quantities, consider percentile intervals or robust methods rather than automatically assuming symmetry around the mean.
+
+### Worked question
+
+A trajectory has 100,000 frames, but ion hopping occurs only twice. Why would a tiny confidence interval based on all frames be unjustified for the diffusion coefficient?
