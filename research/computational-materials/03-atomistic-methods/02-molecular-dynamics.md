@@ -108,7 +108,7 @@ AIMD usually obtains forces from electronic structure repeatedly, while MLIP-MD 
 
 ---
 
-## Advanced Practice: Correlation Time and Effective Sampling
+## Practical Validation: Correlation Time and Effective Sampling
 
 ![Independent trajectories and blocks](../assets/figures/md-block-averaging.svg)
 
@@ -147,7 +147,7 @@ Overlapping MSD time origins are **correlated** because they share trajectory se
 
 ---
 
-## Numerical Time Integration and Uncertainty
+## Numerical Integration and Uncertainty
 
 Time discretization affects trajectories even when the force model is exact. A finite timestep $\Delta t$ approximates the continuous equations of motion. Check stability and representative NVE energy drift as $\Delta t$ changes, but remember that small energy drift alone does not prove convergence of rare hopping rates.
 
