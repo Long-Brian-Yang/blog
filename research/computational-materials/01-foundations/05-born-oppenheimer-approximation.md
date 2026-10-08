@@ -73,3 +73,44 @@ Both aim to describe coupled electronic-energy and ionic motion, but differ algo
 
 - [Born–Oppenheimer approximation (overview)](https://en.wikipedia.org/wiki/Born%E2%80%93Oppenheimer_approximation)
 - [ASE molecular dynamics documentation](https://ase-lib.org/ase/md.html)
+
+---
+
+## Extended Foundations: Electronic States and Timescales
+
+![Electronic versus nuclear timescales](../assets/figures/bo-timescales.svg)
+
+*Figure. The electronic response is often much faster than the motion of nuclei; this separation motivates an adiabatic treatment.*
+
+The **Born–Oppenheimer approximation** treats the electronic problem at a sequence of nearly fixed nuclear configurations. It is not equivalent to density functional theory and does not itself demand classical nuclear motion.
+
+A more complete adiabatic expansion of the total molecular wavefunction is:
+
+```math
+\Psi(\mathbf r,\mathbf R)=\sum_k \chi_k(\mathbf R)\,\psi_k(\mathbf r;\mathbf R).
+```
+
+Derivative couplings between electronic states can be important when their energies approach one another. The approximation often retains a single electronic surface and neglects transitions to others.
+
+![Nearby electronic energy surfaces](../assets/figures/bo-surfaces.svg)
+
+*Figure. Close-lying electronic surfaces can make nonadiabatic transitions more relevant.*
+
+### What changes during a proton hop?
+
+At each nuclear configuration along an O–H transfer, the electronic distribution readjusts. Under ground-state DFT, one computes an electronic-energy surface and its forces. The nuclei are usually moved classically in conventional AIMD, which is a **separate choice** from electronic adiabaticity.
+
+For light atoms, zero-point motion and tunneling can influence transport. Path-integral methods, nuclear quantum corrections, or quantum transition-state approaches may be needed when these effects matter; ordinary DFT-NEB does not directly include them.
+
+### Practical questions
+
+- Is the electronic ground state reasonably separated from excited states?
+- Is a spin-state or charge-state change plausible during the process?
+- Could nuclear quantum effects meaningfully alter proton kinetics?
+- Does the force calculator adequately converge the electronic state at each geometry?
+
+### Review
+
+1. Why is Born–Oppenheimer not synonymous with DFT?
+2. What are nonadiabatic couplings?
+3. Can one use classical nuclei and quantum electrons in the same simulation?
