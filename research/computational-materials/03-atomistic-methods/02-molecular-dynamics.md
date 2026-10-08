@@ -90,24 +90,6 @@ Here $s_D$ is the sample standard deviation across independent estimates. Correl
 
 AIMD usually obtains forces from electronic structure repeatedly, while MLIP-MD evaluates a trained force model. MLIPs allow longer trajectories but require validation for the relevant compositions, temperatures, and local environments.
 
-## Pitfalls
-
-- Calculating MSD from wrapped coordinates.
-- Mistaking a short trajectory with no jumps for zero true diffusivity.
-- Fitting MSD before reaching the diffusive regime.
-- Ignoring thermostat effects and inadequate sampling.
-
-## Review questions
-
-1. What is the difference between a numerical timestep and an ion-hop waiting time?
-2. Why should one test energy drift in NVE?
-3. How can a trajectory have accurate forces but inadequate diffusion statistics?
-4. Why can an MD simulation at high temperature fail to represent room-temperature transport?
-
-**Next:** [Statistical Ensembles](03-statistical-ensembles.md).
-
----
-
 ## Practical Validation: Correlation Time and Effective Sampling
 
 ![Independent trajectories and blocks](../assets/figures/md-block-averaging.svg)
@@ -198,3 +180,21 @@ These formulations motivate symplectic integrators such as Velocity Verlet. Symp
 Time-translation symmetry is associated with energy conservation. Spatial-translation invariance yields momentum conservation; rotational invariance yields angular-momentum conservation under appropriate assumptions. External constraints, rigid walls, thermostats, or barostats modify conservation statements.
 
 **Practical exercise:** Compare NVE energy drift at several timesteps. Why is a stable kinetic temperature insufficient evidence of good Hamiltonian integration?
+
+## Pitfalls
+
+- Calculating MSD from wrapped coordinates.
+- Mistaking a short trajectory with no jumps for zero true diffusivity.
+- Fitting MSD before reaching the diffusive regime.
+- Ignoring thermostat effects and inadequate sampling.
+
+## Review questions
+
+1. What is the difference between a numerical timestep and an ion-hop waiting time?
+2. Why should one test energy drift in NVE?
+3. How can a trajectory have accurate forces but inadequate diffusion statistics?
+4. Why can an MD simulation at high temperature fail to represent room-temperature transport?
+
+**Next:** [Statistical Ensembles](03-statistical-ensembles.md).
+
+---
