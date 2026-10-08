@@ -79,3 +79,28 @@ Bulk migration requires **accessible sites**, **barriers**, and **connectivity**
 4. Why must defect chemical potentials be specified?
 
 **Next:** [Surfaces and Slab Models](../04-materials/01-surfaces-and-slabs.md).
+
+
+## Advanced Application: Defect Chemistry and Hydration
+
+In proton-conducting acceptor-doped perovskites, substitutional dopants may be charge-compensated by oxygen vacancies. Using Kröger–Vink notation, an illustrative hydration equilibrium is:
+
+```math
+\mathrm{H_2O(g)}+V_{\mathrm O}^{\bullet\bullet}+O_{\mathrm O}^{\times}\rightleftharpoons 2OH_{\mathrm O}^{\bullet}.
+```
+
+This relation describes incorporation of water into vacancy-containing oxides; actual concentrations depend on temperature, water partial pressure, dopant content, and other defect equilibria.
+
+For an equilibrium reaction, an idealized mass-action dependence is:
+
+```math
+K(T)=\exp\!\left[-\frac{\Delta G^\circ(T)}{k_{\mathrm B}T}\right].
+```
+
+If $\Delta G^\circ$ is defined per mole, use $RT$ instead of $k_{\mathrm B}T$. Site multiplicities, activities, and electroneutrality must be treated consistently in quantitative defect models.
+
+**Research connection:** Y doping changes both the number of available protonic defects and local trapping/hopping energetics. A lower elementary migration barrier does not automatically mean a larger mobile-proton population.
+
+### Defect association and transport
+
+A dopant–proton association energy measures relative stability of nearby versus separated configurations under a declared reference convention. To discuss trapping quantitatively, evaluate association energies, residence times, and connected migration paths rather than inferring association from distance alone.
