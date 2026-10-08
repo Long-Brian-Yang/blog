@@ -57,6 +57,25 @@ Here $f$ is the number of active quadratic kinetic degrees of freedom, corrected
 
 **Equilibration** allows a system to approach an appropriate stationary distribution under selected conditions. **Production** collects trajectories used for analysis. Duration requirements depend on the property: stable temperature is not evidence that rare diffusion events have been sampled adequately.
 
+### Statistical sampling and uncertainty
+
+![Independent MD replicas and overlapping origins](../assets/figures/md-sampling.svg)
+
+*Figure. Multiple runs and time origins improve sampling; overlapping time windows from the same run remain correlated.*
+
+For diffusion, average over particles and multiple time origins, but do not treat every overlapping displacement as an independent measurement. Where possible, use independently seeded trajectories or independent glass realizations to quantify between-replica variability.
+
+A simple uncertainty estimate from $M$ approximately independent diffusivity estimates is:
+
+```math
+\overline D=\frac{1}{M}\sum_{j=1}^M D_j,\qquad \mathrm{SE}(\overline D)\approx\frac{s_D}{\sqrt M}.
+```
+
+Here $s_D$ is the sample standard deviation across independent estimates. Correlated replicas or too few activated hops invalidate a naive standard error.
+
+**Practical diagnostics:** inspect the MSD fit-window sensitivity, hop counts, direction-resolved MSDs, and uncertainty across independent simulations. A stable temperature and low energy drift alone do not imply converged transport.
+
+
 ## 6. MD outputs are observables only after analysis
 
 | From trajectories | Analysis |
