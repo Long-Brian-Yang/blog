@@ -370,3 +370,5 @@ Not necessarily. High-energy transition-state configurations may be outside the 
 ## Key Takeaway
 
 NEB finds a locally optimized migration pathway and its potential-energy barrier between specified endpoint configurations. Its most difficult aspects are **selecting meaningful endpoints, sampling realistic pathways, converging saddle points, and connecting microscopic barriers to statistically representative transport mechanisms**.
+
+**Materials applications:** [Bulk structures](../01-foundations/06-bulk-crystal-structures.md) · [Surfaces and Slabs](../04-materials/01-surfaces-and-slabs.md) · [Interfaces](../04-materials/02-interfaces-and-heterostructures.md).
