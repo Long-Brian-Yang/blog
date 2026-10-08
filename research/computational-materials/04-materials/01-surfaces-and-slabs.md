@@ -23,9 +23,9 @@ A surface is often approximated by a finite-thickness slab repeated periodically
 
 For a symmetric slab with two equivalent surfaces, a simplified cleavage/surface-energy expression is:
 
-\`\`\`math
+```math
 \gamma=\frac{E_{\mathrm{slab}}-N E_{\mathrm{bulk}}}{2A}.
-\`\`\`
+```
 
 This expression assumes compatible bulk stoichiometry and chemical reference, two equivalent faces, and appropriate matching of bulk units. For inequivalent faces, nonstoichiometric slabs, or variable chemical environments, use an appropriate **surface grand potential** and chemical-potential bookkeeping instead.
 
@@ -47,9 +47,9 @@ Converge the **observable of interest**, such as surface energy, adsorption ener
 
 Water and hydroxyls can change surface proton concentration and available pathways. A schematic adsorption energy is:
 
-\`\`\`math
+```math
 E_{\mathrm{ads}}=E_{\mathrm{slab+ads}}-E_{\mathrm{clean\,slab}}-E_{\mathrm{adsorbate}}.
-\`\`\`
+```
 
 The definition depends on gas-phase or solution references, surface coverage, and whether dissociation occurs. Negative values under this convention indicate exothermic adsorption relative to the selected references, not necessarily experimental stability at finite temperature.
 
@@ -57,9 +57,9 @@ The definition depends on gas-phase or solution references, surface coverage, an
 
 The in-plane and normal components of motion should be distinguished. In a genuinely diffusive regime, a directional Einstein relation gives:
 
-\`\`\`math
+```math
 D_{\parallel}=\lim_{t\to\infty}\frac{\langle\Delta x^2+\Delta y^2\rangle}{4t}.
-\`\`\`
+```
 
 For motion along $z$, define $D_z$ only if unbounded normal diffusion exists. A finite slab with confinement can show a plateau in the $z$-MSD, in which case assigning an ordinary long-time diffusion coefficient is inappropriate.
 
