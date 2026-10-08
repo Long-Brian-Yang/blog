@@ -17,9 +17,9 @@ A **bulk** solid is a region sufficiently far from external surfaces and interfa
 
 A periodic crystal is constructed from a **Bravais lattice** and an atomic **basis**:
 
-\`\`\`math
+```math
 \mathbf r_{n,s}=n_1\mathbf a_1+n_2\mathbf a_2+n_3\mathbf a_3+\boldsymbol\tau_s.
-\`\`\`
+```
 
 Here $n_i$ are integers, $\mathbf a_i$ are lattice vectors, and $\boldsymbol\tau_s$ locates basis atom $s$.
 
@@ -35,9 +35,9 @@ Larger supercells do not automatically remove finite-size errors. Verify energie
 
 Crystal planes are labeled using **Miller indices** $(hkl)$. For a cubic crystal:
 
-\`\`\`math
+```math
 d_{hkl}=\frac{a}{\sqrt{h^2+k^2+l^2}}.
-\`\`\`
+```
 
 This is a cubic-specific interplanar-spacing expression, not a universal formula for triclinic lattices. The (001) plane is normal to one conventional cubic axis; the associated surface may admit multiple chemically different terminations.
 
@@ -51,9 +51,9 @@ For BaZrO₃, oxygen environments, local Y substitution, and proton binding conf
 
 Vacancies, substitutions, interstitials, and protons alter local structure and energetics. A common formal defect-formation-energy expression is:
 
-\`\`\`math
+```math
 E_f(D^q)=E_{\mathrm{def}}^q-E_{\mathrm{bulk}}-\sum_i n_i\mu_i+q(E_F+E_{\mathrm{VBM}})+E_{\mathrm{corr}}.
-\`\`\`
+```
 
 Conventions for $n_i$, potential alignment, chemical potentials, and corrections must be stated. This expression applies to an appropriately defined charged-defect framework, not every neutral or molecular defect model.
 
