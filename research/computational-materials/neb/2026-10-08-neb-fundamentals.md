@@ -45,15 +45,15 @@ The **nudged elastic band (NEB)** method optimizes a chain of atomic configurati
 
 For a system containing $N$ atoms, its atomic configuration can be written as
 
-$
+$$
 \mathbf R=(\mathbf r_1,\mathbf r_2,\ldots,\mathbf r_N).
-$
+$$
 
 The potential energy is a function of all atomic coordinates:
 
-$
+$$
 E=E(\mathbf R).
-$
+$$
 
 A **potential energy surface** is the multidimensional landscape defined by this function. Local valleys correspond to metastable structures, while higher-energy regions separate them. The familiar one-dimensional energy profile is only a projection along a selected reaction coordinate.
 
@@ -75,9 +75,9 @@ The transition state is therefore not an ordinary stable minimum.
 
 For a particular pathway, the forward potential-energy barrier is
 
-$
+$$
 E_{m}^{A\rightarrow B}=E_{\mathrm{TS}}-E_A,
-$
+$$
 
 where $E_A$ and $E_{\mathrm{TS}}$ are the energies of the initial state and the relevant transition state.
 
@@ -91,10 +91,10 @@ where $E_A$ and $E_{\mathrm{TS}}$ are the energies of the initial state and the 
 
 Then
 
-$
+$$
 E_m^{A\rightarrow B}=0.45\ \mathrm{eV},\qquad
 E_m^{B\rightarrow A}=0.55\ \mathrm{eV}.
-$
+$$
 
 Even along the same pathway, forward and reverse barriers can differ when the endpoint energies differ.
 
@@ -102,9 +102,9 @@ Even along the same pathway, forward and reverse barriers can differ when the en
 
 A **minimum-energy path** connects two local minima while satisfying the condition that the component of the potential-energy gradient perpendicular to the path vanishes:
 
-$
+$$
 \left.\nabla E\right|_{\perp}=0.
-$
+$$
 
 The MEP need not be the geometrically shortest path. Atoms may move around a strongly repulsive region, and the surrounding lattice can relax as the migrating ion moves.
 
@@ -119,9 +119,9 @@ Several distinct local MEPs can exist between the same endpoint states. One succ
 
 NEB represents a pathway using a finite sequence of **images**, or full atomic configurations:
 
-$
+$$
 \mathbf R_0,\mathbf R_1,\ldots,\mathbf R_M.
-$
+$$
 
 The endpoints $\mathbf R_0$ and $\mathbf R_M$ are usually held fixed; the intermediate images are optimized.
 
@@ -137,13 +137,13 @@ If full physical forces and spring forces were simply added together, the band c
 
 For an intermediate image $i$, the NEB force is schematically
 
-$
+$$
 \mathbf F_i^{\mathrm{NEB}}
 =
 -\left.\nabla E(\mathbf R_i)\right|_{\perp}
 +
 \left.\mathbf F_i^{\mathrm{spring}}\right|_{\parallel}.
-$
+$$
 
 Here:
 
@@ -159,14 +159,14 @@ A regular NEB band approximates the MEP, but its highest-energy image may not li
 
 In **CI-NEB**, a selected high-energy image climbs toward the saddle point. For the climbing image, the spring contribution is removed and the physical force component parallel to the band is reversed:
 
-$
+$$
 \mathbf F_i^{\mathrm{CI}}
 =
 -\nabla E(\mathbf R_i)
 +
 2[\nabla E(\mathbf R_i)\cdot\hat{\boldsymbol\tau}_i]
 \hat{\boldsymbol\tau}_i.
-$
+$$
 
 In practice, an initial regular-NEB relaxation can help stabilize the pathway before activating climbing-image optimization.
 
@@ -239,9 +239,9 @@ An MLIP can make large-scale or repeated NEB calculations much more affordable, 
 
 For an elementary thermally activated jump, a simple transition-state-inspired rate expression is
 
-$
+$$
 k\approx\nu\exp\left(-\frac{E_m}{k_\mathrm B T}\right),
-$
+$$
 
 where $\nu$ is a characteristic attempt frequency.
 
