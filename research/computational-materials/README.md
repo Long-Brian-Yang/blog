@@ -25,6 +25,11 @@ A structured collection of **English-language notes** organized by subject and c
 | 17 | [MLIP Fundamentals](06-machine-learning-potentials/01-mlip-fundamentals.md) | Machine Learning |
 | 18 | [MLIP Validation for MD, NEB and Diffusion](06-machine-learning-potentials/02-mlip-validation.md) | Machine Learning |
 | 19 | [Amorphous Structure and Ionic Transport](04-materials-interfaces/04-amorphous-structure-and-ionic-transport.md) | Materials / Transport |
+| 20 | [Thermodynamics Fundamentals](01-physical-foundations/07-thermodynamics-fundamentals.md) | Foundations |
+| 21 | [Statistical Mechanics Fundamentals](01-physical-foundations/08-statistical-mechanics-fundamentals.md) | Foundations |
+| 22 | [Free-Energy Calculation Methods](03-atomistic-methods/06-free-energy-calculation-methods.md) | Atomistic methods |
+
+**Suggested prerequisite route for the new lessons:** Thermodynamics → Statistical Mechanics → Statistical Ensembles → Free-Energy Calculation Methods. Reciprocal Space is integrated with PBC and Bulk; DFT Theory with DFT Fundamentals; Numerical Error Analysis with Geometry Optimization and MD.
 
 ## Concept Dependencies
 
@@ -58,15 +63,20 @@ flowchart TD
     BULK --> AMORPH[Amorphous Structure]
     MD --> AMORPH
     AMORPH --> DIFF
+    TH[Thermodynamics] --> SM[Statistical Mechanics]
+    SM --> ENS
+    SM --> FE[Free Energy Methods]
+    MD --> FE
+    FE --> TST
 ```
 
 ## Subject Folders
 
 ```text
 computational-materials/
-├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates, vibrations
+├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates, vibrations, thermodynamics, statistical mechanics
 ├── 02-electronic-structure/     DFT and future SCF/convergence notes
-├── 03-atomistic-methods/       optimization, MD, ensembles, NEB, TST
+├── 03-atomistic-methods/       optimization, MD, ensembles, NEB, TST, free-energy methods
 ├── 04-materials-interfaces/    bulk, surface, interface, amorphous structure
 ├── 05-transport-properties/    MSD, diffusion, conductivity
 ├── 06-machine-learning-potentials/  MLIP fundamentals and property validation
@@ -85,7 +95,7 @@ computational-materials/
 
 ## Next Topics
 
-- Plane-wave cutoff, k-point convergence, pseudopotentials/PAW, and SCF numerical reliability.
+- Continue deepening numerical convergence, finite-size checks, and property-specific uncertainty.
 - Expand amorphous transport with independent glass protocols, RDF, van Hove, and charge-correlation studies.
 - Compare NEP, MACE, and SevenNet on application-specific transferability and performance.
 - Surface thermodynamics, grain boundaries, and interface resistance.
