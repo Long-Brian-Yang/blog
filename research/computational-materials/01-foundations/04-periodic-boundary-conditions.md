@@ -91,3 +91,5 @@ In NEB, two endpoints must represent the intended motion with consistent atom or
 
 - [ASE Atoms and cells](https://ase-lib.org/ase/atoms.html)
 - [GROMACS manual: periodic boundary conditions](https://manual.gromacs.org/current/reference-manual/algorithms/periodic-boundary-conditions.html)
+
+**Applications:** [Bulk crystal structures](06-bulk-crystal-structures.md) and [Surface slab models](../04-materials/01-surfaces-and-slabs.md).
