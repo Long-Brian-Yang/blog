@@ -93,3 +93,35 @@ In NEB, two endpoints must represent the intended motion with consistent atom or
 - [GROMACS manual: periodic boundary conditions](https://manual.gromacs.org/current/reference-manual/algorithms/periodic-boundary-conditions.html)
 
 **Applications:** [Bulk crystal structures](06-bulk-crystal-structures.md) and [Surface slab models](../04-materials/01-surfaces-and-slabs.md).
+
+---
+
+## Extended Foundations: Minimum Images and Dimensionality
+
+![Minimum image across a periodic boundary](../assets/figures/pbc-minimum-image.svg)
+
+*Figure. The nearest image may lie just across a periodic cell boundary.*
+
+For a one-dimensional box of length $L=10$ Å, an ion at $x_A=9.7$ Å and another at $x_B=0.3$ Å have a direct coordinate difference of $-9.4$ Å. The **minimum-image displacement** is $+0.6$ Å. This matters for short-range pair distances and constructing migration paths, while a diffusion trajectory requires **unwrapped positions** over time.
+
+![Periodic bulk and slab cells](../assets/figures/pbc-bulk-slab.svg)
+
+*Figure. Bulk models represent three-dimensional periodic matter. Slab models contain a region of vacuum and may still be computationally periodic in all three directions.*
+
+### PBC does not imply isotropy
+
+In a bulk crystal, periodicity exists along all cell vectors, but diffusivity can be strongly anisotropic. In slab calculations, a large vacuum region separates repeated images in the surface-normal direction; this **does not** turn the slab automatically into a fully nonperiodic electrostatic problem. Dipole corrections and Coulomb-interaction treatments may be required.
+
+### Neighbor lists and cutoffs
+
+Short-range potentials typically evaluate neighboring pairs within a cutoff $r_c$, often using a neighbor list with a skin distance. For a simple orthogonal minimum-image setup, a cutoff below half the shortest box dimension avoids ambiguities. More elaborate cell and long-range Coulomb algorithms require different conditions.
+
+### Finite-size convergence
+
+A 2×2×2 supercell has eight times the volume of its parent cell but need not give eight independent disorder samples. Check dopant–dopant image interactions, defect relaxation fields, phonon sampling, and diffusivity size effects. In NEB, verify consistent atom indices and periodic displacement choices across all images.
+
+### Review
+
+1. Why is minimum-image distance different from unwrapped displacement?
+2. Why can a slab still interact electrostatically with periodic replicas?
+3. Why are more atoms not automatically more independent statistics?
