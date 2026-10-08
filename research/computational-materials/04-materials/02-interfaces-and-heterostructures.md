@@ -95,3 +95,46 @@ For glass–crystal or electrolyte–electrode contacts, distinguish intrinsic i
 5. Why do ideal atomistic interfaces not capture contact resistance automatically?
 
 **Next:** [Diffusion and Ionic Transport](../03-transport/01-diffusion-and-msd.md).
+
+
+## Advanced Application: Grain Boundaries
+
+![Grain-boundary schematic](../assets/figures/grain-boundary.svg)
+
+*Figure 3. Two differently oriented crystalline grains meet in a structurally distinct boundary region.*
+
+A **grain boundary** is an interface between crystals of the same nominal phase with different orientations. Its local free volume, coordination, strain, and defects can differ substantially from those in either grain interior.
+
+Grain boundaries are often classified by misorientation, boundary-plane orientation, and structural units. A single ideal model cannot generally represent the full distribution found in a polycrystal.
+
+For a simple bicrystal supercell containing two equivalent grain boundaries, an illustrative excess energy is:
+
+```math
+\gamma_{\mathrm{GB}}=\frac{E_{\mathrm{bicrystal}}-N E_{\mathrm{bulk}}}{2A}.
+```
+
+This requires matched bulk reference strain/composition and truly equivalent boundaries. Otherwise, revise the reference and interface counting.
+
+## Advanced Application: Segregation and Interfacial Resistance
+
+A defect may prefer the boundary over a bulk-like site. Under a consistent energetic convention:
+
+```math
+E_{\mathrm{seg}}=E_{\mathrm{defect@GB}}-E_{\mathrm{defect@bulk}}.
+```
+
+When the compared cells contain identical species, charge states, and consistent reference energies, negative values indicate an energetic preference for the grain boundary. Entropic terms and concentration effects matter for equilibrium segregation.
+
+### Resistive and fast-conducting boundaries
+
+A boundary can impede transport if mobile ions are depleted, traps dominate, or connected pathways are blocked. In other systems, disordered or widened pathways can enhance interfacial diffusion. Avoid assuming all grain boundaries are either barriers or fast-ion channels.
+
+For a macroscopically layered geometry, a simple series-resistance relation is:
+
+```math
+R_{\mathrm{total}}=R_{\mathrm{bulk}}+R_{\mathrm{interface}}+R_{\mathrm{contacts}}.
+```
+
+Real polycrystalline samples can have parallel pathways, tortuosity, space-charge effects, and contact impedances; the equation is an illustrative circuit approximation.
+
+**Computational workflow:** Compare boundary-resolved residence, defect segregation, parallel/normal transport, and candidate NEB barriers. Distinguish interface-specific material physics from imperfect physical contact and measurement-model artifacts.
