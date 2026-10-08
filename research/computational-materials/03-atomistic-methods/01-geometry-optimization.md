@@ -127,3 +127,39 @@ For $E_m=E_{\mathrm{TS}}-E_A$, errors in both energies contribute. If error esti
 Common systematic errors can cancel partially, but that cancellation must not be assumed without validation. Numerical convergence and model uncertainty are not interchangeable.
 
 **Practice:** Test force thresholds separately from energy change; examine whether an NEB barrier is stable when endpoint and saddle settings are both tightened.
+
+---
+
+## Optimization Algorithms: From Gradient Descent to Quasi-Newton
+
+![Optimization of a curved energy landscape](../assets/figures/optimization-landscape.svg)
+
+*Figure. Curvature-aware methods can improve convergence in anisotropic energy valleys.*
+
+For a local objective $E(\mathbf R)$, steepest descent updates:
+
+```math
+\mathbf R_{k+1}=\mathbf R_k-\alpha_k\nabla E(\mathbf R_k).
+```
+
+The step $\alpha_k$ must be chosen appropriately. In a strongly elongated valley, steepest descent may zigzag.
+
+Newton's method uses local curvature:
+
+```math
+\mathbf R_{k+1}=\mathbf R_k-H_k^{-1}\nabla E(\mathbf R_k).
+```
+
+Explicit Hessian formation/inversion is expensive and may be unstable near saddle points or singular directions. BFGS/L-BFGS builds approximate inverse-curvature information through iterative updates; conjugate gradient builds mutually conjugate search directions under suitable assumptions; FIRE follows a damped velocity-like relaxation scheme.
+
+### Condition number and stiffness
+
+For a positive-definite quadratic potential, the ratio of largest to smallest Hessian eigenvalue is a measure of conditioning. Large condition numbers imply different curvatures across directions, creating slow convergence for simple gradient methods.
+
+### Why convergence must be property-driven
+
+An optimizer may stop after a tiny energy change while retaining significant forces. Tightening force tolerance, verifying the intended basin, and checking energy differences remain necessary before a NEB calculation.
+
+### Review
+
+Which method explicitly uses Hessian curvature? Why might L-BFGS be preferable for large atomistic systems? Why is one numerical optimizer not uniformly best for all PES landscapes?
