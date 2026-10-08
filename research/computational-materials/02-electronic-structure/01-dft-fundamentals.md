@@ -102,3 +102,43 @@ DFT is not automatically exact, nor does standard ground-state DFT directly capt
 - [Kohn–Sham original paper](https://doi.org/10.1103/PhysRev.140.A1133)
 - [VASP Wiki](https://www.vasp.at/wiki/)
 - [Quantum ESPRESSO documentation](https://www.quantum-espresso.org/documentation/)
+
+---
+
+## Advanced Practice: A Reproducible DFT Convergence Study
+
+![Convergence of target quantities](../assets/figures/dft-convergence-checks.svg)
+
+*Figure. Schematic trends only: energy differences and forces can converge at different rates.*
+
+A DFT calculation has several **nested** sources of numerical error: electronic SCF residual, basis-set completeness, Brillouin-zone sampling, supercell size, and structural relaxation. Converging total energy alone does not prove that a 0.1 eV migration barrier is accurate.
+
+For a target quantity $Q$, convergence can be expressed as:
+
+```math
+\Delta Q(p)=\left|Q(p)-Q(p_{\mathrm{ref}})\right|.
+```
+
+Here $p$ is a numerical setting, such as plane-wave cutoff or k-point density; $p_{\mathrm{ref}}$ is a demonstrably more accurate reference. Select tolerances based on the desired scientific conclusion, not a universal default.
+
+**A practical sequence:**
+
+1. Establish consistent pseudopotentials/PAW datasets and exchange–correlation settings.
+2. Test cutoff while holding other settings sufficiently accurate.
+3. Test k-point sampling for energy differences and forces (slabs generally need different sampling along the vacuum direction).
+4. Tighten SCF convergence until forces and relative energies are stable.
+5. Relax atomic coordinates and check force tolerance.
+6. Validate the **difference of interest**: adsorption energy, defect energy, or NEB barrier.
+7. Repeat key checks for exceptional geometries, especially stretched bonds and saddles.
+
+### SCF convergence is not geometry convergence
+
+SCF iterates the electron density for a fixed structure. Ionic relaxation changes nuclear coordinates based on the resulting forces. A fully converged electronic step can still correspond to an unrelaxed geometry.
+
+**Research example:** For BaZrO₃ slab NEB, test whether relative saddle-to-minimum energies remain stable against cutoff, lateral cell size, slab thickness, and relevant k-point sampling. A tiny final NEB force cannot compensate for inaccurate electronic forces.
+
+### Practice
+
+- Why is convergence of $E_{\mathrm{TS}}-E_A$ more relevant than convergence of $E_A$ alone?
+- Which settings might differ between bulk and surface calculations?
+- How would you detect SCF noise in a force-driven optimizer?
