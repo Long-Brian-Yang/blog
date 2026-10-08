@@ -199,3 +199,37 @@ The same NEB concept can be used with different energy-and-force models. However
 **Continue:** [02 · Nudged Elastic Band (NEB)](../02-methods/02-neb.md)
 
 **Materials context:** [Bulk crystal structures](06-bulk-crystal-structures.md) connect the PES to periodic solid models.
+
+---
+
+## Extended Foundations: Basins, Metastability, and Reaction Coordinates
+
+![Local and global minima](../assets/figures/pes-local-global.svg)
+
+*Figure. Local minimization can converge to a metastable basin rather than the absolute lowest-energy structure.*
+
+A **local minimum** has no nearby downhill displacement, whereas a **global minimum** has the lowest energy over the entire specified configuration space. A metastable configuration can persist for a long time if its escape barrier is large, even when its potential energy is above that of another structure.
+
+**Energy is not the same as probability.** At finite temperature, occupation depends on entropy and statistical weights. For states with well-defined free energies $G_A$ and $G_B$, their equilibrium population ratio can be approximately related to their free-energy difference:
+
+```math
+\frac{p_B}{p_A}=\exp\!\left[-\frac{G_B-G_A}{k_{\mathrm B}T}\right].
+```
+
+This assumes consistent state definitions and equilibrium conditions.
+
+![Path projection through a potential landscape](../assets/figures/pes-projection.svg)
+
+*Figure. A reaction coordinate selects a path through a much larger configuration space.*
+
+In atomistic simulations, the full configuration vector contains all atomic coordinates. A reaction coordinate $s$ parameterizes a path $\mathbf R(s)$, producing a one-dimensional profile $E[\mathbf R(s)]$. **Different paths between the same endpoints can have different barriers.** The path is a slice of the PES, not the entire surface.
+
+### Worked example: why relaxation and NEB answer different questions
+
+Relaxing a proton near oxygen A seeks a local minimum. Relaxing it near oxygen B seeks another minimum. NEB connects these optimized endpoints and searches for a pathway. None of these computations alone determines which site is most populated at a given temperature.
+
+### Review
+
+1. Can a higher-energy local minimum be long-lived?
+2. Does the globally lowest potential energy guarantee highest finite-temperature population?
+3. Why can two different reaction coordinates yield distinct barriers?
