@@ -105,3 +105,42 @@ AIMD usually obtains forces from electronic structure repeatedly, while MLIP-MD 
 4. Why can an MD simulation at high temperature fail to represent room-temperature transport?
 
 **Next:** [Statistical Ensembles](03-statistical-ensembles.md).
+
+---
+
+## Advanced Practice: Correlation Time and Effective Sampling
+
+![Independent trajectories and blocks](../assets/figures/md-block-averaging.svg)
+
+*Figure. Block partitioning and multiple trajectories can reveal variability; neighboring blocks may remain correlated.*
+
+Two million trajectory frames are not two million independent observations. For a stationary scalar observable $A(t)$, a normalized autocorrelation function can be written as:
+
+```math
+C_A(t)=\frac{\langle\delta A(t_0+t)\,\delta A(t_0)\rangle}{\langle\delta A(t_0)^2\rangle},\qquad \delta A=A-\langle A\rangle.
+```
+
+The integrated autocorrelation time helps estimate statistical efficiency:
+
+```math
+\tau_{\mathrm{int}}=\int_0^\infty C_A(t)\,dt.
+```
+
+For a sufficiently long stationary trajectory of duration $T_{\mathrm{obs}}$, an approximate effective sample count is $N_{\mathrm{eff}}\sim T_{\mathrm{obs}}/(2\tau_{\mathrm{int}})$. This heuristic depends on the observable, normalization convention, and correlation behavior; it is not reliable if rare transport events have not been sampled.
+
+### What counts as independent data?
+
+Overlapping MSD time origins are **correlated** because they share trajectory segments. Independent glass quenches, starting velocities, or separate long simulations often provide a stronger uncertainty assessment. Compare fitted diffusivities among replicas, not only thousands of overlapping lag windows.
+
+### Finite-temperature sampling checklist
+
+| Check | Reason |
+| --- | --- |
+| Equilibration stability | Avoid transient drift in structure |
+| Timestep and NVE drift | Identify integration artifacts |
+| Thermostat sensitivity | Detect altered time correlations |
+| Diffusive MSD window | Separate vibrations and plateau behavior from diffusion |
+| Independent replicas | Estimate between-sample uncertainty |
+| Hop/residence statistics | Diagnose rare events and trapping |
+
+**Research example:** For amorphous Li–O–Hf–Cl, sample independent glass structures. A single fast-moving Li ion in one glass does not guarantee a representative bulk conductivity.
