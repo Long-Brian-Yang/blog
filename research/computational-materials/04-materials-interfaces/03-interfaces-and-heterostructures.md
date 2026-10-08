@@ -138,3 +138,35 @@ R_{\mathrm{total}}=R_{\mathrm{bulk}}+R_{\mathrm{interface}}+R_{\mathrm{contacts}
 Real polycrystalline samples can have parallel pathways, tortuosity, space-charge effects, and contact impedances; the equation is an illustrative circuit approximation.
 
 **Computational workflow:** Compare boundary-resolved residence, defect segregation, parallel/normal transport, and candidate NEB barriers. Distinguish interface-specific material physics from imperfect physical contact and measurement-model artifacts.
+
+---
+
+## Advanced Practice: Along-Interface versus Across-Interface Transport
+
+![Directional transport near a planar interface](../assets/figures/interface-normal-parallel.svg)
+
+*Figure. Motion parallel to an interface and transfer across it are physically distinct processes.*
+
+An interface may support fast lateral diffusion yet resist crossing into an adjoining solid. Do not collapse these phenomena into one isotropic diffusion coefficient.
+
+**Parallel transport** can be studied by in-plane displacements and residence-conditioned analyses. **Normal transfer** is often better characterized using crossing frequencies, layer populations, residence times, and recrossing probabilities. State whether tracked ions were initially in the interface region or remained there throughout the observation interval.
+
+A simplified parallel diffusion expression is:
+
+```math
+D_{\parallel}=\lim_{t\to\infty}\frac{\langle\Delta x^2+\Delta y^2\rangle}{4t}.
+```
+
+This requires a genuine long-time diffusive regime and a clearly defined population; confinement or exchange makes careless fits misleading.
+
+### Intrinsic and extrinsic interface resistance
+
+A coherent atomic interface may capture local bonding, strain, segregation, and microscopic barriers. It cannot automatically represent imperfect contact, cracks, porosity, reaction layers, or the full grain-boundary network present in a macroscopic specimen.
+
+**Solid-electrolyte application:** A glass–crystal junction may alter Li-ion coordination and transfer probability. Combine local structural statistics, directional trajectories, and selected NEB barriers before interpreting conductivity changes.
+
+### Review questions
+
+1. Can fast interface-parallel transport coexist with slow interface-normal transfer?
+2. Why does membership in a spatial layer complicate MSD analysis?
+3. Which sources of measured interface resistance are absent from a perfectly bonded atomistic model?
