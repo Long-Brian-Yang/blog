@@ -1,9 +1,31 @@
 # Understanding the Nudged Elastic Band (NEB) Method
 
-> **Date:** 2026-10-08  
-> **Topic:** Computational Materials Science · Atomistic Simulations · Ion Migration  
-> **Level:** Fundamentals to practical implementation  
-> **Learning goal:** Understand the physical meaning, algorithm, limitations, and applications of NEB and climbing-image NEB (CI-NEB).
+**From Potential Energy Surfaces to Ion Migration Barriers**
+
+> **Study note · 8 October 2026**  
+> Computational Materials Science · Atomistic Simulations · Solid-State Ion Transport  
+> **Level:** Beginner → Intermediate · **Language:** English
+
+> [!IMPORTANT]
+> **Core idea:** NEB finds a *locally optimized minimum-energy pathway* between two specified atomic configurations. CI-NEB refines the highest-energy image toward a saddle point. **Neither technique directly calculates a diffusion coefficient.**
+
+![Schematic NEB energy profile](figures/energy-profile.svg)
+
+*Figure 1. Illustrative energy landscape showing initial and final states, a saddle point, and the forward migration barrier. Energies are examples, not measured results.*
+
+### Contents
+
+- [01 · Why NEB?](#1-why-do-we-need-neb)
+- [02 · Physical foundations](#2-foundational-concepts)
+- [03 · NEB and CI-NEB algorithms](#3-how-does-the-neb-algorithm-work)
+- [04 · Practical workflow](#4-step-by-step-computational-workflow)
+- [05 · DFT, MD and MLIPs](#5-neb-vs-dft-vs-md-vs-mlips)
+- [06 · Barriers vs diffusion](#6-neb-barriers-and-diffusion-activation-energies-are-not-identical)
+- [07 · Practical challenges](#7-practical-challenges)
+- [08 · BaZrO₃ example](#8-example-proton-migration-in-bazro)
+- [09–12 · Review, exercises and references](#9-common-misconceptions)
+
+---
 
 ## 1. Why Do We Need NEB?
 
@@ -21,17 +43,17 @@ The **nudged elastic band (NEB)** method optimizes a chain of atomic configurati
 
 ### 2.1 Potential Energy Surface (PES)
 
-For a system containing \(N\) atoms, its atomic configuration can be written as
+For a system containing $N$ atoms, its atomic configuration can be written as
 
-\[
+$
 \mathbf R=(\mathbf r_1,\mathbf r_2,\ldots,\mathbf r_N).
-\]
+$
 
 The potential energy is a function of all atomic coordinates:
 
-\[
+$
 E=E(\mathbf R).
-\]
+$
 
 A **potential energy surface** is the multidimensional landscape defined by this function. Local valleys correspond to metastable structures, while higher-energy regions separate them. The familiar one-dimensional energy profile is only a projection along a selected reaction coordinate.
 
@@ -53,11 +75,11 @@ The transition state is therefore not an ordinary stable minimum.
 
 For a particular pathway, the forward potential-energy barrier is
 
-\[
+$
 E_{m}^{A\rightarrow B}=E_{\mathrm{TS}}-E_A,
-\]
+$
 
-where \(E_A\) and \(E_{\mathrm{TS}}\) are the energies of the initial state and the relevant transition state.
+where $E_A$ and $E_{\mathrm{TS}}$ are the energies of the initial state and the relevant transition state.
 
 **Illustrative example:**
 
@@ -69,10 +91,10 @@ where \(E_A\) and \(E_{\mathrm{TS}}\) are the energies of the initial state and 
 
 Then
 
-\[
+$
 E_m^{A\rightarrow B}=0.45\ \mathrm{eV},\qquad
 E_m^{B\rightarrow A}=0.55\ \mathrm{eV}.
-\]
+$
 
 Even along the same pathway, forward and reverse barriers can differ when the endpoint energies differ.
 
@@ -80,9 +102,9 @@ Even along the same pathway, forward and reverse barriers can differ when the en
 
 A **minimum-energy path** connects two local minima while satisfying the condition that the component of the potential-energy gradient perpendicular to the path vanishes:
 
-\[
+$
 \left.\nabla E\right|_{\perp}=0.
-\]
+$
 
 The MEP need not be the geometrically shortest path. Atoms may move around a strongly repulsive region, and the surrounding lattice can relax as the migrating ion moves.
 
@@ -90,13 +112,18 @@ Several distinct local MEPs can exist between the same endpoint states. One succ
 
 ### 2.6 Images
 
+![NEB band with five intermediate images](figures/neb-band.svg)
+
+*Figure 2. Seven configurations along a discretized pathway: five intermediate images and two fixed endpoints. Each image represents the entire atomic system.*
+
+
 NEB represents a pathway using a finite sequence of **images**, or full atomic configurations:
 
-\[
+$
 \mathbf R_0,\mathbf R_1,\ldots,\mathbf R_M.
-\]
+$
 
-The endpoints \(\mathbf R_0\) and \(\mathbf R_M\) are usually held fixed; the intermediate images are optimized.
+The endpoints $\mathbf R_0$ and $\mathbf R_M$ are usually held fixed; the intermediate images are optimized.
 
 For example, five intermediate images plus two endpoints give seven configurations along the band.
 
@@ -108,15 +135,15 @@ Imagine connecting successive images with artificial springs. The purpose of the
 
 If full physical forces and spring forces were simply added together, the band could suffer from undesirable effects. NEB instead separates the forces into components **perpendicular** and **parallel** to the local path tangent.
 
-For an intermediate image \(i\), the NEB force is schematically
+For an intermediate image $i$, the NEB force is schematically
 
-\[
+$
 \mathbf F_i^{\mathrm{NEB}}
 =
 -\left.\nabla E(\mathbf R_i)\right|_{\perp}
 +
 \left.\mathbf F_i^{\mathrm{spring}}\right|_{\parallel}.
-\]
+$
 
 Here:
 
@@ -132,14 +159,14 @@ A regular NEB band approximates the MEP, but its highest-energy image may not li
 
 In **CI-NEB**, a selected high-energy image climbs toward the saddle point. For the climbing image, the spring contribution is removed and the physical force component parallel to the band is reversed:
 
-\[
+$
 \mathbf F_i^{\mathrm{CI}}
 =
 -\nabla E(\mathbf R_i)
 +
 2[\nabla E(\mathbf R_i)\cdot\hat{\boldsymbol\tau}_i]
 \hat{\boldsymbol\tau}_i.
-\]
+$
 
 In practice, an initial regular-NEB relaxation can help stabilize the pathway before activating climbing-image optimization.
 
@@ -147,6 +174,19 @@ In practice, an initial regular-NEB relaxation can help stabilize the pathway be
 **CI-NEB:** More accurately localize the saddle point on that pathway.
 
 ## 4. Step-by-Step Computational Workflow
+
+```mermaid
+flowchart TD
+    A[Define a migration event] --> B[Relax initial and final states]
+    B --> C[Build intermediate images]
+    C --> D[Optimize regular NEB]
+    D --> E[Refine using CI-NEB]
+    E --> F[Validate geometry and convergence]
+    F --> G[Report directional barriers and mechanism]
+```
+
+*Figure 3. A practical NEB calculation sequence. Validation may require returning to earlier steps.*
+
 
 ### Step 1 — Define a Specific Migration Event
 
@@ -199,11 +239,11 @@ An MLIP can make large-scale or repeated NEB calculations much more affordable, 
 
 For an elementary thermally activated jump, a simple transition-state-inspired rate expression is
 
-\[
+$
 k\approx\nu\exp\left(-\frac{E_m}{k_\mathrm B T}\right),
-\]
+$
 
-where \(\nu\) is a characteristic attempt frequency.
+where $\nu$ is a characteristic attempt frequency.
 
 This expression is useful for intuition, but **a single NEB potential-energy barrier is not automatically the experimental Arrhenius activation energy**.
 
@@ -218,6 +258,10 @@ Macroscopic diffusion and conductivity can depend on:
 Thus, NEB provides **microscopic mechanistic evidence**, while MD and transport experiments probe dynamical behavior at larger scales.
 
 ## 7. Practical Challenges
+
+> [!WARNING]
+> **Convergence does not prove physical correctness.** An NEB job may converge to an irrelevant local pathway if the endpoints or initial band are poorly chosen.
+
 
 | Challenge | Why it matters | Practical response |
 | --- | --- | --- |
