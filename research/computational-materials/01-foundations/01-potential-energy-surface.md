@@ -197,3 +197,5 @@ The same NEB concept can be used with different energy-and-force models. However
 ---
 
 **Continue:** [02 · Nudged Elastic Band (NEB)](../02-methods/02-neb.md)
+
+**Materials context:** [Bulk crystal structures](06-bulk-crystal-structures.md) connect the PES to periodic solid models.
