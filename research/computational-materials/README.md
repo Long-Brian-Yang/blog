@@ -11,13 +11,16 @@ A growing collection of English-language study notes, organized by **prerequisit
 | 03 | [Periodic Boundary Conditions](01-foundations/04-periodic-boundary-conditions.md) | Foundations |
 | 04 | [Born–Oppenheimer Approximation](01-foundations/05-born-oppenheimer-approximation.md) | Foundations |
 | 05 | [DFT Fundamentals](02-methods/04-dft-fundamentals.md) | Electronic structure |
-| 06 | [Geometry Optimization and Convergence](02-methods/01-geometry-optimization.md) | Methods |
-| 07 | [Reaction Coordinates, MEPs, and Saddle Points](01-foundations/03-reaction-coordinates-and-saddle-points.md) | Foundations |
-| 08 | [NEB and CI-NEB](02-methods/02-neb.md) | Methods |
-| 09 | [Molecular Dynamics Fundamentals](02-methods/03-molecular-dynamics.md) | Methods |
-| 10 | [Statistical Ensembles: NVE/NVT/NPT](02-methods/05-statistical-ensembles.md) | Methods |
-| 11 | [Transition-State Theory](02-methods/06-transition-state-theory.md) | Kinetics |
-| 12 | [Diffusion, MSD, and Ionic Transport](03-transport/01-diffusion-and-msd.md) | Transport |
+| 06 | [Bulk Materials and Crystal Structures](01-foundations/06-bulk-crystal-structures.md) | Foundations |
+| 07 | [Geometry Optimization and Convergence](02-methods/01-geometry-optimization.md) | Methods |
+| 08 | [Reaction Coordinates, MEPs, and Saddle Points](01-foundations/03-reaction-coordinates-and-saddle-points.md) | Foundations |
+| 09 | [NEB and CI-NEB](02-methods/02-neb.md) | Methods |
+| 10 | [Molecular Dynamics Fundamentals](02-methods/03-molecular-dynamics.md) | Methods |
+| 11 | [Statistical Ensembles: NVE/NVT/NPT](02-methods/05-statistical-ensembles.md) | Methods |
+| 12 | [Transition-State Theory](02-methods/06-transition-state-theory.md) | Kinetics |
+| 13 | [Diffusion, MSD, and Ionic Transport](03-transport/01-diffusion-and-msd.md) | Transport |
+| 14 | [Surfaces, Terminations, and Slab Models](04-materials/01-surfaces-and-slabs.md) | Materials |
+| 15 | [Interfaces, Heterostructures, and Space Charge](04-materials/02-interfaces-and-heterostructures.md) | Materials |
 
 These are **suggested dependencies**, not the only valid reading order. MD and NEB are complementary branches; DFT can be learned in parallel with classical atomistic dynamics.
 
@@ -40,6 +43,11 @@ flowchart TD
     ENS --> DIFF[Diffusion and MSD]
     TST --> DIFF
     PBC --> DIFF
+    PBC --> BULK[Bulk Structures]
+    BULK --> SURF[Surfaces and Slabs]
+    SURF --> INT[Interfaces]
+    NEB --> SURF
+    INT --> DIFF
 ```
 
 ## Repository Organization
@@ -51,7 +59,8 @@ computational-materials/
 │   ├── 02-forces-and-gradients.md
 │   ├── 03-reaction-coordinates-and-saddle-points.md
 │   ├── 04-periodic-boundary-conditions.md
-│   └── 05-born-oppenheimer-approximation.md
+│   ├── 05-born-oppenheimer-approximation.md
+│   └── 06-bulk-crystal-structures.md
 ├── 02-methods/
 │   ├── 01-geometry-optimization.md
 │   ├── 02-neb.md
@@ -61,6 +70,9 @@ computational-materials/
 │   └── 06-transition-state-theory.md
 ├── 03-transport/
 │   └── 01-diffusion-and-msd.md
+├── 04-materials/
+│   ├── 01-surfaces-and-slabs.md
+│   └── 02-interfaces-and-heterostructures.md
 ├── assets/figures/
 └── README.md
 ```
@@ -82,3 +94,4 @@ computational-materials/
 - RDF, coordination number, structure factors, and amorphous materials.
 - Machine-learned interatomic potentials: training, validation, and out-of-distribution behavior.
 - Collective charge transport and correlated ion migration.
+- Realistic surface hydration, adsorbate coverage, interface defects, and grain-boundary kinetics.
