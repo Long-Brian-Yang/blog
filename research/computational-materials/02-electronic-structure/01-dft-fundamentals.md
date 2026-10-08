@@ -142,3 +142,41 @@ SCF iterates the electron density for a fixed structure. Ionic relaxation change
 - Why is convergence of $E_{\mathrm{TS}}-E_A$ more relevant than convergence of $E_A$ alone?
 - Which settings might differ between bulk and surface calculations?
 - How would you detect SCF noise in a force-driven optimizer?
+
+---
+
+## Deeper Theory: Hohenberg–Kohn and Kohn–Sham
+
+![Hohenberg–Kohn to self-consistent Kohn–Sham](../assets/figures/dft-hk-ks.svg)
+
+*Figure. The ground-state density motivates the energy functional; practical Kohn–Sham calculations iterate orbitals and effective potentials.*
+
+### The two Hohenberg–Kohn results
+
+Under the usual nondegenerate ground-state assumptions, the ground-state density determines the external potential up to a constant and hence the ground-state observables. A variational principle establishes that the true ground-state density minimizes the energy functional within an appropriate representable domain.
+
+**These statements do not give a practical exact exchange–correlation functional.** Approximations remain central to real calculations.
+
+### Kohn–Sham mapping and exchange–correlation
+
+Kohn–Sham theory maps the interacting ground-state density to an auxiliary noninteracting orbital problem under suitable representability assumptions. The missing many-body contributions are collected in $E_{\mathrm{xc}}[n]$.
+
+```math
+v_{\mathrm{eff}}(\mathbf r)=v_{\mathrm{ext}}(\mathbf r)+v_{\mathrm H}(\mathbf r)+v_{\mathrm{xc}}(\mathbf r),\qquad v_{\mathrm{xc}}=\frac{\delta E_{\mathrm{xc}}}{\delta n}.
+```
+
+LDA, GGA and hybrid approximations encode different assumptions. Band gaps, magnetism, localized electronic states, adsorption energies and reaction barriers can respond differently to these choices.
+
+### Hartree–Fock versus Kohn–Sham DFT
+
+Hartree–Fock represents a mean-field wavefunction with exact exchange but omits electron correlation beyond its single-determinant approximation. Standard Kohn–Sham DFT treats exchange–correlation through an approximate density functional. Hybrid DFT functionals mix a portion of exact exchange with density-functional contributions; Hartree–Fock and DFT are not synonyms.
+
+### Pseudopotentials and PAW
+
+Plane-wave all-electron wavefunctions oscillate strongly near nuclei and are costly to resolve. Pseudopotentials and PAW provide practical core/valence treatments. Consistent datasets, valence configurations and cutoff convergence matter particularly for energy differences involving substantial bond rearrangement.
+
+### Critical distinction
+
+**Self-consistency** refers to electron-density convergence at fixed nuclei; **basis and k-point convergence** concern numerical representation; **structural relaxation** changes nuclei. They require separate checks.
+
+**Further reading:** [Original Kohn–Sham paper](https://doi.org/10.1103/PhysRev.140.A1133).
