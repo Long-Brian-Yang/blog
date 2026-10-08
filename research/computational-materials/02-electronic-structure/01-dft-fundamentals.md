@@ -90,21 +90,6 @@ For each NEB image, DFT evaluates $E(\mathbf R_i)$ and forces. The entire path i
 
 DFT is not automatically exact, nor does standard ground-state DFT directly capture all temperature effects. Common challenges include exchange–correlation errors, finite-size effects, expensive sampling, and correlation phenomena beyond simple approximations.
 
-## Review questions
-
-1. What is self-consistent in Kohn–Sham DFT?
-2. Why can force convergence be stricter than total-energy convergence?
-3. What changes when you increase a plane-wave cutoff?
-4. Why must one use consistent numerical settings across NEB images?
-
-## Further reading
-
-- [Kohn–Sham original paper](https://doi.org/10.1103/PhysRev.140.A1133)
-- [VASP Wiki](https://www.vasp.at/wiki/)
-- [Quantum ESPRESSO documentation](https://www.quantum-espresso.org/documentation/)
-
----
-
 ## Practical Validation: A Reproducible DFT Convergence Study
 
 ![Convergence of target quantities](../assets/figures/dft-convergence-checks.svg)
@@ -216,3 +201,18 @@ A density of states counts electronic states per energy interval under a given n
 ### Questions
 
 Why is bonding often mixed rather than purely ionic or covalent? What does a charge-density difference depend on? Why are projected orbitals and charge partitioning not unique observables?
+
+## Review questions
+
+1. What is self-consistent in Kohn–Sham DFT?
+2. Why can force convergence be stricter than total-energy convergence?
+3. What changes when you increase a plane-wave cutoff?
+4. Why must one use consistent numerical settings across NEB images?
+
+## Further reading
+
+- [Kohn–Sham original paper](https://doi.org/10.1103/PhysRev.140.A1133)
+- [VASP Wiki](https://www.vasp.at/wiki/)
+- [Quantum ESPRESSO documentation](https://www.quantum-espresso.org/documentation/)
+
+---
