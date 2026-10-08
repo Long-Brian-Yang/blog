@@ -1,6 +1,6 @@
 # Bulk Materials and Crystal Structures
 
-> **Module:** Foundations · **Prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md), [PBC](../01-physical-foundations/04-periodic-boundary-conditions.md)  
+> **Module:** Foundations · **Prerequisites:** [PES](../01-physical-foundations/01-potential-energy-surface.md), [PBC](../01-physical-foundations/03-periodic-boundary-conditions.md)  
 > **Continue:** [Surfaces](02-surfaces-and-slabs.md) → [Interfaces](03-interfaces-and-heterostructures.md)
 
 ## Learning goals
