@@ -1,34 +1,34 @@
 # Computational Materials Science · Learning Path
 
-A structured collection of **English-language notes** organized by subject and cross-linked by prerequisites. The reading order below is a guide, not an assertion that all subjects must be learned sequentially.
+A structured collection of **English-language notes** organized by subject and cross-linked by prerequisites. The ordered path below is a recommended reading sequence, not a strict chain: electronic structure, dynamics, and materials structure have parallel prerequisites. Folder-local filename numbering remains stable even when the suggested global reading order changes.
 
 ## Recommended Reading Order
 
 | Step | Topic | Study area |
 | --- | --- | --- |
-| 01 | [Potential Energy Surfaces](01-physical-foundations/01-potential-energy-surface.md) | Foundations |
-| 02 | [Forces, Gradients and Curvature](01-physical-foundations/02-forces-and-gradients.md) | Foundations |
-| 03 | [Periodic Boundary Conditions](01-physical-foundations/03-periodic-boundary-conditions.md) | Foundations |
-| 04 | [Born–Oppenheimer Approximation](01-physical-foundations/04-born-oppenheimer-approximation.md) | Foundations |
-| 05 | [Bulk Crystal Structures](04-materials-interfaces/01-bulk-crystal-structures.md) | Materials |
-| 06 | [DFT Fundamentals](02-electronic-structure/01-dft-fundamentals.md) | Electronic structure |
-| 07 | [Geometry Optimization](03-atomistic-methods/01-geometry-optimization.md) | Atomistic methods |
-| 08 | [Reaction Coordinates and Saddle Points](01-physical-foundations/05-reaction-coordinates-and-saddle-points.md) | Foundations |
-| 09 | [NEB and CI-NEB](03-atomistic-methods/04-neb.md) | Atomistic methods |
-| 10 | [Molecular Dynamics Fundamentals](03-atomistic-methods/02-molecular-dynamics.md) | Atomistic methods |
-| 11 | [Statistical Ensembles](03-atomistic-methods/03-statistical-ensembles.md) | Atomistic methods |
-| 12 | [Transition-State Theory](03-atomistic-methods/05-transition-state-theory.md) | Atomistic methods |
-| 13 | [Diffusion, MSD and Ionic Transport](05-transport-properties/01-diffusion-and-msd.md) | Transport |
-| 14 | [Surfaces and Slab Models](04-materials-interfaces/02-surfaces-and-slabs.md) | Materials |
-| 15 | [Interfaces, Heterostructures and Space Charge](04-materials-interfaces/03-interfaces-and-heterostructures.md) | Materials |
-| 16 | [Vibrations, Phonons and Free Energy](01-physical-foundations/06-vibrations-phonons-free-energy.md) | Foundations |
-| 17 | [MLIP Fundamentals](06-machine-learning-potentials/01-mlip-fundamentals.md) | Machine Learning |
-| 18 | [MLIP Validation for MD, NEB and Diffusion](06-machine-learning-potentials/02-mlip-validation.md) | Machine Learning |
-| 19 | [Amorphous Structure and Ionic Transport](04-materials-interfaces/04-amorphous-structure-and-ionic-transport.md) | Materials / Transport |
-| 20 | [Thermodynamics Fundamentals](01-physical-foundations/07-thermodynamics-fundamentals.md) | Foundations |
-| 21 | [Statistical Mechanics Fundamentals](01-physical-foundations/08-statistical-mechanics-fundamentals.md) | Foundations |
-| 22 | [Free-Energy Calculation Methods](03-atomistic-methods/06-free-energy-calculation-methods.md) | Atomistic methods |
-| 23 | [Quantum Mechanics Fundamentals](01-physical-foundations/09-quantum-mechanics-fundamentals.md) | Foundations |
+| 01 | [Linear Algebra, Forces and Curvature](01-physical-foundations/02-forces-and-gradients.md) | Foundations |
+| 02 | [Quantum Mechanics Fundamentals](01-physical-foundations/09-quantum-mechanics-fundamentals.md) | Foundations |
+| 03 | [Potential Energy Surfaces](01-physical-foundations/01-potential-energy-surface.md) | Foundations |
+| 04 | [Thermodynamics Fundamentals](01-physical-foundations/07-thermodynamics-fundamentals.md) | Foundations |
+| 05 | [Statistical Mechanics Fundamentals](01-physical-foundations/08-statistical-mechanics-fundamentals.md) | Foundations |
+| 06 | [Periodic Boundary Conditions and Fourier Analysis](01-physical-foundations/03-periodic-boundary-conditions.md) | Foundations |
+| 07 | [Bulk Crystal Structures and Symmetry](04-materials-interfaces/01-bulk-crystal-structures.md) | Materials |
+| 08 | [Born–Oppenheimer Approximation](01-physical-foundations/04-born-oppenheimer-approximation.md) | Foundations |
+| 09 | [DFT Fundamentals](02-electronic-structure/01-dft-fundamentals.md) | Electronic structure |
+| 10 | [Geometry Optimization](03-atomistic-methods/01-geometry-optimization.md) | Atomistic methods |
+| 11 | [Classical Mechanics and Molecular Dynamics](03-atomistic-methods/02-molecular-dynamics.md) | Atomistic methods |
+| 12 | [Statistical Ensembles](03-atomistic-methods/03-statistical-ensembles.md) | Atomistic methods |
+| 13 | [Vibrations, Phonons and Free Energy](01-physical-foundations/06-vibrations-phonons-free-energy.md) | Foundations |
+| 14 | [Reaction Coordinates and Saddle Points](01-physical-foundations/05-reaction-coordinates-and-saddle-points.md) | Foundations |
+| 15 | [NEB and CI-NEB](03-atomistic-methods/04-neb.md) | Atomistic methods |
+| 16 | [Transition-State Theory](03-atomistic-methods/05-transition-state-theory.md) | Atomistic methods |
+| 17 | [Free-Energy Calculation Methods](03-atomistic-methods/06-free-energy-calculation-methods.md) | Atomistic methods |
+| 18 | [Surfaces and Slab Models](04-materials-interfaces/02-surfaces-and-slabs.md) | Materials |
+| 19 | [Interfaces and Space Charge](04-materials-interfaces/03-interfaces-and-heterostructures.md) | Materials |
+| 20 | [Diffusion, MSD and Ionic Transport](05-transport-properties/01-diffusion-and-msd.md) | Transport |
+| 21 | [Amorphous Structure and Ionic Transport](04-materials-interfaces/04-amorphous-structure-and-ionic-transport.md) | Materials / transport |
+| 22 | [MLIP Fundamentals](06-machine-learning-potentials/01-mlip-fundamentals.md) | Machine learning |
+| 23 | [MLIP Validation for MD, NEB and Diffusion](06-machine-learning-potentials/02-mlip-validation.md) | Machine learning |
 
 **Suggested prerequisite route for the new lessons:** Thermodynamics → Statistical Mechanics → Statistical Ensembles → Free-Energy Calculation Methods. Reciprocal Space is integrated with PBC and Bulk; DFT Theory with DFT Fundamentals; Numerical Error Analysis with Geometry Optimization and MD.
 
