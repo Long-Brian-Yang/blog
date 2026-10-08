@@ -1,97 +1,77 @@
 # Computational Materials Science · Learning Path
 
-A growing collection of English-language study notes, organized by **prerequisites** rather than publication dates. Follow the reading sequence below, or browse by subject folder. Lesson file numbers indicate order *within a subject*, while this table gives the overall recommended learning sequence.
+A structured collection of **English-language notes** organized by subject and cross-linked by prerequisites. The reading order below is a guide, not an assertion that all subjects must be learned sequentially.
 
-## Recommended Reading Sequence
+## Recommended Reading Order
 
-| Step | Lesson | Subject |
+| Step | Topic | Study area |
 | --- | --- | --- |
-| 01 | [Potential Energy Surfaces](01-foundations/01-potential-energy-surface.md) | Foundations |
-| 02 | [Forces, Gradients, and Curvature](01-foundations/02-forces-and-gradients.md) | Foundations |
-| 03 | [Periodic Boundary Conditions](01-foundations/04-periodic-boundary-conditions.md) | Foundations |
-| 04 | [Born–Oppenheimer Approximation](01-foundations/05-born-oppenheimer-approximation.md) | Foundations |
-| 05 | [DFT Fundamentals](02-methods/04-dft-fundamentals.md) | Electronic structure |
-| 06 | [Bulk Materials and Crystal Structures](01-foundations/06-bulk-crystal-structures.md) | Foundations |
-| 07 | [Geometry Optimization and Convergence](02-methods/01-geometry-optimization.md) | Methods |
-| 08 | [Reaction Coordinates, MEPs, and Saddle Points](01-foundations/03-reaction-coordinates-and-saddle-points.md) | Foundations |
-| 09 | [NEB and CI-NEB](02-methods/02-neb.md) | Methods |
-| 10 | [Molecular Dynamics Fundamentals](02-methods/03-molecular-dynamics.md) | Methods |
-| 11 | [Statistical Ensembles: NVE/NVT/NPT](02-methods/05-statistical-ensembles.md) | Methods |
-| 12 | [Transition-State Theory](02-methods/06-transition-state-theory.md) | Kinetics |
-| 13 | [Diffusion, MSD, and Ionic Transport](03-transport/01-diffusion-and-msd.md) | Transport |
-| 14 | [Surfaces, Terminations, and Slab Models](04-materials/01-surfaces-and-slabs.md) | Materials |
-| 15 | [Interfaces, Heterostructures, and Space Charge](04-materials/02-interfaces-and-heterostructures.md) | Materials |
+| 01 | [Potential Energy Surfaces](01-physical-foundations/01-potential-energy-surface.md) | Foundations |
+| 02 | [Forces, Gradients and Curvature](01-physical-foundations/02-forces-and-gradients.md) | Foundations |
+| 03 | [Periodic Boundary Conditions](01-physical-foundations/03-periodic-boundary-conditions.md) | Foundations |
+| 04 | [Born–Oppenheimer Approximation](01-physical-foundations/04-born-oppenheimer-approximation.md) | Foundations |
+| 05 | [Bulk Crystal Structures](04-materials-interfaces/01-bulk-crystal-structures.md) | Materials |
+| 06 | [DFT Fundamentals](02-electronic-structure/01-dft-fundamentals.md) | Electronic structure |
+| 07 | [Geometry Optimization](03-atomistic-methods/01-geometry-optimization.md) | Atomistic methods |
+| 08 | [Reaction Coordinates and Saddle Points](01-physical-foundations/05-reaction-coordinates-and-saddle-points.md) | Foundations |
+| 09 | [NEB and CI-NEB](03-atomistic-methods/04-neb.md) | Atomistic methods |
+| 10 | [Molecular Dynamics Fundamentals](03-atomistic-methods/02-molecular-dynamics.md) | Atomistic methods |
+| 11 | [Statistical Ensembles](03-atomistic-methods/03-statistical-ensembles.md) | Atomistic methods |
+| 12 | [Transition-State Theory](03-atomistic-methods/05-transition-state-theory.md) | Atomistic methods |
+| 13 | [Diffusion, MSD and Ionic Transport](05-transport-properties/01-diffusion-and-msd.md) | Transport |
+| 14 | [Surfaces and Slab Models](04-materials-interfaces/02-surfaces-and-slabs.md) | Materials |
+| 15 | [Interfaces, Heterostructures and Space Charge](04-materials-interfaces/03-interfaces-and-heterostructures.md) | Materials |
 
-These are **suggested dependencies**, not the only valid reading order. MD and NEB are complementary branches; DFT can be learned in parallel with classical atomistic dynamics.
-
-## Conceptual Roadmap
+## Concept Dependencies
 
 ```mermaid
 flowchart TD
-    PES[PES] --> FORCE[Forces and Hessians]
+    PES[PES] --> F[Forces and Hessian]
     PES --> BO[Born-Oppenheimer]
-    BO --> DFT[DFT Fundamentals]
-    FORCE --> OPT[Geometry Optimization]
+    PBC[PBC] --> BULK[Bulk crystal structure]
+    BO --> DFT[DFT]
+    F --> OPT[Optimization]
     DFT --> OPT
-    OPT --> PATH[Reaction Coordinates and Saddle Points]
-    PATH --> NEB[NEB and CI-NEB]
-    PATH --> TST[Transition-State Theory]
-    NEB --> TST
-    FORCE --> MD[Molecular Dynamics]
-    PBC[Periodic Boundary Conditions] --> MD
-    MD --> ENS[NVE, NVT and NPT]
-    ENS --> DIFF[Diffusion and MSD]
+    OPT --> RC[Reaction coordinate and saddle]
+    RC --> NEB[NEB]
+    NEB --> TST[Transition state theory]
+    PBC --> MD[MD]
+    F --> MD
+    MD --> ENS[Ensembles]
+    MD --> DIFF[Diffusion and conductivity]
+    ENS --> DIFF
     TST --> DIFF
-    PBC --> DIFF
-    PBC --> BULK[Bulk Structures]
-    BULK --> SURF[Surfaces and Slabs]
-    SURF --> INT[Interfaces]
-    NEB --> SURF
+    BULK --> SURF[Surface]
+    SURF --> INT[Interface]
     INT --> DIFF
 ```
 
-## Repository Organization
+## Subject Folders
 
 ```text
 computational-materials/
-├── 01-foundations/
-│   ├── 01-potential-energy-surface.md
-│   ├── 02-forces-and-gradients.md
-│   ├── 03-reaction-coordinates-and-saddle-points.md
-│   ├── 04-periodic-boundary-conditions.md
-│   ├── 05-born-oppenheimer-approximation.md
-│   └── 06-bulk-crystal-structures.md
-├── 02-methods/
-│   ├── 01-geometry-optimization.md
-│   ├── 02-neb.md
-│   ├── 03-molecular-dynamics.md
-│   ├── 04-dft-fundamentals.md
-│   ├── 05-statistical-ensembles.md
-│   └── 06-transition-state-theory.md
-├── 03-transport/
-│   └── 01-diffusion-and-msd.md
-├── 04-materials/
-│   ├── 01-surfaces-and-slabs.md
-│   └── 02-interfaces-and-heterostructures.md
-├── assets/figures/
+├── 01-physical-foundations/     PES, forces, PBC, BO, reaction coordinates
+├── 02-electronic-structure/     DFT and future SCF/convergence notes
+├── 03-atomistic-methods/       optimization, MD, ensembles, NEB, TST
+├── 04-materials-interfaces/    bulk, surface, interface, defects
+├── 05-transport-properties/    MSD, diffusion, conductivity
+├── 06-machine-learning-potentials/  future MLIP course
+├── assets/figures/             original, version-controlled SVG illustrations
 └── README.md
 ```
 
-## Editorial Standards
+## Editorial Rules
 
-- **English only:** no dates in filenames or article headings.
-- **One core concept per article**, with prerequisites, intuition, equations, practical pitfalls, and review questions.
-- **GitHub-compatible mathematics:** standalone LaTeX expressions use fenced `math` blocks.
-- **Figures:** locally stored SVG illustrations with explanatory captions; diagrams are schematic unless explicitly labeled as data.
-- **Navigation:** maintain prerequisite links and the roadmap when new material is added.
-- **Scientific caution:** distinguish PES barriers, free-energy barriers, jump rates, diffusion coefficients, and conductivity.
+1. English writing throughout, without dates in article filenames.
+2. Numbers indicate **reading order within a folder**; the cross-folder sequence is defined by this README.
+3. Expand existing lessons with complementary fundamentals rather than creating a new file for every short concept.
+4. Use GitHub `math` fenced blocks and local SVG figures, each captioned and labeled as schematic when applicable.
+5. Check assumptions, convergence, unit conventions, uncertainty, and limitations.
+6. Keep prerequisite links current when restructuring; former lesson paths contain a forwarding note.
 
-## Next Expansion Ideas
+## Next Topics
 
-- Self-consistent field convergence, plane-wave basis sets, and k-point sampling.
-- Vibrations and phonons; harmonic transition-state theory.
-- Thermostats, trajectory analysis, statistical uncertainty.
-- RDF, coordination number, structure factors, and amorphous materials.
-- Machine-learned interatomic potentials: training, validation, and out-of-distribution behavior.
-- Collective charge transport and correlated ion migration.
-- Realistic surface hydration, adsorbate coverage, interface defects, and grain-boundary kinetics.
+- Plane-wave cutoff, k-point convergence, pseudopotentials/PAW, and SCF numerical reliability.
+- RDF, coordination environments, glass preparation, and charge-transport correlations.
+- MLIP training data, force/energy/stress validation, and out-of-distribution transferability.
+- Surface thermodynamics, grain boundaries, and interface resistance.
