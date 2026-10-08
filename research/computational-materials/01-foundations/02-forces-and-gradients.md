@@ -81,3 +81,41 @@ Small force magnitudes can be misleading if energies and forces are noisy, the e
 4. Why does NEB project forces parallel and perpendicular to its path?
 
 **Next:** [Geometry Optimization and Convergence](../02-methods/01-geometry-optimization.md).
+
+---
+
+## Extended Foundations: Projected Forces and Normal Modes
+
+![Tangent and normal directions along a pathway](../assets/figures/forces-projection.svg)
+
+*Figure. The local path tangent defines parallel and perpendicular components of a force.*
+
+For unit tangent $\hat{\boldsymbol\tau}$, a vector force $\mathbf F$ can be decomposed into:
+
+```math
+\mathbf F_{\parallel}=(\mathbf F\cdot\hat{\boldsymbol\tau})\hat{\boldsymbol\tau},\qquad \mathbf F_{\perp}=\mathbf F-\mathbf F_{\parallel}.
+```
+
+In standard NEB, the **physical perpendicular force** relaxes the path, while an artificial **parallel spring force** controls image distribution. A tangent must be estimated from nearby images, which is why abrupt path kinks can cause optimization problems.
+
+![Stable and unstable Hessian modes](../assets/figures/hessian-modes.svg)
+
+*Figure. A first-order saddle has one unstable physical eigenmode; locally stable directions have positive curvature.*
+
+For small displacements about a stationary point, the Hessian provides a quadratic approximation. The **mass-weighted Hessian** yields squared harmonic vibrational frequencies:
+
+```math
+\widetilde H_{i\alpha,j\beta}=\frac{H_{i\alpha,j\beta}}{\sqrt{m_i m_j}}.
+```
+
+A negative eigenvalue indicates an unstable mode and is commonly described as an imaginary frequency. At a first-order saddle, exactly one physically relevant negative-curvature mode is expected. Translation, rotation, numerical noise, and constrained atoms must be treated correctly.
+
+### Why force convergence can be deceptive
+
+A small projected NEB force does not ensure that a path has sufficient images, that the endpoints are well relaxed, or that the saddle's unstable-mode count is correct. Validate **geometry, force residuals, barrier stability, and alternate routes** together.
+
+### Review
+
+1. Why is perpendicular force important in NEB?
+2. What is the difference between a zero force and a stable minimum?
+3. What physical information is contained in Hessian eigenvectors?
