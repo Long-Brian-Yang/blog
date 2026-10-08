@@ -45,6 +45,22 @@ The stable-mode products and their normalization must be treated consistently; t
 
 ## 4. Recrossing and dynamical correction
 
+![Illustrative recrossing at a dividing surface](../assets/figures/tst-recrossing.svg)
+
+*Figure 2. Crossing a dividing surface is not always a committed transition: trajectories may recross and return to their original basin.*
+
+### Potential-energy barriers versus free-energy barriers
+
+An NEB calculation generally provides a minimum-potential-energy path for a chosen structure and model. The finite-temperature free-energy barrier includes entropic and other thermal effects:
+
+```math
+\Delta G^\ddagger(T)=\Delta H^\ddagger(T)-T\Delta S^\ddagger(T).
+```
+
+The activation free energy is therefore not necessarily equal to the zero-temperature NEB energy barrier. Harmonic vibrational analysis is one approximation for estimating thermal contributions; anharmonicity and multiple pathways can matter for mobile-ion conductors.
+
+
+
 TST assumes that positive crossings of a dividing surface lead to product formation without recrossing. Real trajectories may cross back, giving a transmission coefficient $\kappa$:
 
 ```math
