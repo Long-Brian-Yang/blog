@@ -1,6 +1,6 @@
 # Interfaces, Heterostructures, and Space Charge
 
-> **Module:** Materials · **Prerequisites:** [Bulk Structures](../01-physical-foundations/01-bulk-crystal-structures.md), [Surfaces](02-surfaces-and-slabs.md)  
+> **Module:** Materials · **Prerequisites:** [Bulk Structures](01-bulk-crystal-structures.md), [Surfaces](02-surfaces-and-slabs.md)  
 > **Related:** [Diffusion and Ionic Transport](../05-transport-properties/01-diffusion-and-msd.md)
 
 ## Learning goals
