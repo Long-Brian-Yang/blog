@@ -21,9 +21,9 @@ An ideal bulk calculation lacks such a boundary, while a single-surface slab bor
 
 For an illustrative one-dimensional lattice matching problem, define a mismatch against substrate spacing $a_s$ as:
 
-\`\`\`math
+```math
 f=\frac{a_f-a_s}{a_s}.
-\`\`\`
+```
 
 This is only one convention; the sign and reference must be stated. Real commensurate interface construction requires searching in-plane supercell matrices and considering possible rotations, misfit dislocations, and strain energy.
 
@@ -33,9 +33,9 @@ An artificially forced coherent match can change defect energies and ionic migra
 
 For a coherent model with suitable reference states, one possible interfacial formation-energy expression is:
 
-\`\`\`math
+```math
 \gamma_{\mathrm{int}}=\frac{E_{\mathrm{cell}}-\sum_i N_i\mu_i}{n_{\mathrm{int}}A}.
-\`\`\`
+```
 
 The reference chemical potentials, strained bulk references, stoichiometry, and number $n_{\mathrm{int}}$ of equivalent interfaces must be defined explicitly. If interfaces are inequivalent, the total excess energy cannot generally be assigned to either interface without additional calculations.
 
@@ -45,9 +45,9 @@ The reference chemical potentials, strained bulk references, stoichiometry, and 
 
 Charged defects and redistribution of mobile ions can create an electrostatic potential gradient near an interface. In a continuum picture:
 
-\`\`\`math
+```math
 \nabla\cdot[\varepsilon(\mathbf r)\nabla\phi(\mathbf r)]=-\rho(\mathbf r).
-\`\`\`
+```
 
 The potential $\phi$ and charge density $\rho$ must be consistent with electrostatic boundary conditions and the chosen dielectric description.
 
