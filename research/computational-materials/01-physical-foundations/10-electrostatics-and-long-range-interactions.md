@@ -27,6 +27,10 @@ Electrostatic potential energy is $q\phi$, not $\phi$ by itself. The absolute ze
 
 ## 2. Gauss's law and Poisson's equation
 
+![Electric field and equipotential geometry](../assets/figures/poisson-field-lines.svg)
+
+*Figure 2. In a simple isotropic point-charge example, electric-field lines are perpendicular to equipotential contours.*
+
 Gauss's law in vacuum is $\nabla\cdot\mathbf E=\rho/\varepsilon_0$. Substituting $\mathbf E=-\nabla\phi$ gives:
 
 ```math
@@ -56,6 +60,10 @@ For simple linear isotropic bulk screening, a Yukawa-like potential may be writt
 where $\kappa^{-1}$ is a characteristic screening length. Not every insulating solid or interface admits this model. Distinguish **electronic dielectric screening**, **ionic relaxation**, and **mobile-carrier screening**.
 
 ## 4. Why periodic electrostatics is difficult
+
+![Schematic short-range and long-range Ewald decomposition](../assets/figures/ewald-splitting.svg)
+
+*Figure 3. Qualitative decomposition into rapidly decaying and smooth contributions; the curves are illustrative rather than an exact Ewald evaluation.*
 
 For a periodic set of charges, directly summing $1/r$ terms over all images converges poorly or is conditionally convergent. A standard **Ewald decomposition** splits the periodic interaction into rapidly convergent real-space and reciprocal-space parts (plus self and boundary corrections).
 
