@@ -100,6 +100,37 @@ For hydrated BaZrO₃, distinguish OH reorientation and oxygen-to-oxygen proton 
 - Check whether the harmonic approximation is reasonable for flexible or strongly anharmonic local environments.
 - Report whether a barrier is **potential energy**, **ZPE-corrected**, **Helmholtz free energy**, or **Gibbs free energy**.
 
+## Phonon Dispersion and Lattice Dynamics
+
+![Schematic acoustic and optical phonon dispersion](../assets/figures/phonon-dispersion.svg)
+
+*Figure. Acoustic-like branches approach zero frequency at the Brillouin-zone center in a translationally invariant crystal. Optical-like branches can remain finite.*
+
+For a periodic harmonic solid, atomic displacements are expanded into plane-wave normal modes. The mass-weighted **dynamical matrix** is constructed from real-space interatomic force constants:
+
+```math
+D_{\kappa\alpha,\kappa'\beta}(\mathbf q)=\frac{1}{\sqrt{m_\kappa m_{\kappa'}}}\sum_{\mathbf R}\Phi_{0\kappa\alpha,\mathbf R\kappa'\beta}\,\exp[i\mathbf q\cdot\mathbf R].
+```
+
+Precise phase conventions depend on whether basis-vector offsets are included in the Fourier factor. Phonon frequencies and polarization vectors solve
+
+```math
+\sum_{\kappa'\beta}D_{\kappa\alpha,\kappa'\beta}(\mathbf q)e_{\kappa'\beta,\nu}(\mathbf q)=\omega_\nu^2(\mathbf q)e_{\kappa\alpha,\nu}(\mathbf q).
+```
+
+### Acoustic sum rule and instabilities
+
+Translational invariance implies acoustic modes vanish at $\mathbf q=0$ (subject to numerical precision and appropriate long-range treatments). Negative $\omega^2$ may indicate structural instability, inadequately relaxed geometry, insufficient force-constant convergence or numerical noise.
+
+### From dispersion to thermodynamics
+
+Phonon DOS aggregates mode frequencies across the Brillouin zone. Harmonic vibrational thermodynamic quantities involve sums or integrations over *all* vibrational modes, not merely Gamma-point frequencies. Soft modes and anharmonic effects can make the harmonic approximation unreliable.
+
+### Calculation checks
+
+Converge displacement amplitude, supercell size, electronic forces, reciprocal-space interpolation and (for polar materials) nonanalytic long-wavelength corrections where relevant. Compare not only the presence of imaginary modes but their displacement patterns and convergence.
+
+
 ## Review questions
 
 1. What do eigenvalues and eigenvectors of the mass-weighted Hessian represent?
