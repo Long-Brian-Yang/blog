@@ -29,10 +29,29 @@ A structured collection of **English-language notes** organized by subject and c
 | 21 | [Amorphous Structure and Ionic Transport](04-materials-interfaces/04-amorphous-structure-and-ionic-transport.md) | Materials / transport |
 | 22 | [MLIP Fundamentals](06-machine-learning-potentials/01-mlip-fundamentals.md) | Machine learning |
 | 23 | [MLIP Validation for MD, NEB and Diffusion](06-machine-learning-potentials/02-mlip-validation.md) | Machine learning |
+| 24 | [Electrostatics and Long-Range Interactions](01-physical-foundations/10-electrostatics-and-long-range-interactions.md) | Foundations |
 
 **Suggested prerequisite route for the new lessons:** Thermodynamics → Statistical Mechanics → Statistical Ensembles → Free-Energy Calculation Methods. Reciprocal Space is integrated with PBC and Bulk; DFT Theory with DFT Fundamentals; Numerical Error Analysis with Geometry Optimization and MD.
 
 **Foundational dependency guides:** Linear Algebra & Vector Calculus → Quantum Mechanics → Born–Oppenheimer → DFT; Crystallography & Symmetry → PBC / Reciprocal Space → periodic electronic structure; Classical Mechanics → MD → Statistical Mechanics & Uncertainty; numerical optimization → Geometry Optimization → NEB. Existing notes have been enriched in place rather than fragmented into many separate lessons.
+
+## Electrostatics and Advanced Theory
+
+**New independent foundation:** [Electrostatics and Long-Range Interactions](01-physical-foundations/10-electrostatics-and-long-range-interactions.md).
+
+Existing lessons have been strengthened in place rather than split into small chapters:
+
+| Theory topic | Updated course |
+| --- | --- |
+| Electronic Band Theory | [DFT Fundamentals](02-electronic-structure/01-dft-fundamentals.md) |
+| Crystal Defects and Disorder | [Bulk Crystal Structures](04-materials-interfaces/01-bulk-crystal-structures.md) |
+| Phonon Dispersion and Lattice Dynamics | [Vibrations and Phonons](01-physical-foundations/06-vibrations-phonons-free-energy.md) |
+| Linear Response and Green–Kubo | [Diffusion and Ionic Transport](05-transport-properties/01-diffusion-and-msd.md) |
+| Surface and Interface Thermodynamics | [Surfaces](04-materials-interfaces/02-surfaces-and-slabs.md) and [Interfaces](04-materials-interfaces/03-interfaces-and-heterostructures.md) |
+| Enhanced Sampling and Convergence | [Free-Energy Calculation Methods](03-atomistic-methods/06-free-energy-calculation-methods.md) |
+| MLIP Long-Range Physics and Reliability | [MLIP Validation](06-machine-learning-potentials/02-mlip-validation.md) |
+
+Recommended prerequisite connection: **Vector Calculus → PBC and Fourier Analysis → Electrostatics → Electronic Structure / Interfaces / MLIP Long-Range Physics**.
 
 ## Concept Dependencies
 
@@ -71,6 +90,9 @@ flowchart TD
     SYM[Crystal Symmetry] --> BULK
     FT[Fourier Analysis] --> DFT
     PBC --> FT
+    PBC --> EL[Electrostatics]
+    EL --> DFT
+    EL --> INT
     CM[Classical Mechanics] --> MD
     TH[Thermodynamics] --> SM[Statistical Mechanics]
     SM --> ENS
