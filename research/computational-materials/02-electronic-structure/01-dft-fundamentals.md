@@ -202,6 +202,37 @@ A density of states counts electronic states per energy interval under a given n
 
 Why is bonding often mixed rather than purely ionic or covalent? What does a charge-density difference depend on? Why are projected orbitals and charge partitioning not unique observables?
 
+## Electronic Band Theory: Bloch States, DOS and Effective Mass
+
+![Illustrative valence and conduction band dispersion](../assets/figures/bands-dispersion.svg)
+
+*Figure. Band energies vary with wavevector; curvature near band extrema determines an effective-mass approximation.*
+
+For a periodic potential, Bloch states are labeled by band $n$ and crystal wavevector $\mathbf k$. Their energies $\varepsilon_n(\mathbf k)$ form bands. The density of one-electron states, in an appropriate normalization, is
+
+```math
+g(E)=\sum_n\int_{\mathrm{BZ}}\frac{d^3k}{(2\pi)^3}\,\delta[E-\varepsilon_n(\mathbf k)].
+```
+
+With this normalization, $g(E)$ is a density of states **per real-space volume** when states are counted per the chosen spin convention. Computational DOS plots may instead be normalized per cell or per formula unit. Projected DOS depends on the chosen orbitals and projection procedure.
+
+Near a nondegenerate band extremum $\mathbf k_0$, the inverse effective-mass tensor is
+
+```math
+(m^{*-1})_{ij}=\frac{1}{\hbar^2}\left.\frac{\partial^2\varepsilon_n}{\partial k_i\partial k_j}\right|_{\mathbf k_0}.
+```
+
+A semiconductor's band gap separates occupied and unoccupied states at zero temperature under the corresponding occupation convention. **Kohn–Sham eigenvalue gaps are not generally equal to quasiparticle excitation gaps**, although particular approximations or cases may show agreement.
+
+### Why this matters
+
+Band structure, Fermi-level position, DOS and bonding projections help interpret electronic conductivity, screening and surface states. **Electronic conductivity and ionic diffusion are distinct transport phenomena**; an ionic migration barrier cannot be inferred from a band gap.
+
+### Numerical interpretation
+
+Converge reciprocal-space sampling, basis and broadening. A band plot along high-symmetry lines is not a full Brillouin-zone integral and cannot by itself prove whether an indirect gap exists elsewhere.
+
+
 ## Review questions
 
 1. What is self-consistent in Kohn–Sham DFT?
