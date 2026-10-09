@@ -53,6 +53,19 @@ Existing lessons have been strengthened in place rather than split into small ch
 
 Recommended prerequisite connection: **Vector Calculus → PBC and Fourier Analysis → Electrostatics → Electronic Structure / Interfaces / MLIP Long-Range Physics**.
 
+## Additional General Foundations Inspired by Public Research Workflows
+
+The [ishikawa-group public repository collection](https://github.com/ishikawa-group) spans atomistic calculators, neural potentials, structural generation, surface stability, enhanced sampling, and reaction-network modeling. The handbook uses these as **topic inspiration**, not as material-specific case studies.
+
+| General theory | English lesson |
+| --- | --- |
+| Microkinetics and Electrochemical Reactions | [Microkinetics Fundamentals](03-atomistic-methods/07-microkinetics-and-electrocatalysis.md) |
+| Structure Generation (VAEs, GANs, periodic representations) | [Generative Models for Atomic Structures](06-machine-learning-potentials/03-generative-materials-models.md) |
+| Knowledge Distillation and Fine-Tuning | [MLIP Validation — additional section](06-machine-learning-potentials/02-mlip-validation.md) |
+| Free-Energy Profiles and Reaction Networks | [Free-Energy Calculation Methods — additional section](03-atomistic-methods/06-free-energy-calculation-methods.md) |
+
+Read in sequence: **Thermodynamics → Statistical Mechanics → Surface Chemistry → TST → Microkinetics**, and separately **Crystal Symmetry → MLIP Fundamentals → Transfer Learning → Generative Structure Models**.
+
 ## Concept Dependencies
 
 ```mermaid
