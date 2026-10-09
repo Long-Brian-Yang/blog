@@ -168,6 +168,28 @@ An ensemble-disagreement score is not automatically a calibrated uncertainty. Ch
 **Related:** [Electrostatics and Long-Range Interactions](../01-physical-foundations/10-electrostatics-and-long-range-interactions.md).
 
 
+## Transfer Learning and Knowledge Distillation
+
+![Teacher and student MLIP training](../assets/figures/mlip-distillation.svg)
+
+*Figure. A student model can learn reference energies, forces or representations from a teacher, but inherits potential teacher biases.*
+
+**Fine-tuning** adapts a pretrained potential to a target environment using additional, typically higher-relevance reference data. This can reduce training expense, but may cause catastrophic forgetting outside the fine-tuning domain.
+
+**Knowledge distillation** trains a student to reproduce signals from a teacher. A schematic objective is:
+
+```math
+\mathcal L_{\rm student}=\lambda_{\rm ref}\mathcal L_{\rm reference}+\lambda_{\rm distill}\mathcal L_{\rm teacher}.
+```
+
+The terms must use consistent energy scales, force conventions and datasets. Teacher predictions are **not independent DFT truth**; students should be evaluated against independent high-quality references, particularly on transition states, surfaces and distinct structural families.
+
+### Generalization tests
+
+Compare scratch training, fine-tuning and distillation with identical held-out benchmarks. Report training cost, inference speed, full error distributions and property-level transfer, not only overall MAE. Monitor domain shift in new chemical environments and model-dependence of teacher labels.
+
+**Relevant public research directions:** [nnp-knowledge-distillation](https://github.com/ishikawa-group/nnp-knowledge-distillation) and [mlip-adsorption-energy-benchmark](https://github.com/ishikawa-group/mlip-adsorption-energy-benchmark).
+
 ## Review questions
 
 1. Why is a random train/test split of one AIMD trajectory often optimistic?
