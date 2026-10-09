@@ -129,6 +129,43 @@ Here $z$ is the number of equivalent destinations and $\nu$ an attempt frequency
 - Check whether mobile species other than the target ion contribute to charge transport.
 - Do not confuse proton transfer event frequency with a macroscopic proton diffusivity.
 
+## Linear Response: Green–Kubo and Einstein–Helfand
+
+![Velocity autocorrelation and its time integral](../assets/figures/greenkubo-vacf.svg)
+
+*Figure. The Green–Kubo self-diffusion coefficient depends on the converged time integral of velocity autocorrelation.*
+
+At equilibrium, normal isotropic three-dimensional self diffusion can be evaluated from the velocity autocorrelation function:
+
+```math
+D=\frac13\int_0^\infty\langle\mathbf v(0)\cdot\mathbf v(t)\rangle\,dt.
+```
+
+This Green–Kubo relation and the long-time Einstein MSD expression are equivalent under stationarity, suitable decay of velocity correlations and normal diffusion. For a finite simulation, integrate only after testing convergence against maximum lag time and uncertainty.
+
+For electrical conductivity, Green–Kubo uses the **total charge current** $\mathbf J(t)=\sum_i q_i\mathbf v_i(t)$ for appropriately defined transported charges:
+
+```math
+\sigma=\frac{1}{3Vk_{\mathrm B}T}\int_0^\infty\langle\mathbf J(0)\cdot\mathbf J(t)\rangle\,dt.
+```
+
+Here $\mathbf J$ is the total charge flux with units charge × velocity, not current density. The corresponding Einstein–Helfand expression uses charge-weighted unwrapped displacements. For multicomponent systems, cross-species terms and frame conventions must be addressed carefully.
+
+### Onsager viewpoint
+
+Near equilibrium, coupled fluxes can respond linearly to thermodynamic forces:
+
+```math
+J_i=\sum_j L_{ij}X_j.
+```
+
+Onsager reciprocity $L_{ij}=L_{ji}$ requires appropriate microscopic reversibility, variable parity and absence of symmetry-breaking magnetic fields. The definition of fluxes and conjugate forces determines the units and coefficients.
+
+### Statistical caveats
+
+Long correlation-time tails can contribute appreciably despite appearing small on a plot. Multiple independent trajectories, block analysis and comparison to Einstein–Helfand estimates help assess convergence. An autocorrelation that has merely crossed zero is not proof that the integral is converged.
+
+
 ## Review questions
 
 1. What is the difference between a hop barrier and a diffusion coefficient?
