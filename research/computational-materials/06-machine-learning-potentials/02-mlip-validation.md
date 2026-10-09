@@ -139,6 +139,35 @@ A good report states training-data provenance, reference code/settings, split st
 
 The conclusion should be proportional to the evidence: **“accurate for the tested force distribution”** is not the same claim as **“predicts room-temperature transport.”**
 
+## Long-Range MLIP Physics and Reliability
+
+![Local MLIP environment and longer-range coupling](../assets/figures/mlip-longrange.svg)
+
+*Figure. A finite local graph cutoff may omit important far-field electrostatic and polarization response.*
+
+Many MLIPs express energy as a sum of local environment contributions. This assumption can be efficient, but in ionic and polar materials long-range Coulomb, dielectric response, and variable oxidation environments may matter.
+
+A hybrid energy decomposition can be written schematically as
+
+```math
+E_{\mathrm{total}}=E_{\mathrm{short,ML}}+E_{\mathrm{long,physical}}+E_{\mathrm{other}},
+```
+
+where the terms must be designed and trained to avoid double counting. Examples of nonlocal modeling choices include explicit electrostatics, learned charges, charge-equilibration schemes, polarizable responses and global features. The best choice depends on the phenomena and data.
+
+### What should be validated?
+
+- **Charge/field response:** stress, dielectric behavior or polarization where applicable.
+- **System-size transferability:** compare cells beyond the training size.
+- **Defects and interfaces:** test environments with distinct local charges or dipoles.
+- **Long-distance interactions:** verify asymptotic behavior where physically required.
+- **Transport and saddles:** re-evaluate property-level errors, not just pointwise force MAE.
+
+An ensemble-disagreement score is not automatically a calibrated uncertainty. Check reliability diagrams or coverage of prediction intervals on untouched validation families if probabilistic claims are made.
+
+**Related:** [Electrostatics and Long-Range Interactions](../01-physical-foundations/10-electrostatics-and-long-range-interactions.md).
+
+
 ## Review questions
 
 1. Why is a random train/test split of one AIMD trajectory often optimistic?
