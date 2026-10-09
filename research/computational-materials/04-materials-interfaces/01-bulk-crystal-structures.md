@@ -71,6 +71,35 @@ Bulk migration requires **accessible sites**, **barriers**, and **connectivity**
 | Relaxation | Is the cell geometry appropriate for the target conditions? |
 | Diffusion | Are site occupation and kinetic connectivity known? |
 
+## Point Defects, Disorder and Thermodynamic Populations
+
+A **point defect** changes the local occupancy or identity of one or a few sites: vacancy, interstitial, substitution, or a defect complex. **Configurational disorder** concerns the spatial distribution of species and defects; structures of identical average composition can have different local environments and energies.
+
+For defect type $D$ with Gibbs formation free energy $\Delta G_f$, a dilute idealized equilibrium concentration scales as
+
+```math
+c_D\propto N_{\mathrm{sites}}\exp\!\left(-\frac{\Delta G_f}{k_{\mathrm B}T}\right).
+```
+
+The prefactor, occupancy constraints, defect charge, activity, chemical reservoirs and electroneutrality equations are needed for quantitative concentrations. In charged defect systems, charge-state equilibria also depend on the electronic chemical potential.
+
+### Disorder and configurational entropy
+
+For an ideal binary mixture with site fractions $x$ and $1-x$, configurational entropy per site is
+
+```math
+s_{\mathrm{mix}}=-k_{\mathrm B}\,[x\ln x+(1-x)\ln(1-x)].
+```
+
+This expression assumes independent site mixing and no short-range correlations. Energetic interactions, local ordering, clustering and interfaces can invalidate ideal-mixing descriptions.
+
+### Defect migration versus formation
+
+Formation energies influence **how many carriers or vacancies exist**; migration barriers influence **how readily an existing carrier hops**. An experimentally fitted activation energy can combine carrier formation, association and migration contributions depending on the transport regime.
+
+A reliable study should distinguish fixed defect concentration (e.g. an imposed simulation composition) from a truly equilibrated defect ensemble.
+
+
 ## Review questions
 
 1. What is the difference between a primitive cell and a supercell?
