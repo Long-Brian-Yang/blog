@@ -77,6 +77,33 @@ For hydrated BaZrO₃(001), compare BaO and ZrO₂ terminations with consistent 
 
 A lower local barrier does **not** automatically imply greater net proton transport across the surface.
 
+## Surface Thermodynamics: Stability, Adsorption and Wulff Shapes
+
+At equilibrium under a specified environment, surface stability is determined by the appropriate **surface excess free energy**, not simply the vacuum-slab total energy. If the slab can exchange species with reservoirs, define a surface grand potential with chemical potentials and the correct number of exposed faces.
+
+For a simple one-species Langmuir adsorption model with noninteracting equivalent sites, the coverage can be expressed as
+
+```math
+\theta=\frac{KP}{1+KP},
+```
+
+where $P$ is an adsorbate pressure and $K$ has reciprocal-pressure units under this convention. Dissociative adsorption, lateral interactions, multiple sites and surface reconstructions generally require richer models.
+
+### Wulff construction
+
+The equilibrium shape of a crystal minimizes total surface free energy at fixed volume. The Wulff construction sets each facet's distance from the center proportional to its orientation-dependent surface free energy $\gamma(\hat{\mathbf n})$:
+
+```math
+h(\hat{\mathbf n})=\lambda\,\gamma(\hat{\mathbf n}).
+```
+
+This ideal equilibrium argument neglects kinetic growth limitations, support effects and changes in chemical environment unless explicitly included. It should not be used to infer experimentally observed nanoparticle shapes without checking those limitations.
+
+### Why multiple terminations matter
+
+Even for one Miller orientation, distinct atomic terminations may exhibit different chemistry, adsorption equilibria and relative thermodynamic stability. Compare candidates with consistent reservoir chemical potentials, stoichiometry and convergence settings. A low-energy termination is not necessarily the most kinetically accessible one.
+
+
 ## Review questions
 
 1. Why can two (001) surfaces have distinct energetics?
