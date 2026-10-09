@@ -30,8 +30,6 @@ A structured collection of **English-language notes** organized by subject and c
 | 22 | [MLIP Fundamentals](06-machine-learning-potentials/01-mlip-fundamentals.md) | Machine learning |
 | 23 | [MLIP Validation for MD, NEB and Diffusion](06-machine-learning-potentials/02-mlip-validation.md) | Machine learning |
 | 24 | [Electrostatics and Long-Range Interactions](01-physical-foundations/10-electrostatics-and-long-range-interactions.md) | Foundations |
-| 25 | [Microkinetics and Electrochemical Reactions](03-atomistic-methods/07-microkinetics-and-electrocatalysis.md) | Atomistic methods |
-| 26 | [Generative Models for Atomic Structures](06-machine-learning-potentials/03-generative-materials-models.md) | Machine learning |
 
 **Suggested prerequisite route for the new lessons:** Thermodynamics → Statistical Mechanics → Statistical Ensembles → Free-Energy Calculation Methods. Reciprocal Space is integrated with PBC and Bulk; DFT Theory with DFT Fundamentals; Numerical Error Analysis with Geometry Optimization and MD.
 
@@ -54,19 +52,6 @@ Existing lessons have been strengthened in place rather than split into small ch
 | MLIP Long-Range Physics and Reliability | [MLIP Validation](06-machine-learning-potentials/02-mlip-validation.md) |
 
 Recommended prerequisite connection: **Vector Calculus → PBC and Fourier Analysis → Electrostatics → Electronic Structure / Interfaces / MLIP Long-Range Physics**.
-
-## Additional General Foundations Inspired by Public Research Workflows
-
-The [ishikawa-group public repository collection](https://github.com/ishikawa-group) spans atomistic calculators, neural potentials, structural generation, surface stability, enhanced sampling, and reaction-network modeling. The handbook uses these as **topic inspiration**, not as material-specific case studies.
-
-| General theory | English lesson |
-| --- | --- |
-| Microkinetics and Electrochemical Reactions | [Microkinetics Fundamentals](03-atomistic-methods/07-microkinetics-and-electrocatalysis.md) |
-| Structure Generation (VAEs, GANs, periodic representations) | [Generative Models for Atomic Structures](06-machine-learning-potentials/03-generative-materials-models.md) |
-| Knowledge Distillation and Fine-Tuning | [MLIP Validation — additional section](06-machine-learning-potentials/02-mlip-validation.md) |
-| Free-Energy Profiles and Reaction Networks | [Free-Energy Calculation Methods — additional section](03-atomistic-methods/06-free-energy-calculation-methods.md) |
-
-Read in sequence: **Thermodynamics → Statistical Mechanics → Surface Chemistry → TST → Microkinetics**, and separately **Crystal Symmetry → MLIP Fundamentals → Transfer Learning → Generative Structure Models**.
 
 ## Concept Dependencies
 

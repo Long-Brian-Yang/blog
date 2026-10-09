@@ -110,22 +110,6 @@ Correlated samples reduce the effective information in reweighting. Block-bootst
 History-dependent bias allows exploration of difficult states, but biased event counts are generally not unbiased physical rate estimates. Kinetics recovery requires dedicated assumptions and reweighting or infrequent-bias methods where appropriate.
 
 
-## Integrating Free-Energy Sampling with Microkinetics
-
-A free-energy profile from umbrella sampling or metadynamics characterizes the reversible statistical cost of a collective-variable change. It does **not** automatically yield a reaction rate: a kinetic model also needs appropriate dynamical assumptions, prefactors and possible recrossing corrections.
-
-For a simple activated event, under transition-state assumptions:
-
-```math
-k_{\rm TST}=\frac{k_{\rm B}T}{h}\exp(-\beta\Delta G^\ddagger).
-```
-
-**Do not** take the highest value of an arbitrary one-dimensional PMF as a universal rate barrier without checking the coordinate measure, dividing surface and hidden slow degrees of freedom.
-
-For reaction networks with several intermediates, compute relative basin free energies and directional rates under consistent reference conventions, then solve a master equation or surface population balances.
-
-**Related:** [Microkinetics and Electrochemical Reaction Fundamentals](07-microkinetics-and-electrocatalysis.md).
-
 ## Review questions
 
 1. Why can entropy change the apparent barrier?
