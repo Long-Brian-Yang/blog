@@ -86,6 +86,31 @@ A low NEB barrier at one interface site is insufficient to demonstrate an overal
 
 For glass–crystal or electrolyte–electrode contacts, distinguish intrinsic interfacial ionic mobility from the experimentally measured interface resistance. Grain boundary chemistry, contact quality, and reaction layers may dominate measured impedance even if atomistic local hopping barriers are small.
 
+## Interface Thermodynamics and Segregation Equilibria
+
+An interface has excess free energy that depends on strain, composition, orientation and interfacial chemical reservoirs. For a model containing two equivalent interfaces of area $A$, a reference-consistent excess energy may be written
+
+```math
+\gamma_{\mathrm{int}}=\frac{G_{\mathrm{cell}}-\sum_i N_i\mu_i}{2A}.
+```
+
+For inequivalent interfaces, the combined excess cannot generally be divided into two identical contributions. Elastic strain energy and appropriate strained bulk references require careful handling.
+
+### Segregation versus mobility
+
+A dopant or mobile defect can preferentially occupy an interface even if its local hopping barrier is high. Segregation changes the **carrier population**; barriers and hopping correlations change the **kinetics**. Both affect interfacial resistance.
+
+A simple equilibrium site-occupation ratio between bulk and interface environments is
+
+```math
+\frac{p_{\mathrm{int}}}{p_{\mathrm{bulk}}}\propto\exp\!\left[-\frac{G_{\mathrm{int}}-G_{\mathrm{bulk}}}{k_{\mathrm B}T}\right],
+```
+
+with degeneracy, site capacity and concentration corrections in a quantitative model.
+
+At an electrolyte/electrode interface, distinguish intrinsic ionic transport, space-charge redistribution and chemical reaction layers from extrinsic contact resistance.
+
+
 ## Review questions
 
 1. How do interfaces differ from surfaces and grain boundaries?
