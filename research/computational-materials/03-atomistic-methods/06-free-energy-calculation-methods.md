@@ -83,6 +83,33 @@ Consider a particle transitioning between two coordination basins in a flexible 
 
 State CV definitions, ensemble, thermostat, sampling length, bias parameters, independent starts, uncertainty methodology, and any observed hysteresis. Distinguish a **free-energy difference** from a **rate**: a barrier alone does not encode all dynamical recrossing or transport correlations.
 
+## Enhanced Sampling: Overlap, Hysteresis and Convergence
+
+![Umbrella histogram overlap](../assets/figures/sampling-overlap.svg)
+
+*Figure. Overlapping biased distributions enable statistically connected reweighting; poor overlap leaves uncertain free-energy regions.*
+
+In umbrella sampling the unbiased probability along $s$ is recovered by accounting for the bias $W_k(s)$. For a single biased distribution measured under the same reference temperature, a schematic reweighting relationship is
+
+```math
+P_0(s)\propto P_k^{\mathrm{bias}}(s)\,\exp[\beta W_k(s)].
+```
+
+Proper normalization and multiwindow combination are required. WHAM and MBAR use bias information across overlapping windows rather than independently stitching unnormalized histograms.
+
+### Hidden barriers and hysteresis
+
+Even extensive sampling along one collective variable can miss slow orthogonal rearrangements. Compare sampling initiated from both sides of a transition, use multiple independent starts, and inspect whether free-energy estimates depend on history. Converged histogram appearance is not enough if slow modes remain trapped.
+
+### Effective sample size and error bars
+
+Correlated samples reduce the effective information in reweighting. Block-bootstrap or autocorrelation-aware uncertainty estimates are preferable to treating every MD frame as independent. Test sensitivity to umbrella spacing, spring constants, run lengths and CV definition.
+
+### Metadynamics caution
+
+History-dependent bias allows exploration of difficult states, but biased event counts are generally not unbiased physical rate estimates. Kinetics recovery requires dedicated assumptions and reweighting or infrequent-bias methods where appropriate.
+
+
 ## Review questions
 
 1. Why can entropy change the apparent barrier?
