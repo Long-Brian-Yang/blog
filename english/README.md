@@ -57,6 +57,8 @@ File naming: `YYYY-MM-DD_topic.md`
 
 - [2026-10-07 — How to Disagree Without Sounding Rude](./daily/2026/10/2026-10-07_disagree-without-sounding-rude.md)
 
+- [2026-10-09 — How to Interrupt and Clarify Naturally](./daily/2026/10/2026-10-09_interrupt-and-clarify.md)
+
 ## Current Learning Progression
 
 ### Everyday & discussion English
