@@ -59,6 +59,8 @@ File naming: `YYYY-MM-DD_topic.md`
 
 - [2026-10-09 — How to Interrupt and Clarify Naturally](./daily/2026/10/2026-10-09_interrupt-and-clarify.md)
 
+- [2026-10-22 — Why Do We Overthink Other People's Reactions?](./daily/2026/10/2026-10-22_overthinking-others-reactions.md)
+
 ## Current Learning Progression
 
 ### Everyday & discussion English
