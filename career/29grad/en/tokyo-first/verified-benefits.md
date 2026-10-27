@@ -46,3 +46,10 @@ Official FAQ explicitly includes expected Sep 2028–Mar 2029 graduates and comp
 
 ## Next verification
 Confirm actual assigned workplace, doctoral new-graduate category, base pay versus allowances, housing eligibility, overtime, transfers, interview language, and Class of 2029 deadlines.
+
+## Additional primary-source checks (2026-10-27)
+- AGC: JPY 389,980/month doctoral base pay and JPY 6.62m reference annual pay are **FY2026** figures; Tokyo HQ, Yokohama lab; 128 annual holidays for FY2026. https://www.agc.com/recruiting/info/new/
+- NTT R&D: projected **FY2027** doctoral pay JPY 390,260/month **includes** JPY 40,200 housing subsidy; labs include Musashino, Yokosuka, Atsugi and Tsukuba. https://www.ntt-labs.jp/saiyo/recruit/recruit02.html
+- PFN: 26 paid days from first year, hybrid work, employer-funded DC pension contribution up to JPY 55,000/month; role conditions need checking. https://www.preferred.jp/ja/careers/culture
+
+**Cohort warning:** AGC's displayed doctoral winter application schedule is for the 2028 cohort, not 2029. NTT's new-graduate page currently addresses 2027. None of these salary figures is a guaranteed 2029 offer.
