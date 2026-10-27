@@ -24,3 +24,5 @@ Compare corporate R&D, materials/chemicals/energy, IT/AI/computational science, 
 Keep this version aligned with the [Japanese version](../ja/README.md). Date meaningful changes in the activity log. Include official URLs and verification dates for employer information.
 
 - [Employer longlist (50 × 4 paths)](company-longlist.md)
+
+- [Tokyo-first employer profiles and benefits research](tokyo-first/README.md)
