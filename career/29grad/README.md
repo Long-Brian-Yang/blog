@@ -1,24 +1,12 @@
-# 29卒 就職活動ログ / Career Exploration
+# 29卒 Career Exploration / 29卒 就職活動
 
-開始日: 2026-10-27 | 想定卒業: 2029年3月 | 状態: 業界・職種探索中
+Started / 開始: 2026-10-27
 
-## 目的
-就職先を早期に決めつけず、調査・対話・応募・振り返りを記録し、自分に合う仕事を見極める。現在の志望業界・職種は未確定。
+Choose a language / 言語を選択:
 
-## 探索する4つの方向
-1. 企業研究所・研究開発（R&D）
-2. 材料・化学・エネルギー
-3. IT・AI・計算科学
-4. コンサルティング・総合職
+- [日本語版 / Japanese](ja/README.md)
+- [English version / 英語版](en/README.md)
 
-これらは候補であり、優先順位や志望確定を意味しない。
+Both versions contain corresponding sections and are intended to be updated together. / 日英両版は同じ構成で、今後も同時に更新します。
 
-## ナビゲーション
-- [自己分析](self-assessment.md)
-- [業界・職種探索](industry-exploration.md)
-- [企業比較・応募管理](company-tracker.md)
-- [活動記録](activity-log.md)
-- [今後の計画](roadmap.md)
-
-## 更新ルール
-事実・仮説・個人的感想を区別する。企業情報は出典URLと確認日を記載する。応募資格・締切は必ず公式情報で再確認する。個人情報や非公開の選考内容は公開リポジトリに書かない。
+Current focus / 現在の方針: Explore R&D, materials/chemicals/energy, IT/AI/computational science, and consulting/generalist careers without choosing a preferred industry yet.
