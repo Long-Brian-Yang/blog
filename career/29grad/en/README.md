@@ -29,3 +29,5 @@ Keep this version aligned with the [Japanese version](../ja/README.md). Date mea
 
 - [Officially checked salary and benefits comparison](tokyo-first/verified-benefits.md)
 - [Preparation scripts and interview drafts](preparation-drafts.md)
+
+- [Personal preparation master workbook](personal-preparation.md)
