@@ -26,3 +26,6 @@ Keep this version aligned with the [Japanese version](../ja/README.md). Date mea
 - [Employer longlist (50 × 4 paths)](company-longlist.md)
 
 - [Tokyo-first employer profiles and benefits research](tokyo-first/README.md)
+
+- [Officially checked salary and benefits comparison](tokyo-first/verified-benefits.md)
+- [Preparation scripts and interview drafts](preparation-drafts.md)
