@@ -31,3 +31,5 @@ R&D、材料・化学・エネルギー、IT・AI・計算科学、コンサル�
 - [就職準備・自己紹介・面接原稿集](preparation-drafts.md)
 
 - [個人準備マスター（研究棚卸し・自己紹介・志望動機）](personal-preparation.md)
+
+- [5方向並行探索のキャリア方針](parallel-career-strategy.md)
