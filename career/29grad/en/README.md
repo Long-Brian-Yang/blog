@@ -1,24 +1,24 @@
-# Class of 2029 — Career Exploration & Job Hunting
+# Class of 2029 Career Exploration & Job Search Handbook
 
-Started: 2026-10-27 | Expected graduation: March 2029 | Current stage: Exploring industries and roles
+**Started:** 2026-10-27 | **Expected graduation:** March 2029 | **Stage:** Exploration
 
-## Purpose
-Keep an evolving record of research, conversations, applications, and reflections without prematurely committing to one career path.
+> This is a personal working framework, not a finalized career choice. Industries, roles, and target employers remain open. Always verify hiring year, deadlines, eligibility, and selection steps on official employer websites.
 
-## Four paths to explore
-1. Corporate research laboratories and R&D
-2. Materials, chemicals, and energy
-3. IT, AI, and computational science
-4. Consulting and generalist business roles
+## How to use this handbook
+1. [Self-assessment](self-assessment.md): Map experience, strengths, and values
+2. [Industry and role exploration](industry-exploration.md): Compare day-to-day work and fit
+3. [Company and application tracker](company-tracker.md): Track sources, deadlines, and applications
+4. [Activity log](activity-log.md): Record research, conversations, and reflections
+5. [Roadmap](roadmap.md): Plan actions from now to joining a company
 
-These are exploration categories, not ranked preferences.
+## Exploration philosophy
+Compare corporate R&D, materials/chemicals/energy, IT/AI/computational science, and consulting/generalist roles without ranking them prematurely. Industry and job function are different dimensions. Consider technical and business positions where doctoral skills transfer.
 
-## Pages
-- [Self-assessment](self-assessment.md)
-- [Industry exploration](industry-exploration.md)
-- [Company and application tracker](company-tracker.md)
-- [Activity log](activity-log.md)
-- [Roadmap](roadmap.md)
+## Decision principles
+- Separate **verified facts**, **hypotheses**, and **personal impressions**.
+- Focus on actual responsibilities, mentorship, working conditions, and evaluation—not brand names alone.
+- Compare work content, expertise fit, learning, compensation, location, language, autonomy, research freedom, and impact.
+- Do not publish contact details, confidential research, or private interview information in a public repository.
 
-## Maintenance rules
-Update Japanese and English counterparts together. Distinguish verified facts from hypotheses and personal impressions. Add official sources and verification dates for company information. Recheck eligibility and deadlines. Do not publish personal or confidential recruitment information in this public repository.
+## Updating
+Keep this version aligned with the [Japanese version](../ja/README.md). Date meaningful changes in the activity log. Include official URLs and verification dates for employer information.
