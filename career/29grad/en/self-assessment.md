@@ -45,3 +45,15 @@ Why continue research? What makes a career change attractive or concerning? What
 - Behavioral story: ownership, difficulty, improvement, and result
 
 **Do not invent personal answers or achievements.** Fill them in through discussion and evidence.
+
+## User response, 2026-10-27: What feels rewarding in research?
+
+The user reported enjoying **all five**: scientific discovery, coding/computational methods, solving difficult problems, explaining and presenting results, and collaboration. No ranking should be imposed; keep career exploration broad.
+
+### Provisional positioning (substantiate before applications)
+“I enjoy the full process of approaching scientific questions: computational analysis, problem solving, and communicating results.”
+
+**Important:** Interest is not proof of proficiency or achievement. Add specific STAR evidence for each competency.
+
+### Next evidence to gather
+Choose one concrete research challenge and document the situation, personal actions, validation, and outcome.
