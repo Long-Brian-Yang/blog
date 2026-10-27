@@ -24,3 +24,5 @@ R&D、材料・化学・エネルギー、IT・AI・計算科学、コンサル�
 日本語版と[English version](../en/README.md)を同じ内容で更新する。日付と変更点を活動ログに追記する。企業データには公式URL・確認日を添える。
 
 - [企業ロングリスト（4方向×50社）](company-longlist.md)
+
+- [東京優先・待遇重視の企業研究（個別企業ページ）](tokyo-first/README.md)
