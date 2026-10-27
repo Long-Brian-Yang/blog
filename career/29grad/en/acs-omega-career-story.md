@@ -27,3 +27,6 @@ Benchmarking NEP, MACE, and SevenNet machine-learning interatomic potentials for
 
 ## Next interview prompt
 **Which reviewer comment or research setback most changed the way you think or work, and what did you personally do afterward?**
+
+## Additional clarification (2026-10-27)
+The user reports **more than 20 new comments in the second review round**. Reviewer 5's seven points are only a subset, not the entire second-round workload. Specific responses and individual contributions remain unverified. The story should emphasize evidenced prioritization, validation, judgment, and collaboration rather than comment count alone.
