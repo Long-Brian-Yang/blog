@@ -26,3 +26,6 @@ R&D、材料・化学・エネルギー、IT・AI・計算科学、コンサル�
 - [企業ロングリスト（4方向×50社）](company-longlist.md)
 
 - [東京優先・待遇重視の企業研究（個別企業ページ）](tokyo-first/README.md)
+
+- [公式確認済み給与・福利厚生比較](tokyo-first/verified-benefits.md)
+- [就職準備・自己紹介・面接原稿集](preparation-drafts.md)
